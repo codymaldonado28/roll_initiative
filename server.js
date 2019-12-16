@@ -7,7 +7,7 @@ const express = require('express'),
 
 app.use(express.json())
 
-require('./server/config/db')
+require('./server/config/database')
 require('./server/config/routes')(app)
 
 

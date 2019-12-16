@@ -1,10 +1,10 @@
-const authors = require('../controllers/authors')
+const characters = require('../controllers/characters')
 
 module.exports = (app) => {
-    app.get('/api/authors', (req, res) => authors.index(req,res))
-    app.post('/api/author/create', (req, res) => authors.create(req,res))
-    app.get('/api/author/:id', (req,res) => authors.show(req,res))
-    app.put('/api/author/update/:id', (req,res) => authors.update(req,res))
-    app.delete('/api/author/destroy/:id', (req,res) => authors.destroy(req,res))
+    app.get('/api/characters', (req, res) => characters.index(req,res))
+    app.post('/api/character/create', (req, res) => characters.create(req,res))
+    app.get('/api/character/:id', (req,res) => characters.show(req,res))
+    app.put('/api/character/update/:id', (req,res) => characters.update(req,res))
+    app.delete('/api/character/destroy/:id', (req,res) => characters.destroy(req,res))
     
 }
