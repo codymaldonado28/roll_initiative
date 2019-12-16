@@ -570,6 +570,21 @@ let HttpService = class HttpService {
     constructor(_http) {
         this._http = _http;
     }
+    getAllCharacters() {
+        return this._http.get('/api/characters');
+    }
+    getOneCharacter(id) {
+        return this._http.get(`/api/character/${id}`);
+    }
+    createCharacter(newCharacter) {
+        return this._http.post('/api/character/create', newCharacter);
+    }
+    updateCharacter(updateCharacter) {
+        return this._http.put(`/api/character/update/${updateCharacter._id}`, updateCharacter);
+    }
+    destroyCharacter(id) {
+        return this._http.delete(`/api/character/destroy/${id}`);
+    }
 };
 HttpService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }

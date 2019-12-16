@@ -28,4 +28,4 @@ export class HttpService {
     return this._http.delete(`/api/character/destroy/${id}`);
   }
 }
-}
+
