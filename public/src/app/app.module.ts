@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CharacterSheetComponent } from './character-sheet/character-sheet.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CharacterSheetComponent
+    CharacterSheetComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
