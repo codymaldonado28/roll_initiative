@@ -2,7 +2,7 @@ const mongoose = require('mongoose'),
     path = require('path'),
     fs = require('fs');
 
-mongoose.connect('mongodb://localhost/projectWhatever', {useNewUrlParser:true, useUnifiedTopology:true})
+mongoose.connect('mongodb://localhost/projectCharacter', {useNewUrlParser:true, useUnifiedTopology:true})
 
 var models_path = path.join(__dirname, './../models');
 
