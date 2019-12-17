@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="create.component.css">
+</head>
+
+<body>
+    <div *ngFor='let err of errors'>
+        <p>{{err}}</p>
+    </div>
+    <form (submit)="createCharacter()">
+        <label>Name:</label>
+        <input type="text" name="newCharacter.name" [(ngModel)]="newCharacter.name" /><br>
+        <label>Bio/Description</label>
+        <textarea type="textarea" name="newCharacter.description" [(ngModel)]="newCharacter.description"></textarea><br>
+        <label>Race:</label>
+        <label>
+            <input type="radio" name="newCharacter.race" [(ngModel)]="newCharacter.race" value="Human">
+            Human
+        </label><br/>
+        <label>Class:</label>
+        <input type="text" name="newCharacter.character_class" [(ngModel)]="newCharacter.character_class" /><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+<div *ngFor="let race of allRaces">
+    {{race.name}}
+</div>
+</html>

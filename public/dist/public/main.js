@@ -45,7 +45,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>character-sheet works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>character-sheet works!</p>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/create/create.component.html":
+/*!************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/create/create.component.html ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n    <title>Document</title>\n    <link rel=\"stylesheet\" href=\"create.component.css\">\n</head>\n\n<body>\n    <div *ngFor='let err of errors'>\n        <p>{{err}}</p>\n    </div>\n    <form (submit)=\"createCharacter()\">\n        <label>Name:</label>\n        <input type=\"text\" name=\"newCharacter.name\" [(ngModel)]=\"newCharacter.name\" /><br>\n        <label>Bio/Description</label>\n        <textarea type=\"textarea\" name=\"newCharacter.description\" [(ngModel)]=\"newCharacter.description\"></textarea><br>\n        <label>Race:</label>\n        <label>\n            <input type=\"radio\" name=\"newCharacter.race\" [(ngModel)]=\"newCharacter.race\" value=\"Human\">\n            Human\n        </label><br/>\n        <label>Class:</label>\n        <input type=\"text\" name=\"newCharacter.character_class\" [(ngModel)]=\"newCharacter.character_class\" /><br>\n        <input type=\"submit\" value=\"submit\">\n    </form>\n</body>\n<div *ngFor=\"let race of allRaces\">\n    {{race.name}}\n</div>\n</html>");
 
 /***/ }),
 
@@ -58,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>home works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>home works!</p>\r\n");
 
 /***/ }),
 
@@ -71,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>page-not-found works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>page-not-found works!</p>\r\n");
 
 /***/ }),
 
@@ -320,6 +333,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./character-sheet/character-sheet.component */ "./src/app/character-sheet/character-sheet.component.ts");
 /* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./page-not-found/page-not-found.component */ "./src/app/page-not-found/page-not-found.component.ts");
+/* harmony import */ var _create_create_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./create/create.component */ "./src/app/create/create.component.ts");
+
 
 
 
@@ -330,6 +345,8 @@ const routes = [
     { path: '', redirectTo: '/characters', pathMatch: "full" },
     { path: 'characters', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
     { path: 'character/:id', component: _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_4__["CharacterSheetComponent"] },
+    { path: 'characters/create', component: _create_create_component__WEBPACK_IMPORTED_MODULE_6__["CreateComponent"] },
+    { path: '', pathMatch: 'full', redirectTo: '/characters/create' },
     { path: '**', component: _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_5__["PageNotFoundComponent"] }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -410,6 +427,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./character-sheet/character-sheet.component */ "./src/app/character-sheet/character-sheet.component.ts");
 /* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./page-not-found/page-not-found.component */ "./src/app/page-not-found/page-not-found.component.ts");
+/* harmony import */ var _create_create_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./create/create.component */ "./src/app/create/create.component.ts");
+
 
 
 
@@ -429,7 +448,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
             _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"],
             _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_9__["CharacterSheetComponent"],
-            _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_10__["PageNotFoundComponent"]
+            _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_10__["PageNotFoundComponent"],
+            _create_create_component__WEBPACK_IMPORTED_MODULE_11__["CreateComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -485,6 +505,103 @@ CharacterSheetComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./character-sheet.component.css */ "./src/app/character-sheet/character-sheet.component.css")).default]
     })
 ], CharacterSheetComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/create/create.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/create/create.component.css ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NyZWF0ZS9jcmVhdGUuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/create/create.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/create/create.component.ts ***!
+  \********************************************/
+/*! exports provided: CreateComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateComponent", function() { return CreateComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+let CreateComponent = class CreateComponent {
+    constructor(_httpService, _route, _router) {
+        this._httpService = _httpService;
+        this._route = _route;
+        this._router = _router;
+        this.errors = [];
+    }
+    ngOnInit() {
+        this.getAllRaces();
+        this.newCharacter = {
+            name: '',
+            description: '',
+            race: '',
+            character_class: '',
+            inventory: [],
+            stats: []
+        };
+    }
+    createCharacter() {
+        this.errors = [];
+        let obs = this._httpService.createCharacter(this.newCharacter);
+        obs.subscribe(data => {
+            if (data['results']) {
+                this.newCharacter = {
+                    name: '',
+                    description: '',
+                    race: '',
+                    character_class: '',
+                    inventory: [],
+                    stats: []
+                };
+                console.log(data);
+            }
+            else if (data['errors']) {
+                for (var key in data['errors']) {
+                    this.errors.push(data['errors'][key]['message']);
+                }
+            }
+        });
+    }
+    getAllRaces() {
+        let obs = this._httpService.getAllRaces();
+        obs.subscribe(data => {
+            if (data['results']) {
+                this.allRaces = data['results'];
+            }
+        });
+    }
+};
+CreateComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
+CreateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/create/create.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create.component.css */ "./src/app/create/create.component.css")).default]
+    })
+], CreateComponent);
 
 
 
@@ -584,6 +701,9 @@ let HttpService = class HttpService {
     }
     destroyCharacter(id) {
         return this._http.delete(`/api/character/destroy/${id}`);
+    }
+    getAllRaces() {
+        return this._http.get('http://www.dnd5eapi.co/api/races');
     }
 };
 HttpService.ctorParameters = () => [
@@ -708,7 +828,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\abrya\Desktop\Roll_Initiative\RollInitClone2\rollinitiative\public\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\aidan\Desktop\dojo\MeanStack\rollinitiative\public\src\main.ts */"./src/main.ts");
 
 
 /***/ })
