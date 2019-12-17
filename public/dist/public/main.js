@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n    <title>Document</title>\n    <link rel=\"stylesheet\" href=\"create.component.css\">\n</head>\n\n<body>\n    <div *ngFor='let err of errors'>\n        <p>{{err}}</p>\n    </div>\n    <form (submit)=\"createCharacter()\">\n        <label>Name:</label>\n        <input type=\"text\" name=\"newCharacter.name\" [(ngModel)]=\"newCharacter.name\" /><br>\n        <label>Bio/Description</label>\n        <textarea type=\"textarea\" name=\"newCharacter.description\" [(ngModel)]=\"newCharacter.description\"></textarea><br>\n        <label>Race:</label><br>\n        <label *ngFor=\"let race of allRaces\">\n            <input type=\"radio\" name=\"newCharacter.race\" [(ngModel)]=\"newCharacter.race\" value=\"{{race.name}}\">\n            {{race.name}}\n        </label><br/>\n        <label>Class:</label><br>\n        <label *ngFor=\"let class of allClasses\">\n            <input type=\"radio\" name=\"newCharacter.character_class\" [(ngModel)]=\"newCharacter.character_class\" value=\"{{class.name}}\">\n            {{class.name}}\n        </label><br/>\n        <input type=\"submit\" value=\"submit\">\n    </form>\n\n</body>\n\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <title>Document</title>\r\n    <link rel=\"stylesheet\" href=\"create.component.css\">\r\n</head>\r\n\r\n<body>\r\n    <div *ngFor='let err of errors'>\r\n        <p>{{err}}</p>\r\n    </div>\r\n    <form (submit)=\"createCharacter()\">\r\n        <label>Name:</label>\r\n        <input type=\"text\" name=\"newCharacter.name\" [(ngModel)]=\"newCharacter.name\" /><br>\r\n        <label>Bio/Description</label>\r\n        <textarea type=\"textarea\" name=\"newCharacter.description\" [(ngModel)]=\"newCharacter.description\"></textarea><br>\r\n        <label>Race:</label><br>\r\n        <label *ngFor=\"let race of allRaces\">\r\n            <input type=\"radio\" name=\"newCharacter.race\" [(ngModel)]=\"newCharacter.race\" value=\"{{race.name}}\">\r\n            {{race.name}}\r\n        </label><br/>\r\n        <label>Class:</label><br>\r\n        <label *ngFor=\"let class of allClasses\">\r\n            <input type=\"radio\" name=\"newCharacter.character_class\" [(ngModel)]=\"newCharacter.character_class\" value=\"{{class.name}}\">\r\n            {{class.name}}\r\n        </label><br/>\r\n        <input type=\"submit\" value=\"submit\">\r\n    </form>\r\n\r\n</body>\r\n\r\n</html>");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>page-not-found works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>page-not-found works!</p>\n");
 
 /***/ }),
 
@@ -840,7 +840,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\aidan\Desktop\dojo\MeanStack\rollinitiative\public\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\abrya\Desktop\Roll_Initiative\RollInitClone2\rollinitiative\public\src\main.ts */"./src/main.ts");
 
 
 /***/ })
