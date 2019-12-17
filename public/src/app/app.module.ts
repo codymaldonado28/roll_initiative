@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CharacterSheetComponent } from './character-sheet/character-sheet.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CharacterSheetComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

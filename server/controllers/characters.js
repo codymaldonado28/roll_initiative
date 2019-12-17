@@ -13,13 +13,11 @@ module.exports = {
         Character.create(req.body)
             .then(character => res.json({ results: character }))
             .catch(err => res.json({ errors: err.errors }))
-
     },
     show: (req, res) => {
         Character.findById(req.params.id)
             .then(character => res.json({ results: character }))
             .catch(err => res.json({ errors: err.errors }))
-
     },
     update: (req, res) => {
         Character.findOneAndUpdate({_id: req.params.id}, req.body, {runValidators:true, useFindAndModify:false})
