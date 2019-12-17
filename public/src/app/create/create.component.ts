@@ -16,7 +16,9 @@ export class CreateComponent implements OnInit {
   newCharacter: any;
   errors = [];
   allRaces: any;
+  allClasses: any;
   ngOnInit() {
+    this.getAllClasses()
     this.getAllRaces()
     this.newCharacter = {
       name: '',
@@ -54,6 +56,14 @@ export class CreateComponent implements OnInit {
     obs.subscribe(data => {
       if (data['results']) {
         this.allRaces = data['results'];
+      }
+    })
+  }
+  getAllClasses() {
+    let obs = this._httpService.getAllClasses();
+    obs.subscribe(data => {
+      if (data['results']) {
+        this.allClasses = data['results'];
       }
     })
   }

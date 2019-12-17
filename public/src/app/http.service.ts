@@ -30,5 +30,8 @@ export class HttpService {
   getAllRaces(){
     return this._http.get('http://www.dnd5eapi.co/api/races')
   }
+  getAllClasses(){
+    return this._http.get('http://www.dnd5eapi.co/api/classes')
+  }
 }
 

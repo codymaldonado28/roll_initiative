@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n    <title>Document</title>\n    <link rel=\"stylesheet\" href=\"create.component.css\">\n</head>\n\n<body>\n    <div *ngFor='let err of errors'>\n        <p>{{err}}</p>\n    </div>\n    <form (submit)=\"createCharacter()\">\n        <label>Name:</label>\n        <input type=\"text\" name=\"newCharacter.name\" [(ngModel)]=\"newCharacter.name\" /><br>\n        <label>Bio/Description</label>\n        <textarea type=\"textarea\" name=\"newCharacter.description\" [(ngModel)]=\"newCharacter.description\"></textarea><br>\n        <label>Race:</label>\n        <label>\n            <input type=\"radio\" name=\"newCharacter.race\" [(ngModel)]=\"newCharacter.race\" value=\"Human\">\n            Human\n        </label><br/>\n        <label>Class:</label>\n        <input type=\"text\" name=\"newCharacter.character_class\" [(ngModel)]=\"newCharacter.character_class\" /><br>\n        <input type=\"submit\" value=\"submit\">\n    </form>\n</body>\n<div *ngFor=\"let race of allRaces\">\n    {{race.name}}\n</div>\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n    <title>Document</title>\n    <link rel=\"stylesheet\" href=\"create.component.css\">\n</head>\n\n<body>\n    <div *ngFor='let err of errors'>\n        <p>{{err}}</p>\n    </div>\n    <form (submit)=\"createCharacter()\">\n        <label>Name:</label>\n        <input type=\"text\" name=\"newCharacter.name\" [(ngModel)]=\"newCharacter.name\" /><br>\n        <label>Bio/Description</label>\n        <textarea type=\"textarea\" name=\"newCharacter.description\" [(ngModel)]=\"newCharacter.description\"></textarea><br>\n        <label>Race:</label><br>\n        <label *ngFor=\"let race of allRaces\">\n            <input type=\"radio\" name=\"newCharacter.race\" [(ngModel)]=\"newCharacter.race\" value=\"{{race.name}}\">\n            {{race.name}}\n        </label><br/>\n        <label>Class:</label><br>\n        <label *ngFor=\"let class of allClasses\">\n            <input type=\"radio\" name=\"newCharacter.character_class\" [(ngModel)]=\"newCharacter.character_class\" value=\"{{class.name}}\">\n            {{class.name}}\n        </label><br/>\n        <input type=\"submit\" value=\"submit\">\n    </form>\n\n</body>\n\n</html>");
 
 /***/ }),
 
@@ -549,6 +549,7 @@ let CreateComponent = class CreateComponent {
         this.errors = [];
     }
     ngOnInit() {
+        this.getAllClasses();
         this.getAllRaces();
         this.newCharacter = {
             name: '',
@@ -586,6 +587,14 @@ let CreateComponent = class CreateComponent {
         obs.subscribe(data => {
             if (data['results']) {
                 this.allRaces = data['results'];
+            }
+        });
+    }
+    getAllClasses() {
+        let obs = this._httpService.getAllClasses();
+        obs.subscribe(data => {
+            if (data['results']) {
+                this.allClasses = data['results'];
             }
         });
     }
@@ -704,6 +713,9 @@ let HttpService = class HttpService {
     }
     getAllRaces() {
         return this._http.get('http://www.dnd5eapi.co/api/races');
+    }
+    getAllClasses() {
+        return this._http.get('http://www.dnd5eapi.co/api/classes');
     }
 };
 HttpService.ctorParameters = () => [

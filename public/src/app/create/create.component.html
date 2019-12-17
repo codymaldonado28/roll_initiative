@@ -18,17 +18,19 @@
         <input type="text" name="newCharacter.name" [(ngModel)]="newCharacter.name" /><br>
         <label>Bio/Description</label>
         <textarea type="textarea" name="newCharacter.description" [(ngModel)]="newCharacter.description"></textarea><br>
-        <label>Race:</label>
-        <label>
-            <input type="radio" name="newCharacter.race" [(ngModel)]="newCharacter.race" value="Human">
-            Human
+        <label>Race:</label><br>
+        <label *ngFor="let race of allRaces">
+            <input type="radio" name="newCharacter.race" [(ngModel)]="newCharacter.race" value="{{race.name}}">
+            {{race.name}}
         </label><br/>
-        <label>Class:</label>
-        <input type="text" name="newCharacter.character_class" [(ngModel)]="newCharacter.character_class" /><br>
+        <label>Class:</label><br>
+        <label *ngFor="let class of allClasses">
+            <input type="radio" name="newCharacter.character_class" [(ngModel)]="newCharacter.character_class" value="{{class.name}}">
+            {{class.name}}
+        </label><br/>
         <input type="submit" value="submit">
     </form>
+
 </body>
-<div *ngFor="let race of allRaces">
-    {{race.name}}
-</div>
+
 </html>
