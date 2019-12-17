@@ -13,6 +13,9 @@ const CharacterSchema = new mongoose.Schema({
         required: [true, "Your character must have a name or a title to be referred to."],
         minlength: [2, "Character names need to be longer than two letters. Try adding a title to differentiate yourself"]
     },
+    description: {
+        type: String
+    },
     race: {
         type: String,
         required: [true, "You must choose a race."],

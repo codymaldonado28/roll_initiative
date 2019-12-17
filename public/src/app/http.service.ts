@@ -27,5 +27,11 @@ export class HttpService {
   destroyCharacter(id){
     return this._http.delete(`/api/character/destroy/${id}`);
   }
+  getAllRaces(){
+    return this._http.get('http://www.dnd5eapi.co/api/races')
+  }
+  getAllClasses(){
+    return this._http.get('http://www.dnd5eapi.co/api/classes')
+  }
 }
 
