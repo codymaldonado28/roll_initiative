@@ -338,7 +338,11 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
+module.exports = __webpack_require__(/*! C:\Users\jndab\Documents\CodingDojo\MEAN\js\Angular\RollClone\rollinitiative\public\src\styles.css */"./src/styles.css");
+=======
 module.exports = __webpack_require__(/*! C:\Users\aidan\Desktop\dojo\MeanStack\rollinitiative\public\src\styles.css */"./src/styles.css");
+>>>>>>> 78e64a04e4b1b6322a1f49b9996bba074e80a158
 
 
 /***/ })
