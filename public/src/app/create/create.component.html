@@ -18,16 +18,38 @@
         <input type="text" name="newCharacter.name" [(ngModel)]="newCharacter.name" /><br>
         <label>Bio/Description</label>
         <textarea type="textarea" name="newCharacter.description" [(ngModel)]="newCharacter.description"></textarea><br>
-        <label>Race:</label><br>
-        <label *ngFor="let race of allRaces">
-            <input type="radio" name="newCharacter.race" [(ngModel)]="newCharacter.race" value="{{race.name}}">
-            {{race.name}}
-        </label><br/>
-        <label>Class:</label><br>
-        <label *ngFor="let class of allClasses">
-            <input type="radio" name="newCharacter.character_class" [(ngModel)]="newCharacter.character_class" value="{{class.name}}">
-            {{class.name}}
-        </label><br/>
+        <div *ngIf='newCharacter'>
+            <h3>Chosen Race: {{newCharacter.race}}</h3>
+            <img (click)="chooseRace('Dwarf', 1)" src="../../assets/img/Dwarf.png" alt="Dwarf">
+            <img (click)="chooseRace('Elf', 2)" src="../../assets/img/Elf.png" alt="Elf">
+            <img (click)="chooseRace('Halfling', 3)" src="../../assets/img/Halfling.png" alt="Halfling">
+            <img (click)="chooseRace('Human', 4)" src="../../assets/img/human.png" alt="human">
+            <img (click)="chooseRace('Dragonborn', 5)" src="../../assets/img/Dragonborn.png" alt="dragonborn">
+            <img (click)="chooseRace('Gnome, 6')" src="../../assets/img/Gnome.png" alt="Gnome">
+            <img (click)="chooseRace('Half-Elf', 7)" src="../../assets/img/Half-elf.png" alt="Half-elf">
+            <img (click)="chooseRace('Half-orc', 8)" src="../../assets/img/Half-orc.png" alt="Half-Orc">
+            <img (click)="chooseRace('Tiefling', 9)" src="../../assets/img/Tiefling.png" alt="Tiefling">
+            <div *ngIf='oneRace'>
+                Alignment: {{this.oneRace.alignment}}<br>
+                Age: {{this.oneRace.age}}<br>
+                Size: {{this.oneRace.size}}, {{this.oneRace.size_description}}
+            </div>
+        </div>
+        <div *ngIf='newCharacter.race'>
+            <h3>Chosen Class: {{newCharacter.character_class}}</h3>
+            <img (click)="chooseClass('Barbarian', 1)" src="../../assets/img/Barbarian.png" alt="Barbarian">
+            <img (click)="chooseClass('Bard', 2)" src="../../assets/img/Bard.png" alt="Bard">
+            <img (click)="chooseClass('Cleric', 3)" src="../../assets/img/Cleric.png" alt="Cleric">
+            <img (click)="chooseClass('Druid', 4)" src="../../assets/img/Druid.png" alt="Druid">
+            <img (click)="chooseClass('Fighter', 5)" src="../../assets/img/Fighter.png" alt="Fighter">
+            <img (click)="chooseClass('Monk', 6)" src="../../assets/img/Monk.png" alt="Monk">
+            <img (click)="chooseClass('Paladin', 7)" src="../../assets/img/Paladin.png" alt="Paladin">
+            <img (click)="chooseClass('Ranger', 8)" src="../../assets/img/Ranger.png" alt="Ranger">
+            <img (click)="chooseClass('Rogue', 9)" src="../../assets/img/Rogue.png" alt="Rogure">
+            <img (click)="chooseClass('Sorcerer', 10)" src="../../assets/img/Sorcerer.png" alt="Sorcerer">
+            <img (click)="chooseClass('Warlock', 11)" src="../../assets/img/Warlock.png" alt="Warlock">
+            <img (click)="chooseClass('Wizard', 12)" src="../../assets/img/Wizard.png" alt="Wizard">
+        </div>
         <input type="submit" value="submit">
     </form>
 

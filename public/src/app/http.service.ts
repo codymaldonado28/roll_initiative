@@ -8,30 +8,32 @@ export class HttpService {
 
   constructor(private _http: HttpClient) { }
 
-  getAllCharacters(){
+  getAllCharacters() {
     return this._http.get('/api/characters');
   }
 
-  getOneCharacter(id){
+  getOneCharacter(id) {
     return this._http.get(`/api/character/${id}`)
   }
 
-  createCharacter(newCharacter){
+  createCharacter(newCharacter) {
     return this._http.post('/api/character/create', newCharacter)
   }
 
-  updateCharacter(updateCharacter){
+  updateCharacter(updateCharacter) {
     return this._http.put(`/api/character/update/${updateCharacter._id}`, updateCharacter)
   }
 
-  destroyCharacter(id){
+  destroyCharacter(id) {
     return this._http.delete(`/api/character/destroy/${id}`);
   }
-  getAllRaces(){
+  getAllRaces() {
     return this._http.get('http://www.dnd5eapi.co/api/races')
   }
-  getAllClasses(){
+  getAllClasses() {
     return this._http.get('http://www.dnd5eapi.co/api/classes')
   }
+  getARace(raceIndex) {
+    return this._http.get(`http://www.dnd5eapi.co/api/races/${raceIndex}`)
+  }
 }
-

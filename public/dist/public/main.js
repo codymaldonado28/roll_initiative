@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <title>Document</title>\r\n    <link rel=\"stylesheet\" href=\"create.component.css\">\r\n</head>\r\n\r\n<body>\r\n    <div *ngFor='let err of errors'>\r\n        <p>{{err}}</p>\r\n    </div>\r\n    <form (submit)=\"createCharacter()\">\r\n        <label>Name:</label>\r\n        <input type=\"text\" name=\"newCharacter.name\" [(ngModel)]=\"newCharacter.name\" /><br>\r\n        <label>Bio/Description</label>\r\n        <textarea type=\"textarea\" name=\"newCharacter.description\" [(ngModel)]=\"newCharacter.description\"></textarea><br>\r\n        <label>Race:</label><br>\r\n        <label *ngFor=\"let race of allRaces\">\r\n            <input type=\"radio\" name=\"newCharacter.race\" [(ngModel)]=\"newCharacter.race\" value=\"{{race.name}}\">\r\n            {{race.name}}\r\n        </label><br/>\r\n        <label>Class:</label><br>\r\n        <label *ngFor=\"let class of allClasses\">\r\n            <input type=\"radio\" name=\"newCharacter.character_class\" [(ngModel)]=\"newCharacter.character_class\" value=\"{{class.name}}\">\r\n            {{class.name}}\r\n        </label><br/>\r\n        <input type=\"submit\" value=\"submit\">\r\n    </form>\r\n\r\n</body>\r\n\r\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <title>Document</title>\r\n    <link rel=\"stylesheet\" href=\"create.component.css\">\r\n</head>\r\n\r\n<body>\r\n    <div *ngFor='let err of errors'>\r\n        <p>{{err}}</p>\r\n    </div>\r\n    <form (submit)=\"createCharacter()\">\r\n        <label>Name:</label>\r\n        <input type=\"text\" name=\"newCharacter.name\" [(ngModel)]=\"newCharacter.name\" /><br>\r\n        <label>Bio/Description</label>\r\n        <textarea type=\"textarea\" name=\"newCharacter.description\" [(ngModel)]=\"newCharacter.description\"></textarea><br>\r\n        <div *ngIf='newCharacter'>\r\n            <h3>Chosen Race: {{newCharacter.race}}</h3>\r\n            <img (click)=\"chooseRace('Dwarf', 1)\" src=\"../../assets/img/Dwarf.png\" alt=\"Dwarf\">\r\n            <img (click)=\"chooseRace('Elf', 2)\" src=\"../../assets/img/Elf.png\" alt=\"Elf\">\r\n            <img (click)=\"chooseRace('Halfling', 3)\" src=\"../../assets/img/Halfling.png\" alt=\"Halfling\">\r\n            <img (click)=\"chooseRace('Human', 4)\" src=\"../../assets/img/human.png\" alt=\"human\">\r\n            <img (click)=\"chooseRace('Dragonborn', 5)\" src=\"../../assets/img/Dragonborn.png\" alt=\"dragonborn\">\r\n            <img (click)=\"chooseRace('Gnome, 6')\" src=\"../../assets/img/Gnome.png\" alt=\"Gnome\">\r\n            <img (click)=\"chooseRace('Half-Elf', 7)\" src=\"../../assets/img/Half-elf.png\" alt=\"Half-elf\">\r\n            <img (click)=\"chooseRace('Half-orc', 8)\" src=\"../../assets/img/Half-orc.png\" alt=\"Half-Orc\">\r\n            <img (click)=\"chooseRace('Tiefling', 9)\" src=\"../../assets/img/Tiefling.png\" alt=\"Tiefling\">\r\n            <div *ngIf='oneRace'>\r\n                Alignment: {{this.oneRace.alignment}}<br>\r\n                Age: {{this.oneRace.age}}<br>\r\n                Size: {{this.oneRace.size}}, {{this.oneRace.size_description}}\r\n            </div>\r\n        </div>\r\n        <div *ngIf='newCharacter.race'>\r\n            <h3>Chosen Class: {{newCharacter.character_class}}</h3>\r\n            <img (click)=\"chooseClass('Barbarian', 1)\" src=\"../../assets/img/Barbarian.png\" alt=\"Barbarian\">\r\n            <img (click)=\"chooseClass('Bard', 2)\" src=\"../../assets/img/Bard.png\" alt=\"Bard\">\r\n            <img (click)=\"chooseClass('Cleric', 3)\" src=\"../../assets/img/Cleric.png\" alt=\"Cleric\">\r\n            <img (click)=\"chooseClass('Druid', 4)\" src=\"../../assets/img/Druid.png\" alt=\"Druid\">\r\n            <img (click)=\"chooseClass('Fighter', 5)\" src=\"../../assets/img/Fighter.png\" alt=\"Fighter\">\r\n            <img (click)=\"chooseClass('Monk', 6)\" src=\"../../assets/img/Monk.png\" alt=\"Monk\">\r\n            <img (click)=\"chooseClass('Paladin', 7)\" src=\"../../assets/img/Paladin.png\" alt=\"Paladin\">\r\n            <img (click)=\"chooseClass('Ranger', 8)\" src=\"../../assets/img/Ranger.png\" alt=\"Ranger\">\r\n            <img (click)=\"chooseClass('Rogue', 9)\" src=\"../../assets/img/Rogue.png\" alt=\"Rogure\">\r\n            <img (click)=\"chooseClass('Sorcerer', 10)\" src=\"../../assets/img/Sorcerer.png\" alt=\"Sorcerer\">\r\n            <img (click)=\"chooseClass('Warlock', 11)\" src=\"../../assets/img/Warlock.png\" alt=\"Warlock\">\r\n            <img (click)=\"chooseClass('Wizard', 12)\" src=\"../../assets/img/Wizard.png\" alt=\"Wizard\">\r\n        </div>\r\n        <input type=\"submit\" value=\"submit\">\r\n    </form>\r\n\r\n</body>\r\n\r\n</html>");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>page-not-found works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>page-not-found works!</p>\r\n");
 
 /***/ }),
 
@@ -535,7 +535,7 @@ CharacterSheetComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NyZWF0ZS9jcmVhdGUuY29tcG9uZW50LmNzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("img {\r\n    width: 150px;\r\n    height: 200px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3JlYXRlL2NyZWF0ZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9jcmVhdGUvY3JlYXRlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpbWcge1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgaGVpZ2h0OiAyMDBweDtcclxufSJdfQ== */");
 
 /***/ }),
 
@@ -613,6 +613,24 @@ let CreateComponent = class CreateComponent {
                 this.allClasses = data['results'];
             }
         });
+    }
+    chooseRace(race, raceIndex) {
+        this.newCharacter.race = race;
+        this.raceIndex = raceIndex;
+        this.getARace(raceIndex);
+    }
+    getARace(raceIndex) {
+        let obs = this._httpService.getARace(raceIndex);
+        obs.subscribe(data => {
+            if (data) {
+                this.oneRace = data;
+            }
+        });
+    }
+    chooseClass(character_class, classIndex) {
+        this.newCharacter.character_class = character_class;
+        this.classIndex = classIndex;
+        console.log({ classIndex });
     }
 };
 CreateComponent.ctorParameters = () => [
@@ -746,6 +764,9 @@ let HttpService = class HttpService {
     }
     getAllClasses() {
         return this._http.get('http://www.dnd5eapi.co/api/classes');
+    }
+    getARace(raceIndex) {
+        return this._http.get(`http://www.dnd5eapi.co/api/races/${raceIndex}`);
     }
 };
 HttpService.ctorParameters = () => [
@@ -953,7 +974,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\abrya\Desktop\Roll_Initiative\RollInitClone2\rollinitiative\public\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\aidan\Desktop\dojo\MeanStack\rollinitiative\public\src\main.ts */"./src/main.ts");
 
 
 /***/ })
