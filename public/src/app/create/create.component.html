@@ -52,7 +52,9 @@
         </div>
         <input type="submit" value="submit">
     </form>
-
+    <div class="root">
+        <app-pick-attributes *ngIf = "classIndex" [classIndex]= "classIndex" ></app-pick-attributes>
+    </div>
 </body>
 
 </html>

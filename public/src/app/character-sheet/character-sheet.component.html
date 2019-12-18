@@ -1,1 +1,40 @@
-<p>character-sheet works!</p>
+<h2>Character Sheet</h2>
+<div id = "character_info">
+    <div>Name: {{oneCharacter.name}}</div>
+    <div>Class: Levl 1 {{oneCharacter.character_class}}</div>
+    <div>Race: {{oneCharacter.race}}</div>
+    <div>Experience: {{oneCharacter.exp}}</div>
+</div>
+<div id = "stats_and_skills">
+    <div id = "str">
+        <h3>STR</h3>
+        <p>{{oneCharacter.stats[0]}}</p>
+        <h3>Mod</h3>
+    </div>
+    <div id = "dex">
+        <h3>DEX</h3>
+        <p>{{oneCharacter.stats[1]}}</p>
+        <h3>Mod</h3>
+    </div>
+    <div id = "con">
+        <h3>CON</h3>
+        <p>{{oneCharacter.stats[2]}}</p>
+        <h3>Mod</h3>
+    </div>
+    <div id = "int">
+        <h3>INT</h3>
+        <p>{{oneCharacter.stats[3]}}</p>
+        <h3>Mod</h3>
+    </div>
+    <div id = "wis">
+        <h3>WIS</h3>
+        <p>{{oneCharacter.stats[4]}}</p>
+        <h3>Mod</h3>
+    </div>
+    <div id = "cha">
+        <h3>CHA</h3>
+        <p>{{oneCharacter.stats[5]}}</p>
+        <h3>Mod</h3>
+    </div>
+
+</div>
