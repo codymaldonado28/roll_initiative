@@ -1,0 +1,16 @@
+<h1>Pick Attributes</h1>
+<div *ngIf= 'characterClass'>
+    <h1>Class: {{characterClass.name}}</h1>
+    <h3>Choose Your Attributes</h3>
+    <h4>Choose {{characterClass['proficiency_choices'][0]['choose']}} Skills:</h4>
+    <div *ngFor="let skill of  classSkills">
+        <button *ngIf = 'skill.added==false'(click) = 'addSkill(skill)' >{{skill.name}}</button>
+        <button style='background-color: red;'*ngIf = 'skill.added==true' (click) = 'cancelSkill(skill)'>{{skill.name}}</button>
+    </div>
+</div>
+<div *ngIf='classSpells.length > 0'>
+    <h2>Pick Spells</h2>
+    <div *ngFor= 'let spell of classSpells'>
+        <button>{{spell}}</button>
+    </div>
+</div>
