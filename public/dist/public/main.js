@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>home works!</p>\r\n<table>\r\n    <tr>\r\n        <th>Name</th>\r\n        <th>Race</th>\r\n        <th>Class</th>\r\n        <th>Description</th>\r\n\r\n    </tr>\r\n    <tr *ngFor=\"let character of allCharacters\">\r\n        <td>{{character.name}}</td>\r\n        <td>{{character.race}}</td>\r\n        <td>{{character.character_class}}</td>\r\n        <td>{{character.description}}</td>\r\n    </tr>\r\n</table>");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n<button [routerLink]=\"['/characters/create']\">Create a new Hero</button><br>\r\n\r\n<table>\r\n    <tr>\r\n        <th>Name</th>\r\n        <th>Race</th>\r\n        <th>Class</th>\r\n        <th>Description</th>\r\n        <th>Actions</th>\r\n\r\n    </tr>\r\n    <tr *ngFor=\"let character of allCharacters\">\r\n        <td>{{character.name}}</td>\r\n        <td>{{character.race}}</td>\r\n        <td>{{character.character_class}}</td>\r\n        <td>{{character.description}}</td>\r\n        <td>\r\n            <button [routerLink]=\"['/character', character._id]\">View Sheet</button><br>\r\n            <button [routerLink]=\"['/character', character._id]\">Enhance a Hero</button><br>\r\n            <button (click) =\"destroyOneCharacter(character._id)\">Retire</button><br>\r\n        </td>\r\n    </tr>\r\n</table>");
 
 /***/ }),
 
@@ -642,12 +642,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
 let HomeComponent = class HomeComponent {
-    constructor(_httpService) {
+    constructor(_httpService, _router, _route) {
         this._httpService = _httpService;
+        this._router = _router;
+        this._route = _route;
     }
     ngOnInit() {
         this.getAllCharactersFromService();
@@ -660,9 +664,19 @@ let HomeComponent = class HomeComponent {
             }
         });
     }
+    destroyOneCharacter(id) {
+        let observable = this._httpService.destroyCharacter(id);
+        observable.subscribe(data => {
+            if (data['results']) {
+                this.getAllCharactersFromService();
+            }
+        });
+    }
 };
 HomeComponent.ctorParameters = () => [
-    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] }
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
 ];
 HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
