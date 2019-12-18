@@ -13,11 +13,13 @@ export class CreateComponent implements OnInit {
     private _httpService: HttpService,
     private _route: ActivatedRoute,
     private _router: Router) { }
+  class_index: number;
   newCharacter: any;
   errors = [];
   allRaces: any;
   allClasses: any;
   ngOnInit() {
+    this.class_index = 10;
     this.getAllClasses()
     this.getAllRaces()
     this.newCharacter = {

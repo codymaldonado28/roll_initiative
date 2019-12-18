@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { CreateComponent } from './create/create.component';
 
 import { StatComponent } from './stat/stat.component';
+import { PickAttributesComponent } from './pick-attributes/pick-attributes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { StatComponent } from './stat/stat.component';
     HomeComponent,
     CharacterSheetComponent,
     PageNotFoundComponent,
-    CreateComponent
+    CreateComponent,
+    PickAttributesComponent
   ],
   imports: [
     BrowserModule,
