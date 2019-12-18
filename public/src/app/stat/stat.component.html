@@ -1,9 +1,9 @@
 
 
-<!-- <div *ngFor="let err of errors">
+<div *ngFor="let err of errors">
     <p style="color:red;">{{err}}</p>
-</div> -->
-<form> <!--needs a (submit) action-->
+</div>
+<form (submit)="updateCharacter()">
     <label for="STR">STR
         <input type="radio" name="STR" value="9"> 9
         <input type="radio" name="STR" value="10"> 10
