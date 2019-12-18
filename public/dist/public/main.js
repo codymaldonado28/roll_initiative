@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>character-sheet works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2>Character Sheet</h2>\r\n<div id = \"character_info\">\r\n    <div>Name: {{oneCharacter.name}}</div>\r\n    <div>Class: Levl 1 {{oneCharacter.character_class}}</div>\r\n    <div>Race: {{oneCharacter.race}}</div>\r\n    <div>Experience: {{oneCharacter.exp}}</div>\r\n</div>\r\n<div id = \"stats_and_skills\">\r\n    <div id = \"str\">\r\n        <h3>STR</h3>\r\n        <p>{{oneCharacter.stats[0]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"dex\">\r\n        <h3>DEX</h3>\r\n        <p>{{oneCharacter.stats[1]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"con\">\r\n        <h3>CON</h3>\r\n        <p>{{oneCharacter.stats[2]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"int\">\r\n        <h3>INT</h3>\r\n        <p>{{oneCharacter.stats[3]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"wis\">\r\n        <h3>WIS</h3>\r\n        <p>{{oneCharacter.stats[4]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"cha\">\r\n        <h3>CHA</h3>\r\n        <p>{{oneCharacter.stats[5]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n\r\n</div>");
 
 /***/ }),
 
@@ -491,7 +491,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NoYXJhY3Rlci1zaGVldC9jaGFyYWN0ZXItc2hlZXQuY29tcG9uZW50LmNzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("#character_info{\r\n    border: 1px solid black;\r\n    padding: 20px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLXNoZWV0L2NoYXJhY3Rlci1zaGVldC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksdUJBQXVCO0lBQ3ZCLGFBQWE7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9jaGFyYWN0ZXItc2hlZXQvY2hhcmFjdGVyLXNoZWV0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY2hhcmFjdGVyX2luZm97XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -507,13 +507,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharacterSheetComponent", function() { return CharacterSheetComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
 
 
 let CharacterSheetComponent = class CharacterSheetComponent {
-    constructor() { }
-    ngOnInit() {
+    constructor(_httpService, _router, _route) {
+        this._httpService = _httpService;
+        this._router = _router;
+        this._route = _route;
     }
+    ngOnInit() {
+        this._route.params.subscribe((params) => {
+            this.getOneCharacterFromService(params['id']);
+        });
+    }
+    getOneCharacterFromService(id) {
+        let observable = this._httpService.getOneCharacter(id);
+        observable.subscribe(data => {
+            this.oneCharacter = data['results'];
+            console.log(this.oneCharacter);
+        });
+    }
+    getModOfStat() { }
 };
+CharacterSheetComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+];
 CharacterSheetComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-character-sheet',
