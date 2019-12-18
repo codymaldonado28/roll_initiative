@@ -39,5 +39,11 @@ export class HttpService {
   getOneRace(race_index){
     return this._http.get(`http://www.dnd5eapi.co/api/classes/${race_index}`)
 }
+  getAllSpells(){
+    return this._http.get("http://www.dnd5eapi.co/api/spells")
+  }
+  checkClassAndLevel(url){
+    return this._http.get(url)
+  }
 }
 

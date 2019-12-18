@@ -8,3 +8,9 @@
         <button style='background-color: red;'*ngIf = 'skill.added==true' (click) = 'cancelSkill(skill)'>{{skill.name}}</button>
     </div>
 </div>
+<div *ngIf='classSpells.length > 0'>
+    <h2>Pick Spells</h2>
+    <div *ngFor= 'let spell of classSpells'>
+        <button>{{spell}}</button>
+    </div>
+</div>

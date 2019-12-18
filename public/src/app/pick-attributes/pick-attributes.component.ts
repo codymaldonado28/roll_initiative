@@ -13,6 +13,8 @@ export class PickAttributesComponent implements OnInit {
   characterClass:any;
   classSkills:any;
   skills:any;
+  allSpells:any;
+  classSpells:any;
   constructor(
     private _httpService: HttpService
   ) { }
@@ -21,6 +23,8 @@ export class PickAttributesComponent implements OnInit {
     this.skills=[];
     this.classSkills=[];
     this.getOneClass(this.class_index)
+    this.getAllSpells()
+    this.classSpells=[];
   }
   getOneClass(class_index){
     let obs = this._httpService.getOneClass(class_index)
@@ -60,6 +64,28 @@ export class PickAttributesComponent implements OnInit {
       }
       console.log(this.skills)
     }
+  }
+  checkClassAndLevel(url){
+    let obs = this._httpService.checkClassAndLevel(url)
+    obs.subscribe(data => {
+      if (data['level'] <= 1){
+      for(var check of data['classes'] ){
+        if (check.name == this.characterClass.name){
+          this.classSpells.push(data['name'])
+        } 
+      }     
+      }
+      console.log(this.classSpells)
+    })
+  }
+  getAllSpells(){
+    let obs= this._httpService.getAllSpells()
+    obs.subscribe(data => {
+      console.log(data)
+      for (var spell of data['results']){
+        this.checkClassAndLevel(spell['url'])
+      }
+    })
   }
 }
 

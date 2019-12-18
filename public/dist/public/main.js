@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Pick Attributes</h1>\n<div *ngIf= 'characterClass'>\n    <h1>Class: {{characterClass.name}}</h1>\n    <h3>Choose Your Attributes</h3>\n    <h4>Choose {{characterClass['proficiency_choices'][0]['choose']}} Skills:</h4>\n    <div *ngFor=\"let skill of  classSkills\">\n        <button *ngIf = 'skill.added==false'(click) = 'addSkill(skill)' >{{skill.name}}</button>\n        <button style='background-color: red;'*ngIf = 'skill.added==true' (click) = 'cancelSkill(skill)'>{{skill.name}}</button>\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Pick Attributes</h1>\n<div *ngIf= 'characterClass'>\n    <h1>Class: {{characterClass.name}}</h1>\n    <h3>Choose Your Attributes</h3>\n    <h4>Choose {{characterClass['proficiency_choices'][0]['choose']}} Skills:</h4>\n    <div *ngFor=\"let skill of  classSkills\">\n        <button *ngIf = 'skill.added==false'(click) = 'addSkill(skill)' >{{skill.name}}</button>\n        <button style='background-color: red;'*ngIf = 'skill.added==true' (click) = 'cancelSkill(skill)'>{{skill.name}}</button>\n    </div>\n</div>\n<div *ngIf='classSpells.length > 0'>\n    <h2>Pick Spells</h2>\n    <div *ngFor= 'let spell of classSpells'>\n        <button>{{spell}}</button>\n    </div>\n</div>\n");
 
 /***/ }),
 
@@ -581,7 +581,7 @@ let CreateComponent = class CreateComponent {
         this.errors = [];
     }
     ngOnInit() {
-        this.class_index = 10;
+        this.class_index = 3;
         this.getAllClasses();
         this.getAllRaces();
         this.newCharacter = {
@@ -756,6 +756,12 @@ let HttpService = class HttpService {
     getOneRace(race_index) {
         return this._http.get(`http://www.dnd5eapi.co/api/classes/${race_index}`);
     }
+    getAllSpells() {
+        return this._http.get("http://www.dnd5eapi.co/api/spells");
+    }
+    checkClassAndLevel(url) {
+        return this._http.get(url);
+    }
 };
 HttpService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
@@ -851,6 +857,8 @@ let PickAttributesComponent = class PickAttributesComponent {
         this.skills = [];
         this.classSkills = [];
         this.getOneClass(this.class_index);
+        this.getAllSpells();
+        this.classSpells = [];
     }
     getOneClass(class_index) {
         let obs = this._httpService.getOneClass(class_index);
@@ -890,6 +898,28 @@ let PickAttributesComponent = class PickAttributesComponent {
             }
             console.log(this.skills);
         }
+    }
+    checkClassAndLevel(url) {
+        let obs = this._httpService.checkClassAndLevel(url);
+        obs.subscribe(data => {
+            if (data['level'] <= 1) {
+                for (var check of data['classes']) {
+                    if (check.name == this.characterClass.name) {
+                        this.classSpells.push(data['name']);
+                    }
+                }
+            }
+            console.log(this.classSpells);
+        });
+    }
+    getAllSpells() {
+        let obs = this._httpService.getAllSpells();
+        obs.subscribe(data => {
+            console.log(data);
+            for (var spell of data['results']) {
+                this.checkClassAndLevel(spell['url']);
+            }
+        });
     }
 };
 PickAttributesComponent.ctorParameters = () => [

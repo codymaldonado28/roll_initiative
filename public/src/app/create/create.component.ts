@@ -19,7 +19,7 @@ export class CreateComponent implements OnInit {
   allRaces: any;
   allClasses: any;
   ngOnInit() {
-    this.class_index = 10;
+    this.class_index = 3;
     this.getAllClasses()
     this.getAllRaces()
     this.newCharacter = {
