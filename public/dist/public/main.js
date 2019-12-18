@@ -58,7 +58,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+
 /* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <title>Document</title>\r\n    <link rel=\"stylesheet\" href=\"create.component.css\">\r\n</head>\r\n\r\n<body>\r\n    <div *ngFor='let err of errors'>\r\n        <p>{{err}}</p>\r\n    </div>\r\n    <form (submit)=\"createCharacter()\">\r\n        <label>Name:</label>\r\n        <input type=\"text\" name=\"newCharacter.name\" [(ngModel)]=\"newCharacter.name\" /><br>\r\n        <label>Bio/Description</label>\r\n        <textarea type=\"textarea\" name=\"newCharacter.description\" [(ngModel)]=\"newCharacter.description\"></textarea><br>\r\n        <label>Race:</label><br>\r\n        <label *ngFor=\"let race of allRaces\">\r\n            <input type=\"radio\" name=\"newCharacter.race\" [(ngModel)]=\"newCharacter.race\" value=\"{{race.name}}\">\r\n            {{race.name}}\r\n        </label><br/>\r\n        <label>Class:</label><br>\r\n        <label *ngFor=\"let class of allClasses\">\r\n            <input type=\"radio\" name=\"newCharacter.character_class\" [(ngModel)]=\"newCharacter.character_class\" value=\"{{class.name}}\">\r\n            {{class.name}}\r\n        </label><br/>\r\n        <input type=\"submit\" value=\"submit\">\r\n    </form>\r\n    <div class=\"root\">\r\n        <app-pick-attributes *ngIf = \"class_index\" [class_index]= \"class_index\" ></app-pick-attributes>\r\n    </div>\r\n</body>\r\n\r\n</html>");
+
 
 /***/ }),
 
@@ -71,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>home works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n<button [routerLink]=\"['/characters/create']\">Create a new Hero</button><br>\r\n\r\n<table>\r\n    <tr>\r\n        <th>Name</th>\r\n        <th>Race</th>\r\n        <th>Class</th>\r\n        <th>Description</th>\r\n        <th>Actions</th>\r\n\r\n    </tr>\r\n    <tr *ngFor=\"let character of allCharacters\">\r\n        <td>{{character.name}}</td>\r\n        <td>{{character.race}}</td>\r\n        <td>{{character.character_class}}</td>\r\n        <td>{{character.description}}</td>\r\n        <td>\r\n            <button [routerLink]=\"['/character', character._id]\">View Sheet</button><br>\r\n            <button [routerLink]=\"['/character', character._id]\">Enhance a Hero</button><br>\r\n            <button (click) =\"destroyOneCharacter(character._id)\">Retire</button><br>\r\n        </td>\r\n    </tr>\r\n</table>\r\n\r\n<img src=\"../../assets/img/Barbarian.png\">");
 
 /***/ }),
 
@@ -88,18 +90,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pick-attributes/pick-attributes.component.html":
-/*!******************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pick-attributes/pick-attributes.component.html ***!
-  \******************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Pick Attributes</h1>\n<div *ngIf= 'characterClass'>\n    <h1>Class: {{characterClass.name}}</h1>\n    <h3>Choose Your Attributes</h3>\n    <h4>Choose {{characterClass['proficiency_choices'][0]['choose']}} Skills:</h4>\n    <div *ngFor=\"let skill of  classSkills\">\n        <button *ngIf = 'skill.added==false'(click) = 'addSkill(skill)' >{{skill.name}}</button>\n        <button style='background-color: red;'*ngIf = 'skill.added==true' (click) = 'cancelSkill(skill)'>{{skill.name}}</button>\n    </div>\n</div>\n<div *ngIf='classSpells.length > 0'>\n    <h2>Pick Spells</h2>\n    <div *ngFor= 'let spell of classSpells'>\n        <button>{{spell}}</button>\n    </div>\n</div>\n");
-
-/***/ }),
 
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/stat/stat.component.html":
 /*!********************************************************************************!*\
@@ -455,9 +445,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./page-not-found/page-not-found.component */ "./src/app/page-not-found/page-not-found.component.ts");
 /* harmony import */ var _create_create_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./create/create.component */ "./src/app/create/create.component.ts");
 /* harmony import */ var _stat_stat_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./stat/stat.component */ "./src/app/stat/stat.component.ts");
-/* harmony import */ var _pick_attributes_pick_attributes_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pick-attributes/pick-attributes.component */ "./src/app/pick-attributes/pick-attributes.component.ts");
-
-
 
 
 
@@ -551,7 +538,7 @@ CharacterSheetComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NyZWF0ZS9jcmVhdGUuY29tcG9uZW50LmNzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("img {\r\n    width: 150px;\r\n    height: 200px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3JlYXRlL2NyZWF0ZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9jcmVhdGUvY3JlYXRlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpbWcge1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgaGVpZ2h0OiAyMDBweDtcclxufSJdfQ== */");
 
 /***/ }),
 
@@ -631,6 +618,24 @@ let CreateComponent = class CreateComponent {
             }
         });
     }
+    chooseRace(race, raceIndex) {
+        this.newCharacter.race = race;
+        this.raceIndex = raceIndex;
+        this.getARace(raceIndex);
+    }
+    getARace(raceIndex) {
+        let obs = this._httpService.getARace(raceIndex);
+        obs.subscribe(data => {
+            if (data) {
+                this.oneRace = data;
+            }
+        });
+    }
+    chooseClass(character_class, classIndex) {
+        this.newCharacter.character_class = character_class;
+        this.classIndex = classIndex;
+        console.log({ classIndex });
+    }
 };
 CreateComponent.ctorParameters = () => [
     { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
@@ -675,12 +680,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
 let HomeComponent = class HomeComponent {
-    constructor(_httpService) {
+    constructor(_httpService, _router, _route) {
         this._httpService = _httpService;
+        this._router = _router;
+        this._route = _route;
     }
     ngOnInit() {
         this.getAllCharactersFromService();
@@ -693,9 +702,19 @@ let HomeComponent = class HomeComponent {
             }
         });
     }
+    destroyOneCharacter(id) {
+        let observable = this._httpService.destroyCharacter(id);
+        observable.subscribe(data => {
+            if (data['results']) {
+                this.getAllCharactersFromService();
+            }
+        });
+    }
 };
 HomeComponent.ctorParameters = () => [
-    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] }
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
 ];
 HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -750,17 +769,7 @@ let HttpService = class HttpService {
     getAllClasses() {
         return this._http.get('http://www.dnd5eapi.co/api/classes');
     }
-    getOneClass(class_index) {
-        return this._http.get(`http://www.dnd5eapi.co/api/classes/${class_index}`);
-    }
-    getOneRace(race_index) {
-        return this._http.get(`http://www.dnd5eapi.co/api/classes/${race_index}`);
-    }
-    getAllSpells() {
-        return this._http.get("http://www.dnd5eapi.co/api/spells");
-    }
-    checkClassAndLevel(url) {
-        return this._http.get(url);
+
     }
 };
 HttpService.ctorParameters = () => [
@@ -820,125 +829,6 @@ PageNotFoundComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/pick-attributes/pick-attributes.component.css":
-/*!***************************************************************!*\
-  !*** ./src/app/pick-attributes/pick-attributes.component.css ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BpY2stYXR0cmlidXRlcy9waWNrLWF0dHJpYnV0ZXMuY29tcG9uZW50LmNzcyJ9 */");
-
-/***/ }),
-
-/***/ "./src/app/pick-attributes/pick-attributes.component.ts":
-/*!**************************************************************!*\
-  !*** ./src/app/pick-attributes/pick-attributes.component.ts ***!
-  \**************************************************************/
-/*! exports provided: PickAttributesComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PickAttributesComponent", function() { return PickAttributesComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
-
-
-
-let PickAttributesComponent = class PickAttributesComponent {
-    constructor(_httpService) {
-        this._httpService = _httpService;
-    }
-    ngOnInit() {
-        this.skills = [];
-        this.classSkills = [];
-        this.getOneClass(this.class_index);
-        this.getAllSpells();
-        this.classSpells = [];
-    }
-    getOneClass(class_index) {
-        let obs = this._httpService.getOneClass(class_index);
-        obs.subscribe(data => {
-            console.log(data);
-            this.characterClass = data;
-            for (var skill of this.characterClass['proficiency_choices'][0]['from']) {
-                console.log(skill.name);
-                this.classSkills.push({
-                    name: skill.name,
-                    added: false
-                });
-            }
-            console.log(this.classSkills);
-            console.log(this.characterClass);
-            console.log(this.characterClass.name);
-        });
-    }
-    addSkill(skill) {
-        if (this.skills.length < this.characterClass['proficiency_choices'][0]['choose']) {
-            this.skills.push(skill);
-        }
-        else {
-            let canceled = this.skills[this.skills.length - 1];
-            this.skills.splice(this.skills.length - 1, 1);
-            this.skills.push(skill);
-            canceled.added = false;
-        }
-        console.log(this.skills);
-        skill.added = true;
-    }
-    cancelSkill(skill) {
-        for (var i = 0; i < this.skills.length; i++) {
-            if (this.skills[i] == skill) {
-                this.skills[i].added = false;
-                this.skills.splice(i, 1);
-            }
-            console.log(this.skills);
-        }
-    }
-    checkClassAndLevel(url) {
-        let obs = this._httpService.checkClassAndLevel(url);
-        obs.subscribe(data => {
-            if (data['level'] <= 1) {
-                for (var check of data['classes']) {
-                    if (check.name == this.characterClass.name) {
-                        this.classSpells.push(data['name']);
-                    }
-                }
-            }
-            console.log(this.classSpells);
-        });
-    }
-    getAllSpells() {
-        let obs = this._httpService.getAllSpells();
-        obs.subscribe(data => {
-            console.log(data);
-            for (var spell of data['results']) {
-                this.checkClassAndLevel(spell['url']);
-            }
-        });
-    }
-};
-PickAttributesComponent.ctorParameters = () => [
-    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] }
-];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], PickAttributesComponent.prototype, "class_index", void 0);
-PickAttributesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-pick-attributes',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./pick-attributes.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pick-attributes/pick-attributes.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./pick-attributes.component.css */ "./src/app/pick-attributes/pick-attributes.component.css")).default]
-    })
-], PickAttributesComponent);
-
-
-
-/***/ }),
 
 /***/ "./src/app/stat/stat.component.css":
 /*!*****************************************!*\
@@ -1088,7 +978,6 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Source\MEAN_Stack\mean_intro\rollinitiative-1\public\src\main.ts */"./src/main.ts");
 
 
 /***/ })

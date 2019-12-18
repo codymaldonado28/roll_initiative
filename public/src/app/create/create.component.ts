@@ -18,6 +18,9 @@ export class CreateComponent implements OnInit {
   errors = [];
   allRaces: any;
   allClasses: any;
+  oneRace: any;
+  raceIndex: number;
+  classIndex: number;
   ngOnInit() {
     this.class_index = 3;
     this.getAllClasses()
@@ -69,5 +72,24 @@ export class CreateComponent implements OnInit {
       }
     })
   }
-}
+  chooseRace(race, raceIndex){
+    this.newCharacter.race=race
+    this.raceIndex=raceIndex
+    this.getARace(raceIndex);
+  }
+  getARace(raceIndex) {
+    let obs = this._httpService.getARace(raceIndex);
+    obs.subscribe(data => {
+      if (data) {
+        this.oneRace = data;
+      }
+    })
+  }
+  cho
+  chooseClass(character_class, classIndex){
+    this.newCharacter.character_class=character_class
+    this.classIndex = classIndex
+    console.log({classIndex})
+  }
 
+}
