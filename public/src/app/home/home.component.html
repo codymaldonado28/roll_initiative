@@ -1,1 +1,16 @@
 <p>home works!</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Race</th>
+        <th>Class</th>
+        <th>Description</th>
+
+    </tr>
+    <tr *ngFor="let character of allCharacters">
+        <td>{{character.name}}</td>
+        <td>{{character.race}}</td>
+        <td>{{character.character_class}}</td>
+        <td>{{character.description}}</td>
+    </tr>
+</table>

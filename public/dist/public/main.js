@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>home works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>home works!</p>\r\n<table>\r\n    <tr>\r\n        <th>Name</th>\r\n        <th>Race</th>\r\n        <th>Class</th>\r\n        <th>Description</th>\r\n\r\n    </tr>\r\n    <tr *ngFor=\"let character of allCharacters\">\r\n        <td>{{character.name}}</td>\r\n        <td>{{character.race}}</td>\r\n        <td>{{character.character_class}}</td>\r\n        <td>{{character.description}}</td>\r\n    </tr>\r\n</table>");
 
 /***/ }),
 
