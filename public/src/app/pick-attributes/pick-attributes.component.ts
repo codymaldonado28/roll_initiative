@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { HttpService } from '../http.service';
 import { ActivatedRoute, Router, Params} from '@angular/router'
 
@@ -8,8 +8,8 @@ import { ActivatedRoute, Router, Params} from '@angular/router'
   templateUrl: './pick-attributes.component.html',
   styleUrls: ['./pick-attributes.component.css']
 })
-export class PickAttributesComponent implements OnInit {
-  @Input() class_index: any;
+export class PickAttributesComponent implements OnInit, OnChanges {
+  @Input() classIndex: any;
   characterClass:any;
   classSkills:any;
   skills:any;
@@ -22,25 +22,29 @@ export class PickAttributesComponent implements OnInit {
   ngOnInit() {
     this.skills=[];
     this.classSkills=[];
-    this.getOneClass(this.class_index)
+    this.getOneClass(this.classIndex)
     this.getAllSpells()
     this.classSpells=[];
   }
-  getOneClass(class_index){
-    let obs = this._httpService.getOneClass(class_index)
+  ngOnChanges(){
+    this.getOneClass(this.classIndex)
+    this.getAllSpells()
+  }
+  getOneClass(classIndex){
+    this.classSpells=[];
+    this.skills=[];
+    this.classSkills=[];
+    let obs = this._httpService.getOneClass(classIndex)
     obs.subscribe(data=> {
       console.log(data)
       this.characterClass = data;
       for(var skill of this.characterClass['proficiency_choices'][0]['from']){
-        console.log(skill.name)
           this.classSkills.push({
             name: skill.name,
             added: false
         })
       }
       console.log(this.classSkills)
-      console.log(this.characterClass)
-      console.log(this.characterClass.name)
     })
   }
   addSkill(skill){
