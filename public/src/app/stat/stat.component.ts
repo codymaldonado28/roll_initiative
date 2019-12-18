@@ -33,7 +33,7 @@ export class StatComponent implements OnInit {
     })
   }
 
-  updateAuthor(){
+  updateCharacter(){
     this.errors = [];
     let obs = this._httpService.updateCharacter(this.editCharacter);
     obs.subscribe(data => {
