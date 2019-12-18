@@ -88,6 +88,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/stat/stat.component.html":
+/*!********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/stat/stat.component.html ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n<div *ngFor=\"let err of errors\">\r\n    <p style=\"color:red;\">{{err}}</p>\r\n</div>\r\n<form (submit)=\"updateCharacter()\">\r\n    <label for=\"STR\">STR\r\n        <input type=\"radio\" name=\"STR\" value=\"9\"> 9\r\n        <input type=\"radio\" name=\"STR\" value=\"10\"> 10\r\n        <input type=\"radio\" name=\"STR\" value=\"12\"> 12\r\n        <input type=\"radio\" name=\"STR\" value=\"13\"> 13\r\n        <input type=\"radio\" name=\"STR\" value=\"14\"> 14\r\n        <input type=\"radio\" name=\"STR\" value=\"15\"> 15<br>\r\n    </label>\r\n    <label for=\"DEX\">DEX\r\n        <input type=\"radio\" name=\"DEX\" value=\"9\"> 9\r\n        <input type=\"radio\" name=\"DEX\" value=\"10\"> 10\r\n        <input type=\"radio\" name=\"DEX\" value=\"12\"> 12\r\n        <input type=\"radio\" name=\"DEX\" value=\"13\"> 13\r\n        <input type=\"radio\" name=\"DEX\" value=\"14\"> 14\r\n        <input type=\"radio\" name=\"DEX\" value=\"15\"> 15<br>\r\n    </label>\r\n    <label for=\"CON\">CON\r\n        <input type=\"radio\" name=\"CON\" value=\"9\"> 9\r\n        <input type=\"radio\" name=\"CON\" value=\"10\"> 10\r\n        <input type=\"radio\" name=\"CON\" value=\"12\"> 12\r\n        <input type=\"radio\" name=\"CON\" value=\"13\"> 13\r\n        <input type=\"radio\" name=\"CON\" value=\"14\"> 14\r\n        <input type=\"radio\" name=\"CON\" value=\"15\"> 15<br>\r\n    </label>\r\n    <label for=\"INT\">INT\r\n        <input type=\"radio\" name=\"INT\" value=\"9\"> 9\r\n        <input type=\"radio\" name=\"INT\" value=\"10\"> 10\r\n        <input type=\"radio\" name=\"INT\" value=\"12\"> 12\r\n        <input type=\"radio\" name=\"INT\" value=\"13\"> 13\r\n        <input type=\"radio\" name=\"INT\" value=\"14\"> 14\r\n        <input type=\"radio\" name=\"INT\" value=\"15\"> 15<br>\r\n    </label>\r\n    <label for=\"WIS\">WIS\r\n        <input type=\"radio\" name=\"WIS\" value=\"9\"> 9\r\n        <input type=\"radio\" name=\"WIS\" value=\"10\"> 10\r\n        <input type=\"radio\" name=\"WIS\" value=\"12\"> 12\r\n        <input type=\"radio\" name=\"WIS\" value=\"13\"> 13\r\n        <input type=\"radio\" name=\"WIS\" value=\"14\"> 14\r\n        <input type=\"radio\" name=\"WIS\" value=\"15\"> 15<br>\r\n    </label>\r\n    <label for=\"CHA\">CHA\r\n        <input type=\"radio\" name=\"CHA\" value=\"9\"> 9\r\n        <input type=\"radio\" name=\"CHA\" value=\"10\"> 10\r\n        <input type=\"radio\" name=\"CHA\" value=\"12\"> 12\r\n        <input type=\"radio\" name=\"CHA\" value=\"13\"> 13\r\n        <input type=\"radio\" name=\"CHA\" value=\"14\"> 14\r\n        <input type=\"radio\" name=\"CHA\" value=\"15\"> 15<br>\r\n    </label>\r\n    <input type=\"submit\">\r\n    </form> ");
+
+/***/ }),
+
 /***/ "./node_modules/tslib/tslib.es6.js":
 /*!*****************************************!*\
   !*** ./node_modules/tslib/tslib.es6.js ***!
@@ -428,6 +441,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./character-sheet/character-sheet.component */ "./src/app/character-sheet/character-sheet.component.ts");
 /* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./page-not-found/page-not-found.component */ "./src/app/page-not-found/page-not-found.component.ts");
 /* harmony import */ var _create_create_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./create/create.component */ "./src/app/create/create.component.ts");
+/* harmony import */ var _stat_stat_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./stat/stat.component */ "./src/app/stat/stat.component.ts");
+
 
 
 
@@ -446,6 +461,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
+            _stat_stat_component__WEBPACK_IMPORTED_MODULE_12__["StatComponent"],
             _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"],
             _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_9__["CharacterSheetComponent"],
             _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_10__["PageNotFoundComponent"],
@@ -784,6 +800,89 @@ PageNotFoundComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./page-not-found.component.css */ "./src/app/page-not-found/page-not-found.component.css")).default]
     })
 ], PageNotFoundComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/stat/stat.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/stat/stat.component.css ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N0YXQvc3RhdC5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/stat/stat.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/stat/stat.component.ts ***!
+  \****************************************/
+/*! exports provided: StatComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StatComponent", function() { return StatComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+let StatComponent = class StatComponent {
+    constructor(_httpService, _router, _route) {
+        this._httpService = _httpService;
+        this._router = _router;
+        this._route = _route;
+        this.errors = [];
+    }
+    ngOnInit() {
+        this._route.params.subscribe((params) => {
+            this.getEditCharacter(params['id']);
+        });
+    }
+    getEditCharacter(id) {
+        let obs = this._httpService.getOneCharacter(id);
+        obs.subscribe(data => {
+            if (data['results']) {
+                this.editCharacter = data['results'];
+            }
+        });
+    }
+    updateCharacter() {
+        this.errors = [];
+        let obs = this._httpService.updateCharacter(this.editCharacter);
+        obs.subscribe(data => {
+            if (data['results']) {
+                this._router.navigate(['/']);
+            }
+            else if (data['errors']) {
+                for (var key in data['errors']) {
+                    this.errors.push(data['errors'][key]['message']);
+                }
+            }
+        });
+    }
+};
+StatComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+];
+StatComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-stat',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./stat.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/stat/stat.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./stat.component.css */ "./src/app/stat/stat.component.css")).default]
+    })
+], StatComponent);
 
 
 

@@ -1,0 +1,56 @@
+
+
+<div *ngFor="let err of errors">
+    <p style="color:red;">{{err}}</p>
+</div>
+<form (submit)="updateCharacter()">
+    <label for="STR">STR
+        <input type="radio" name="STR" value="9"> 9
+        <input type="radio" name="STR" value="10"> 10
+        <input type="radio" name="STR" value="12"> 12
+        <input type="radio" name="STR" value="13"> 13
+        <input type="radio" name="STR" value="14"> 14
+        <input type="radio" name="STR" value="15"> 15<br>
+    </label>
+    <label for="DEX">DEX
+        <input type="radio" name="DEX" value="9"> 9
+        <input type="radio" name="DEX" value="10"> 10
+        <input type="radio" name="DEX" value="12"> 12
+        <input type="radio" name="DEX" value="13"> 13
+        <input type="radio" name="DEX" value="14"> 14
+        <input type="radio" name="DEX" value="15"> 15<br>
+    </label>
+    <label for="CON">CON
+        <input type="radio" name="CON" value="9"> 9
+        <input type="radio" name="CON" value="10"> 10
+        <input type="radio" name="CON" value="12"> 12
+        <input type="radio" name="CON" value="13"> 13
+        <input type="radio" name="CON" value="14"> 14
+        <input type="radio" name="CON" value="15"> 15<br>
+    </label>
+    <label for="INT">INT
+        <input type="radio" name="INT" value="9"> 9
+        <input type="radio" name="INT" value="10"> 10
+        <input type="radio" name="INT" value="12"> 12
+        <input type="radio" name="INT" value="13"> 13
+        <input type="radio" name="INT" value="14"> 14
+        <input type="radio" name="INT" value="15"> 15<br>
+    </label>
+    <label for="WIS">WIS
+        <input type="radio" name="WIS" value="9"> 9
+        <input type="radio" name="WIS" value="10"> 10
+        <input type="radio" name="WIS" value="12"> 12
+        <input type="radio" name="WIS" value="13"> 13
+        <input type="radio" name="WIS" value="14"> 14
+        <input type="radio" name="WIS" value="15"> 15<br>
+    </label>
+    <label for="CHA">CHA
+        <input type="radio" name="CHA" value="9"> 9
+        <input type="radio" name="CHA" value="10"> 10
+        <input type="radio" name="CHA" value="12"> 12
+        <input type="radio" name="CHA" value="13"> 13
+        <input type="radio" name="CHA" value="14"> 14
+        <input type="radio" name="CHA" value="15"> 15<br>
+    </label>
+    <input type="submit">
+    </form> 
