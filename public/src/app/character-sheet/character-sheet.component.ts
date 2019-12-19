@@ -15,7 +15,7 @@ export class CharacterSheetComponent implements OnInit {
     private _route: ActivatedRoute
   ) { }
   oneCharacter: any;
-  
+  strMod: any;
   dexMod: any;
   conMod: any;
   intMod: any;
@@ -23,24 +23,19 @@ export class CharacterSheetComponent implements OnInit {
   chaMod: any;
 
 
-
   ngOnInit() {
     this._route.params.subscribe((params: Params) => {
       this.getOneCharacterFromService(params['id']);
-      
     })
   }
   getOneCharacterFromService(id) {
     let observable = this._httpService.getOneCharacter(id);
     observable.subscribe(data => {
       this.oneCharacter = data['results'];
-      console.log(this.oneCharacter)
+    
     })
   }
-  getModOfStat(num) {
-    return Math.floor(num - 10) / 2
-  }
 
-  strMod = this.getModOfStat(this.oneCharacter.stats[0])
+  
 
 }

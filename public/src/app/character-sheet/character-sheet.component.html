@@ -1,42 +1,131 @@
 <h2>Character Sheet</h2>
-<div id = "character_info">
+<div id="character_info">
     <div>Name: {{oneCharacter.name}}</div>
     <div>Class: Levl 1 {{oneCharacter.character_class}}</div>
     <div>Race: {{oneCharacter.race}}</div>
     <div>Experience: {{oneCharacter.exp}}</div>
 </div>
-<div id = "stats_and_skills">
-    <div id = "str">
+<div id="stats_and_skills">
+    <div id="str" class="stat_block">
         <h3>STR</h3>
         <p>{{oneCharacter.stats[0]}}</p>
         <h3>Mod</h3>
-        <p>{{strMod}}</p>
+        <p>
+            {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}
+
+        </p>
+        <div>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</div>
+        <h4>Skills</h4>
+        <ul>
+            <li>Athletics: </li>
+        </ul>
     </div>
-    <div id = "dex">
+    <div id="dex" class="stat_block">
         <h3>DEX</h3>
         <p>{{oneCharacter.stats[1]}}</p>
         <h3>Mod</h3>
+        <p>
+            {{(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}
+
+        </p>
+        <div>Save: {{(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</div>
+        <h4>Skills</h4>
+        <ul>
+            <li>Acrobatics: </li>
+            <li>Sleight of Hand: </li>
+            <li>Stealth: </li>
+        </ul>
 
     </div>
-    <div id = "con">
+    <div id="con" class="stat_block">
         <h3>CON</h3>
         <p>{{oneCharacter.stats[2]}}</p>
         <h3>Mod</h3>
+        <p>
+            {{(oneCharacter.stats[2] - 10.1) / 2 | number:'1.0-0'}}
+
+        </p>
+        <h3>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h3>
     </div>
-    <div id = "int">
+    <div id="int" class="stat_block">
         <h3>INT</h3>
         <p>{{oneCharacter.stats[3]}}</p>
         <h3>Mod</h3>
+        <p>
+            {{(oneCharacter.stats[3] - 10.1) / 2 | number:'1.0-0'}}
+
+        </p>
+        <div>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</div>
+        <h4>Skills</h4>
+        <ul>
+            <li>Arcana: </li>
+            <li>History: </li>
+            <li>Investigation: </li>
+            <li>Nature: </li>
+            <li>Religion: </li>
+        </ul>
     </div>
-    <div id = "wis">
+    <div id="wis" class="stat_block">
         <h3>WIS</h3>
         <p>{{oneCharacter.stats[4]}}</p>
         <h3>Mod</h3>
+        <p>
+            {{(oneCharacter.stats[4] - 10.1) / 2 | number:'1.0-0'}}
+
+        </p>
+        <div>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</div>
+        <h4>Skills</h4>
+        <ul>
+            <li>Animal Handling: </li>
+            <li>Insight: </li>
+            <li>Medicine: </li>
+            <li>Perception: </li>
+            <li>Survival</li>
+        </ul>
     </div>
-    <div id = "cha">
+    <div id="cha" class="stat_block">
         <h3>CHA</h3>
         <p>{{oneCharacter.stats[5]}}</p>
         <h3>Mod</h3>
+        <p>
+            {{(oneCharacter.stats[5] - 10.1) / 2 | number:'1.0-0'}}
+
+        </p>
+        <div>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</div>
+        <h4>Skills</h4>
+        <ul>
+            <li>Deception: </li>
+            <li>Intimidation: </li>
+            <li>Performance: </li>
+            <li>Persuasion: </li>
+            
+        </ul>
     </div>
 
+</div>
+<div id="combat">
+    <div>
+        <h3>Proficiency Bonus </h3>
+        <p>2</p>
+    </div>
+    <div>
+        <h3>Initiative</h3>
+        <p>{{ (oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</p>
+    </div>
+    <div>
+        <h3>AC</h3>
+        <div>{{ 10+(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</div>
+    </div>
+    <div>
+        <h3>Max Health</h3>
+        <p>{{ (oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</p>
+    </div>
+    
+
+
+</div>
+<div id = "features">
+    <h3>Features</h3>
+<div id = "spells">
+    <h3>Spells</h3>
 </div>
