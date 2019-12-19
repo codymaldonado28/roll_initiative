@@ -14,10 +14,10 @@
         <p>{{err}}</p>
     </div>
     <form (submit)="createCharacter()">
-        <label>Name:</label>
+        <label>Name: </label>
         <input type="text" name="newCharacter.name" [(ngModel)]="newCharacter.name" /><br>
-        <label>Bio/Description</label>
-        <textarea type="textarea" name="newCharacter.description" [(ngModel)]="newCharacter.description"></textarea><br>
+        <label>Bio/Description:</label><br>
+        <textarea type="textarea" rows="4" cols="50" name="newCharacter.description" [(ngModel)]="newCharacter.description"></textarea><br>
         <div *ngIf='newCharacter'>
             <h3>Chosen Race: {{newCharacter.race}}</h3>
             <img (click)="chooseRace('Dwarf', 1)" src="../../assets/img/Dwarf.png" alt="Dwarf">
