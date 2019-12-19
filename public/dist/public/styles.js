@@ -334,9 +334,9 @@ if (content.locals) {
 /***/ 2:
 /*!******************************!*\
   !*** multi ./src/styles.css ***!
-  \******************************/
 
 module.exports = __webpack_require__(/*! C:\Users\aidan\Desktop\dojo\MeanStack\rollinitiative\public\src\styles.css */"./src/styles.css");
+
 
 
 /***/ })
