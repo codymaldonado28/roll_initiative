@@ -335,10 +335,8 @@ if (content.locals) {
 /*!******************************!*\
   !*** multi ./src/styles.css ***!
   \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\jndab\Documents\CodingDojo\MEAN\js\Angular\RollClone\rollinitiative\public\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Users\aidan\Desktop\dojo\MeanStack\rollinitiative\public\src\styles.css */"./src/styles.css");
 
 
 /***/ })
