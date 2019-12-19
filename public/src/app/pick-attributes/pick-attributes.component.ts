@@ -166,4 +166,3 @@ export class PickAttributesComponent implements OnInit, OnChanges {
     }
   }
 }
-

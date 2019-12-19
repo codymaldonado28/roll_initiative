@@ -338,7 +338,9 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\abrya\Desktop\Roll_Initiative\RollInitClone2\rollinitiative\public\src\styles.css */"./src/styles.css");
+
+module.exports = __webpack_require__(/*! C:\Source\MEAN_Stack\mean_intro\rollinitiative-2\rollinitiative\public\src\styles.css */"./src/styles.css");
+
 
 
 /***/ })
