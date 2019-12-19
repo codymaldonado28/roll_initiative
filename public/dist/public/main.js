@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Character Sheet</h2>\r\n<div id = \"character_info\">\r\n    <div>Name: {{oneCharacter.name}}</div>\r\n    <div>Class: Levl 1 {{oneCharacter.character_class}}</div>\r\n    <div>Race: {{oneCharacter.race}}</div>\r\n    <div>Experience: {{oneCharacter.exp}}</div>\r\n</div>\r\n<div id = \"stats_and_skills\">\r\n    <div id = \"str\">\r\n        <h3>STR</h3>\r\n        <p>{{oneCharacter.stats[0]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"dex\">\r\n        <h3>DEX</h3>\r\n        <p>{{oneCharacter.stats[1]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"con\">\r\n        <h3>CON</h3>\r\n        <p>{{oneCharacter.stats[2]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"int\">\r\n        <h3>INT</h3>\r\n        <p>{{oneCharacter.stats[3]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"wis\">\r\n        <h3>WIS</h3>\r\n        <p>{{oneCharacter.stats[4]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"cha\">\r\n        <h3>CHA</h3>\r\n        <p>{{oneCharacter.stats[5]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2>Character Sheet</h2>\r\n<div id = \"character_info\">\r\n    <div>Name: {{oneCharacter.name}}</div>\r\n    <div>Class: Levl 1 {{oneCharacter.character_class}}</div>\r\n    <div>Race: {{oneCharacter.race}}</div>\r\n    <div>Experience: {{oneCharacter.exp}}</div>\r\n</div>\r\n<div id = \"stats_and_skills\">\r\n    <div id = \"str\">\r\n        <h3>STR</h3>\r\n        <p>{{oneCharacter.stats[0]}}</p>\r\n        <h3>Mod</h3>\r\n        <p>{{strMod}}</p>\r\n    </div>\r\n    <div id = \"dex\">\r\n        <h3>DEX</h3>\r\n        <p>{{oneCharacter.stats[1]}}</p>\r\n        <h3>Mod</h3>\r\n\r\n    </div>\r\n    <div id = \"con\">\r\n        <h3>CON</h3>\r\n        <p>{{oneCharacter.stats[2]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"int\">\r\n        <h3>INT</h3>\r\n        <p>{{oneCharacter.stats[3]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"wis\">\r\n        <h3>WIS</h3>\r\n        <p>{{oneCharacter.stats[4]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"cha\">\r\n        <h3>CHA</h3>\r\n        <p>{{oneCharacter.stats[5]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n\r\n</div>");
 
 /***/ }),
 
@@ -534,6 +534,7 @@ let CharacterSheetComponent = class CharacterSheetComponent {
         this._httpService = _httpService;
         this._router = _router;
         this._route = _route;
+        this.strMod = this.getModOfStat(this.oneCharacter.stats[0]);
     }
     ngOnInit() {
         this._route.params.subscribe((params) => {
@@ -547,7 +548,9 @@ let CharacterSheetComponent = class CharacterSheetComponent {
             console.log(this.oneCharacter);
         });
     }
-    getModOfStat() { }
+    getModOfStat(num) {
+        return Math.floor(num - 10) / 2;
+    }
 };
 CharacterSheetComponent.ctorParameters = () => [
     { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
