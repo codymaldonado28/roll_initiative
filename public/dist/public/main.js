@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Character Sheet</h2>\r\n<div id = \"character_info\">\r\n    <div>Name: {{oneCharacter.name}}</div>\r\n    <div>Class: Levl 1 {{oneCharacter.character_class}}</div>\r\n    <div>Race: {{oneCharacter.race}}</div>\r\n    <div>Experience: {{oneCharacter.exp}}</div>\r\n</div>\r\n<div id = \"stats_and_skills\">\r\n    <div id = \"str\">\r\n        <h3>STR</h3>\r\n        <p>{{oneCharacter.stats[0]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"dex\">\r\n        <h3>DEX</h3>\r\n        <p>{{oneCharacter.stats[1]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"con\">\r\n        <h3>CON</h3>\r\n        <p>{{oneCharacter.stats[2]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"int\">\r\n        <h3>INT</h3>\r\n        <p>{{oneCharacter.stats[3]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"wis\">\r\n        <h3>WIS</h3>\r\n        <p>{{oneCharacter.stats[4]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"cha\">\r\n        <h3>CHA</h3>\r\n        <p>{{oneCharacter.stats[5]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2>Character Sheet</h2>\r\n<div id=\"character_info\">\r\n    <div>Name: {{oneCharacter.name}}</div>\r\n    <div>Class: Levl 1 {{oneCharacter.character_class}}</div>\r\n    <div>Race: {{oneCharacter.race}}</div>\r\n    <div>Experience: {{oneCharacter.exp}}</div>\r\n</div>\r\n<div id=\"stats_and_skills\">\r\n    <div id=\"str\" class=\"stat_block\">\r\n        <h3>STR</h3>\r\n        <p>{{oneCharacter.stats[0]}}</p>\r\n        <h3>Mod</h3>\r\n        <p>\r\n            {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n        </p>\r\n        <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n        <h4>Skills</h4>\r\n        <ul>\r\n            <li>Athletics: </li>\r\n        </ul>\r\n    </div>\r\n    <div id=\"dex\" class=\"stat_block\">\r\n        <h3>DEX</h3>\r\n        <p>{{oneCharacter.stats[1]}}</p>\r\n        <h3>Mod</h3>\r\n        <p>\r\n            {{(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n        </p>\r\n        <h4>Save: {{(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n        <h4>Skills</h4>\r\n        <ul>\r\n            <li>Acrobatics: </li>\r\n            <li>Sleight of Hand: </li>\r\n            <li>Stealth: </li>\r\n        </ul>\r\n\r\n    </div>\r\n    <div id=\"con\" class=\"stat_block\">\r\n        <h3>CON</h3>\r\n        <p>{{oneCharacter.stats[2]}}</p>\r\n        <h3>Mod</h3>\r\n        <p>\r\n            {{(oneCharacter.stats[2] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n        </p>\r\n        <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n    </div>\r\n    <div id=\"int\" class=\"stat_block\">\r\n        <h3>INT</h3>\r\n        <p>{{oneCharacter.stats[3]}}</p>\r\n        <h3>Mod</h3>\r\n        <p>\r\n            {{(oneCharacter.stats[3] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n        </p>\r\n        <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n        <h4>Skills</h4>\r\n        <ul>\r\n            <li>Arcana: </li>\r\n            <li>History: </li>\r\n            <li>Investigation: </li>\r\n            <li>Nature: </li>\r\n            <li>Religion: </li>\r\n        </ul>\r\n    </div>\r\n    <div id=\"wis\" class=\"stat_block\">\r\n        <h3>WIS</h3>\r\n        <p>{{oneCharacter.stats[4]}}</p>\r\n        <h3>Mod</h3>\r\n        <p>\r\n            {{(oneCharacter.stats[4] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n        </p>\r\n        <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n        <h4>Skills</h4>\r\n        <ul>\r\n            <li>Animal Handling: </li>\r\n            <li>Insight: </li>\r\n            <li>Medicine: </li>\r\n            <li>Perception: </li>\r\n            <li>Survival</li>\r\n        </ul>\r\n    </div>\r\n    <div id=\"cha\" class=\"stat_block\">\r\n        <h3>CHA</h3>\r\n        <p>{{oneCharacter.stats[5]}}</p>\r\n        <h3>Mod</h3>\r\n        <p>\r\n            {{(oneCharacter.stats[5] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n        </p>\r\n        <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n        <h4>Skills</h4>\r\n        <ul>\r\n            <li>Deception: </li>\r\n            <li>Intimidation: </li>\r\n            <li>Performance: </li>\r\n            <li>Persuasion: </li>\r\n            \r\n        </ul>\r\n    </div>\r\n\r\n</div>\r\n<div id=\"combat\">\r\n    <div>\r\n        <h3>Proficiency Bonus </h3>\r\n        <p>2</p>\r\n    </div>\r\n    <div>\r\n        <h3>Initiative</h3>\r\n        <p>{{ (oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</p>\r\n    </div>\r\n    <div>\r\n        <h3>AC</h3>\r\n        <div>{{ 10+(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</div>\r\n    </div>\r\n    <div>\r\n        <h3>Max Health</h3>\r\n        <p>{{ (oneCharacter.stats[2] - 10.1) / 2 | number:'1.0-0'}}</p>\r\n    </div>\r\n    \r\n\r\n\r\n</div>\r\n<div id = \"features\">\r\n    <h3>Features</h3>\r\n<div id = \"spells\">\r\n    <h3>Spells</h3>\r\n</div>");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n<button [routerLink]=\"['/characters/create']\">Create a new Hero</button><br>\r\n\r\n<table>\r\n    <tr>\r\n        <th>Name</th>\r\n        <th>Race</th>\r\n        <th>Class</th>\r\n        <th>Description</th>\r\n        <th>Actions</th>\r\n\r\n    </tr>\r\n    <tr *ngFor=\"let character of allCharacters\">\r\n        <td>{{character.name}}</td>\r\n        <td>{{character.race}}</td>\r\n        <td>{{character.character_class}}</td>\r\n        <td>{{character.description}}</td>\r\n        <td>\r\n            <button [routerLink]=\"['/character', character._id]\">View Sheet</button><br>\r\n            <button [routerLink]=\"['/character', character._id]\">Enhance a Hero</button><br>\r\n            <button (click) =\"destroyOneCharacter(character._id)\">Retire</button><br>\r\n        </td>\r\n    </tr>\r\n</table>\r\n\r\n<img src=\"../../assets/img/Barbarian.png\">");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n<button [routerLink]=\"['/characters/create']\">Create a new Hero</button><br>\r\n\r\n<table>\r\n    <tr>\r\n        <th>Name</th>\r\n        <th>Race</th>\r\n        <th>Class</th>\r\n        <th>Description</th>\r\n        <th>Actions</th>\r\n\r\n    </tr>\r\n    <tr *ngFor=\"let character of allCharacters\">\r\n        <td>{{character.name}}</td>\r\n        <td>{{character.race}}</td>\r\n        <td>{{character.character_class}}</td>\r\n        <td>{{character.description}}</td>\r\n        <td>\r\n            <button [routerLink]=\"['/character/show', character._id]\">View Sheet</button><br>\r\n            <button [routerLink]=\"['/character', character._id]\">Enhance a Hero</button><br>\r\n            <button (click) =\"destroyOneCharacter(character._id)\">Retire</button><br>\r\n        </td>\r\n    </tr>\r\n</table>\r\n\r\n");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>page-not-found works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>page-not-found works!</p>\n");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Pick Attributes</h1>\r\n<div *ngIf= 'characterClass'>\r\n    <h1>Class: {{characterClass.name}}</h1>\r\n    <h3>Choose Your Attributes</h3>\r\n    <h4>Choose {{characterClass['proficiency_choices'][0]['choose']}} Skills:</h4>\r\n    <div *ngFor=\"let skill of  classSkills\">\r\n        <button *ngIf = 'skill.added==false'(click) = 'addSkill(skill)' >{{skill.name}}</button>\r\n        <button style='background-color: red;'*ngIf = 'skill.added==true' (click) = 'cancelSkill(skill)'>{{skill.name}}</button>\r\n    </div>\r\n</div>\r\n<div *ngIf='classSpells.length > 0'>\r\n    <h2>Pick Spells</h2>\r\n    <div *ngFor= 'let spell of classSpells'>\r\n        <button>{{spell}}</button>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<div *ngIf= 'characterClass'>\r\n    <h1>Class: {{characterClass.name}}</h1>\r\n        <div *ngIf='classFeatures.length>0'>\r\n            <h4>Class Features:</h4>\r\n            <ul *ngFor ='let f of classFeatures'>\r\n                <li>{{f.name}}</li>\r\n            </ul>\r\n        </div>\r\n    <h2>Choose Your Attributes</h2>\r\n    <h3>Choose {{characterClass['proficiency_choices'][0]['choose']}} Skills:</h3>\r\n    <div style = 'vertical-align: top; display: inline-block' *ngFor=\"let skill of  classSkills\">\r\n        <button style = 'margin:3px' *ngIf = 'skill.added==false'(click) = 'addSkill(skill)' >{{skill.name}}</button>\r\n        <button style='background-color: red; margin:3px; color:white'*ngIf = 'skill.added==true' (click) = 'cancelSkill(skill)'>{{skill.name}}</button>\r\n    </div>\r\n</div>\r\n<div *ngIf='classSpells'>\r\n    <h1>Pick Spells</h1>\r\n    <div *ngFor=\"let level of classSpells; let i = index\" [attr.data-index]='i'>\r\n        <h3>Pick {{spellLimit}} Spells from level {{i}} spells</h3>\r\n        <div  style = 'vertical-align: top; display: inline-block' *ngFor= 'let spell of level'>\r\n        <button style = 'margin:3px' *ngIf = 'spell.added==false' (click) = 'addSpell(spell, i)'>{{spell.name}}</button>\r\n        <button style = 'margin:3px; background-color: red; color: white' *ngIf = 'spell.added==true' (click) = 'cancelSpell(spell, i)'>{{spell.name}}</button>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -370,7 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     { path: '', redirectTo: '/characters', pathMatch: "full" },
     { path: 'characters', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
-    { path: 'character/:id', component: _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_4__["CharacterSheetComponent"] },
+    { path: 'character/show/:id', component: _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_4__["CharacterSheetComponent"] },
     { path: 'characters/create', component: _create_create_component__WEBPACK_IMPORTED_MODULE_6__["CreateComponent"] },
     { path: '', pathMatch: 'full', redirectTo: '/characters/create' },
     { path: '**', component: _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_5__["PageNotFoundComponent"] }
@@ -507,7 +507,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#character_info{\r\n    border: 1px solid black;\r\n    padding: 20px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLXNoZWV0L2NoYXJhY3Rlci1zaGVldC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksdUJBQXVCO0lBQ3ZCLGFBQWE7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9jaGFyYWN0ZXItc2hlZXQvY2hhcmFjdGVyLXNoZWV0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY2hhcmFjdGVyX2luZm97XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("#character_info{\r\n    border: 1px solid black;\r\n    padding: 20px;\r\n}\r\n#stats_and_skills{\r\n    display: inline-block;\r\n    text-align: center;\r\n}\r\n#combat{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    text-align: center;\r\n    margin-left: 30px;\r\n}\r\n.stat_block{\r\n    padding: 20px;\r\n    border: 1px solid black;\r\n}\r\n#spells{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    text-align: center;\r\n    margin-left: 30px;\r\n}\r\n#features{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    text-align: center;\r\n    margin-left: 30px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLXNoZWV0L2NoYXJhY3Rlci1zaGVldC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksdUJBQXVCO0lBQ3ZCLGFBQWE7QUFDakI7QUFDQTtJQUNJLHFCQUFxQjtJQUNyQixrQkFBa0I7QUFDdEI7QUFDQTtJQUNJLHFCQUFxQjtJQUNyQixtQkFBbUI7SUFDbkIsa0JBQWtCO0lBQ2xCLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksYUFBYTtJQUNiLHVCQUF1QjtBQUMzQjtBQUNBO0lBQ0kscUJBQXFCO0lBQ3JCLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIsaUJBQWlCO0FBQ3JCO0FBQ0E7SUFDSSxxQkFBcUI7SUFDckIsbUJBQW1CO0lBQ25CLGtCQUFrQjtJQUNsQixpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9jaGFyYWN0ZXItc2hlZXQvY2hhcmFjdGVyLXNoZWV0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY2hhcmFjdGVyX2luZm97XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn1cclxuI3N0YXRzX2FuZF9za2lsbHN7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuI2NvbWJhdHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tbGVmdDogMzBweDtcclxufVxyXG4uc3RhdF9ibG9ja3tcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxufVxyXG4jc3BlbGxze1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi1sZWZ0OiAzMHB4O1xyXG59XHJcbiNmZWF0dXJlc3tcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tbGVmdDogMzBweDtcclxufSJdfQ== */");
 
 /***/ }),
 
@@ -544,10 +544,8 @@ let CharacterSheetComponent = class CharacterSheetComponent {
         let observable = this._httpService.getOneCharacter(id);
         observable.subscribe(data => {
             this.oneCharacter = data['results'];
-            console.log(this.oneCharacter);
         });
     }
-    getModOfStat() { }
 };
 CharacterSheetComponent.ctorParameters = () => [
     { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
@@ -668,9 +666,15 @@ let CreateComponent = class CreateComponent {
         });
     }
     chooseClass(character_class, classIndex) {
+        this.playAudio(character_class);
         this.newCharacter.character_class = character_class;
         this.classIndex = classIndex;
-        console.log({ classIndex });
+    }
+    playAudio(character_class) {
+        let audio = new Audio();
+        audio.src = `../../assets/audio/${character_class}.mp3`;
+        audio.load();
+        audio.play();
     }
 };
 CreateComponent.ctorParameters = () => [
@@ -811,11 +815,11 @@ let HttpService = class HttpService {
     getOneRace(race_index) {
         return this._http.get(`http://www.dnd5eapi.co/api/classes/${race_index}`);
     }
-    getAllSpells() {
-        return this._http.get("http://www.dnd5eapi.co/api/spells");
+    getAllSpellsForClassAndLevel(name, level) {
+        return this._http.get(`http://www.dnd5eapi.co/api/spells/${name}/level/${level}`);
     }
-    checkClassAndLevel(url) {
-        return this._http.get(url);
+    getAllFeaturesForClassAndLevel(name, level) {
+        return this._http.get(`http://www.dnd5eapi.co/api/features/${name}/level/${level}`);
     }
     getARace(raceIndex) {
         return this._http.get(`http://www.dnd5eapi.co/api/races/${raceIndex}`);
@@ -912,19 +916,39 @@ let PickAttributesComponent = class PickAttributesComponent {
         this._httpService = _httpService;
     }
     ngOnInit() {
-        this.skills = [];
+        this.characterClassMap = {
+            1: 'barbarian',
+            2: 'bard',
+            3: 'cleric',
+            4: 'druid',
+            5: 'fighter',
+            6: 'monk',
+            7: 'paladin',
+            8: 'ranger',
+            9: 'rogue',
+            10: 'sorcerer',
+            11: 'warlock',
+            12: 'wizard'
+        };
+        this.characterSkills = [];
         this.classSkills = [];
         this.getOneClass(this.classIndex);
-        this.getAllSpells();
         this.classSpells = [];
+        this.characterSpells = [];
+        this.spellLimit = 4;
+        this.characterLevel = 1;
+        this.classFeatures = [];
+        this.getAllFeatures();
+        this.getAllSpells();
     }
     ngOnChanges() {
         this.getOneClass(this.classIndex);
         this.getAllSpells();
+        this.getAllFeatures();
     }
     getOneClass(classIndex) {
         this.classSpells = [];
-        this.skills = [];
+        this.characterSkills = [];
         this.classSkills = [];
         let obs = this._httpService.getOneClass(classIndex);
         obs.subscribe(data => {
@@ -940,48 +964,93 @@ let PickAttributesComponent = class PickAttributesComponent {
         });
     }
     addSkill(skill) {
-        if (this.skills.length < this.characterClass['proficiency_choices'][0]['choose']) {
-            this.skills.push(skill);
+        if (this.characterSkills.length < this.characterClass['proficiency_choices'][0]['choose']) {
+            this.characterSkills.push(skill);
         }
         else {
-            let canceled = this.skills[this.skills.length - 1];
-            this.skills.splice(this.skills.length - 1, 1);
-            this.skills.push(skill);
+            let canceled = this.characterSkills[this.characterSkills.length - 1];
+            this.characterSkills.splice(this.characterSkills.length - 1, 1);
+            this.characterSkills.push(skill);
             canceled.added = false;
         }
-        console.log(this.skills);
+        console.log(this.characterSkills);
         skill.added = true;
     }
     cancelSkill(skill) {
-        for (var i = 0; i < this.skills.length; i++) {
-            if (this.skills[i] == skill) {
-                this.skills[i].added = false;
-                this.skills.splice(i, 1);
+        for (var i = 0; i < this.characterSkills.length; i++) {
+            if (this.characterSkills[i] == skill) {
+                this.characterSkills[i].added = false;
+                this.characterSkills.splice(i, 1);
             }
-            console.log(this.skills);
+            console.log(this.characterSkills);
         }
     }
-    checkClassAndLevel(url) {
-        let obs = this._httpService.checkClassAndLevel(url);
+    getAllSpells() {
+        console.log('get all spells running');
+        this.characterSpells = [];
+        let character_class_name = (this.characterClassMap[this.classIndex]);
+        console.log(character_class_name);
+        for (let i = 0; i <= this.characterLevel; i++) {
+            this.classSpells.push([]);
+            let obs = this._httpService.getAllSpellsForClassAndLevel(character_class_name, i);
+            obs.subscribe(data => {
+                for (var spell of data['results']) {
+                    this.classSpells[i].push({
+                        name: spell['name'],
+                        added: false
+                    });
+                }
+            });
+        }
+        this.characterSpells = [];
+        for (let i = 0; i <= this.characterLevel; i++) {
+            this.characterSpells.push([]);
+        }
+        console.log("class spells:", this.classSpells);
+    }
+    getAllFeatures() {
+        this.classFeatures = [];
+        let character_class_name = (this.characterClassMap[this.classIndex]);
+        console.log(character_class_name);
+        let obs = this._httpService.getAllFeaturesForClassAndLevel(character_class_name, this.characterLevel);
         obs.subscribe(data => {
-            if (data['level'] <= 1) {
-                for (var check of data['classes']) {
-                    if (check.name == this.characterClass.name) {
-                        this.classSpells.push(data['name']);
+            for (var feature of data['results']) {
+                var test = true;
+                for (var f of this.classFeatures) {
+                    if (feature.name == f.name) {
+                        test = false;
                     }
                 }
+                if (test == true)
+                    this.classFeatures.push(feature);
             }
-            console.log(this.classSpells);
+            console.log(data['results']);
+            console.log(this.classFeatures);
         });
     }
-    getAllSpells() {
-        let obs = this._httpService.getAllSpells();
-        obs.subscribe(data => {
-            console.log(data);
-            for (var spell of data['results']) {
-                this.checkClassAndLevel(spell['url']);
+    addSpell(spell, level) {
+        console.log(level);
+        console.log(this.characterSpells);
+        if (this.characterSpells[level].length < this.spellLimit) {
+            this.characterSpells[level].push(spell);
+        }
+        else {
+            let canceled = this.characterSpells[level][this.characterSpells[level].length - 1];
+            this.characterSpells[level].splice(this.characterSpells[level].length - 1, 1);
+            this.characterSpells[level].push(spell);
+            canceled.added = false;
+        }
+        console.log(this.characterSpells);
+        spell.added = true;
+    }
+    cancelSpell(spell, level) {
+        for (let i = 0; i < this.characterSpells.length; i++) {
+            if (this.characterSpells[level][i] == spell) {
+                this.characterSpells[level][i].added = false;
+                this.characterSpells[level].splice(i, 1);
             }
-        });
+            console.log(this.characterSpells);
+        }
     }
 };
 PickAttributesComponent.ctorParameters = () => [
@@ -1150,7 +1219,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\jndab\Documents\CodingDojo\MEAN\js\Angular\RollClone\rollinitiative\public\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\abrya\Desktop\Roll_Initiative\RollInitClone2\rollinitiative\public\src\main.ts */"./src/main.ts");
 
 
 /***/ })
