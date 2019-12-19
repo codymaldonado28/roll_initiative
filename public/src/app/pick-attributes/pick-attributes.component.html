@@ -31,10 +31,12 @@
 </div>
 <div *ngIf='classSpells'>
     <div *ngFor="let level of classSpells; let i = index" [attr.data-index]='i'>
+    <div *ngIf="level.length>0">
         <h3>Pick {{spellLimit}} Spells from level {{i}} spells</h3>
         <div  style = 'vertical-align: top; display: inline-block' *ngFor= 'let spell of level'>
         <button style = 'margin:3px' *ngIf = 'spell.added==false' (click) = 'addSpell(spell, i)'>{{spell.name}}</button>
         <button style = 'margin:3px; background-color: red; color: white' *ngIf = 'spell.added==true' (click) = 'cancelSpell(spell, i)'>{{spell.name}}</button>
         </div>
+    </div>
     </div>
 </div>
