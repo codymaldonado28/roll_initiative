@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output } from '@angular/core';
 import { HttpService } from '../http.service';
 import { ActivatedRoute, Router, Params } from '@angular/router'
 import { analyzeAndValidateNgModules } from '@angular/compiler';
@@ -13,6 +13,7 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 export class PickAttributesComponent implements OnInit, OnChanges {
   @Input() classIndex: any;
+  @Input() newCharacter: any;
   characterClass: any;
   classSkills: any;
   characterSkills: any;
@@ -23,9 +24,11 @@ export class PickAttributesComponent implements OnInit, OnChanges {
   characterClassMap: any;
   characterLevel: number;
   classFeatures: any;
-
+  errors:any;
+  stats:any;
   constructor(
-    private _httpService: HttpService
+    private _httpService: HttpService,
+    private _router : Router,
   ) { }
 
   ngOnInit() {
@@ -43,6 +46,7 @@ export class PickAttributesComponent implements OnInit, OnChanges {
       11: 'warlock',
       12: 'wizard'
     }
+    this.stats=[];
     this.characterSkills = [];
     this.classSkills = [];
     this.getOneClass(this.classIndex)
@@ -163,6 +167,50 @@ export class PickAttributesComponent implements OnInit, OnChanges {
         this.characterSpells[level].splice(i, 1);
       }
       console.log(this.characterSpells)
+    }
+  }
+  addStat(stat, value){
+
+  }
+  createCharacter() {
+    this.errors = []
+    this.newCharacter.spells=this.characterSpells
+    this.newCharacter.skills=this.characterSkills
+    console.log(this.newCharacter)
+    if(this.newCharacter.name==''){
+      this.errors.push('you need a name')
+    }
+    if(this.newCharacter.description==''){
+      this.errors.push('you need a description')
+    }
+    if(this.newCharacter.race==''){
+      this.errors.push('you need a race')
+    }
+    if(this.newCharacter.skills.length != this.characterClass['proficiency_choices'][0]['choose']){
+      this.errors.push(`You can have ${this.characterClass['proficiency_choices'][0]['choose']} skills but you only have ${this.newCharacter.skills.length}`)
+    }
+    else{
+    let obs = this._httpService.createCharacter(this.newCharacter)
+    obs.subscribe(data => {
+      if (data['results']) {
+        console.log(data)
+        this.newCharacter = {
+          name: '',
+          description: '',
+          race: '',
+          character_class: '',
+          inventory: [],
+          stats: []
+        }
+        console.log(data)
+        this._router.navigate(['/'])
+      }
+      else if (data['errors']) {
+        for (var key in data['errors']) {
+          this.errors.push(data['errors'][key]['message']);
+        }
+      }
+    })
     }
   }
 }
