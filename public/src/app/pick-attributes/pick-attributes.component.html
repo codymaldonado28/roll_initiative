@@ -1,16 +1,26 @@
-<h1>Pick Attributes</h1>
+
 <div *ngIf= 'characterClass'>
     <h1>Class: {{characterClass.name}}</h1>
-    <h3>Choose Your Attributes</h3>
-    <h4>Choose {{characterClass['proficiency_choices'][0]['choose']}} Skills:</h4>
-    <div *ngFor="let skill of  classSkills">
-        <button *ngIf = 'skill.added==false'(click) = 'addSkill(skill)' >{{skill.name}}</button>
-        <button style='background-color: red;'*ngIf = 'skill.added==true' (click) = 'cancelSkill(skill)'>{{skill.name}}</button>
+        <div *ngIf='classFeatures.length>0'>
+            <h4>Class Features:</h4>
+            <ul *ngFor ='let f of classFeatures'>
+                <li>{{f.name}}</li>
+            </ul>
+        </div>
+    <h2>Choose Your Attributes</h2>
+    <h3>Choose {{characterClass['proficiency_choices'][0]['choose']}} Skills:</h3>
+    <div style = 'vertical-align: top; display: inline-block' *ngFor="let skill of  classSkills">
+        <button style = 'margin:3px' *ngIf = 'skill.added==false'(click) = 'addSkill(skill)' >{{skill.name}}</button>
+        <button style='background-color: red; margin:3px; color:white'*ngIf = 'skill.added==true' (click) = 'cancelSkill(skill)'>{{skill.name}}</button>
     </div>
 </div>
-<div *ngIf='classSpells.length > 0'>
-    <h2>Pick Spells</h2>
-    <div *ngFor= 'let spell of classSpells'>
-        <button>{{spell}}</button>
+<div *ngIf='classSpells'>
+    <h1>Pick Spells</h1>
+    <div *ngFor="let level of classSpells; let i = index" [attr.data-index]='i'>
+        <h3>Pick {{spellLimit}} Spells from level {{i}} spells</h3>
+        <div  style = 'vertical-align: top; display: inline-block' *ngFor= 'let spell of level'>
+        <button style = 'margin:3px' *ngIf = 'spell.added==false' (click) = 'addSpell(spell, i)'>{{spell.name}}</button>
+        <button style = 'margin:3px; background-color: red; color: white' *ngIf = 'spell.added==true' (click) = 'cancelSpell(spell, i)'>{{spell.name}}</button>
+        </div>
     </div>
 </div>
