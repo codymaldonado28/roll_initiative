@@ -30,6 +30,7 @@ const CharacterSchema = new mongoose.Schema({
     },
     exp: {
         type: Number,
+        default: 0,
     },
     inventory: {
         type: Array,
