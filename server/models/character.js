@@ -21,8 +21,12 @@ const CharacterSchema = new mongoose.Schema({
         required: [true, "You must choose a race."],
     },
     character_class: {
-        type: String,
+        type: Array,
+        arr_of_classes: {
+            type: String
+        },
         required: [true, "You must have a class to play"]
+
     },
     exp: {
         type: Number,
