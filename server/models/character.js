@@ -29,12 +29,12 @@ const CharacterSchema = new mongoose.Schema({
 
     },
     skills: {
-        type: Array;
-    }
-    
+        type: Array,
+    },
+
     spells: {
-        type: Array;
-    }
+        type: Array
+    },
 
     exp: {
         type: Number,
