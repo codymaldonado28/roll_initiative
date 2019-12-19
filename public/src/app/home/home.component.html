@@ -17,7 +17,7 @@
         <td>{{character.character_class}}</td>
         <td>{{character.description}}</td>
         <td>
-            <button [routerLink]="['/characters', character._id]">View Sheet</button><br>
+            <button [routerLink]="['/character/show', character._id]">View Sheet</button><br>
             <button [routerLink]="['/character', character._id]">Enhance a Hero</button><br>
             <button (click) ="destroyOneCharacter(character._id)">Retire</button><br>
         </td>

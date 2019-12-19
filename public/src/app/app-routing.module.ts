@@ -9,7 +9,7 @@ import { CreateComponent } from './create/create.component';
 const routes: Routes = [
   {path: '', redirectTo: '/characters', pathMatch: "full"},
   {path: 'characters', component: HomeComponent},
-  {path: 'characters/:id', component: CharacterSheetComponent},
+  {path: 'character/show/:id', component: CharacterSheetComponent},
   {path: 'characters/create', component: CreateComponent},
   {path: '', pathMatch: 'full', redirectTo: '/characters/create' },
   {path: '**', component: PageNotFoundComponent}
