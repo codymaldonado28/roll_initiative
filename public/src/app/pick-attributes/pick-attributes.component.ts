@@ -25,6 +25,7 @@ export class PickAttributesComponent implements OnInit, OnChanges {
   characterLevel: number;
   classFeatures: any;
   errors:any;
+  stats:any;
   constructor(
     private _httpService: HttpService,
     private _router : Router,
@@ -45,6 +46,7 @@ export class PickAttributesComponent implements OnInit, OnChanges {
       11: 'warlock',
       12: 'wizard'
     }
+    this.stats=[];
     this.characterSkills = [];
     this.classSkills = [];
     this.getOneClass(this.classIndex)
@@ -166,6 +168,9 @@ export class PickAttributesComponent implements OnInit, OnChanges {
       }
       console.log(this.characterSpells)
     }
+  }
+  addStat(stat, value){
+
   }
   createCharacter() {
     this.errors = []
