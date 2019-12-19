@@ -28,6 +28,14 @@ const CharacterSchema = new mongoose.Schema({
         required: [true, "You must have a class to play"]
 
     },
+    skills: {
+        type: Array;
+    }
+    
+    spells: {
+        type: Array;
+    }
+
     exp: {
         type: Number,
         default: 0,

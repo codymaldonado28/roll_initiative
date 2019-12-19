@@ -30,9 +30,9 @@
             <img (click)="chooseRace('Half-orc', 8)" src="../../assets/img/Half-orc.png" alt="Half-Orc">
             <img (click)="chooseRace('Tiefling', 9)" src="../../assets/img/Tiefling.png" alt="Tiefling">
             <div *ngIf='oneRace'>
-                Alignment: {{this.oneRace.alignment}}<br>
-                Age: {{this.oneRace.age}}<br>
-                Size: {{this.oneRace.size}}, {{this.oneRace.size_description}}
+                <b>Alignment:</b> {{this.oneRace.alignment}}<br>
+                <b>Age:</b> {{this.oneRace.age}}<br>
+                <b>Size:</b> {{this.oneRace.size}}, {{this.oneRace.size_description}}
             </div>
         </div>
         <div *ngIf='newCharacter.race'>
