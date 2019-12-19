@@ -83,7 +83,7 @@ export class CreateComponent implements OnInit {
       }
     })
   }
-  cho
+  
   chooseClass(character_class, classIndex){
     this.newCharacter.character_class=character_class
     this.classIndex = classIndex

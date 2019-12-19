@@ -2,3 +2,29 @@
     border: 1px solid black;
     padding: 20px;
 }
+#stats_and_skills{
+    display: inline-block;
+    text-align: center;
+}
+#combat{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin-left: 30px;
+}
+.stat_block{
+    padding: 20px;
+    border: 1px solid black;
+}
+#spells{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin-left: 30px;
+}
+#features{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin-left: 30px;
+}
