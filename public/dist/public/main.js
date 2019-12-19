@@ -668,9 +668,15 @@ let CreateComponent = class CreateComponent {
         });
     }
     chooseClass(character_class, classIndex) {
+        this.playAudio(character_class);
         this.newCharacter.character_class = character_class;
         this.classIndex = classIndex;
-        console.log({ classIndex });
+    }
+    playAudio(character_class) {
+        let audio = new Audio();
+        audio.src = `../../assets/audio/${character_class}.mp3`;
+        audio.load();
+        audio.play();
     }
 };
 CreateComponent.ctorParameters = () => [
