@@ -50,11 +50,11 @@
             <img (click)="chooseClass('Warlock', 11)" src="../../assets/img/Warlock.png" alt="Warlock">
             <img (click)="chooseClass('Wizard', 12)" src="../../assets/img/Wizard.png" alt="Wizard">
         </div>
+        <div class="root">
+            <app-pick-attributes *ngIf = "classIndex" [classIndex]= "classIndex" [race]="race" ></app-pick-attributes>
+        </div>
         <input type="submit" value="submit">
     </form>
-    <div class="root">
-        <app-pick-attributes *ngIf = "classIndex" [classIndex]= "classIndex" ></app-pick-attributes>
-    </div>
 </body>
 
 </html>

@@ -26,7 +26,9 @@ const CharacterSchema = new mongoose.Schema({
             type: String
         },
         required: [true, "You must have a class to play"]
-
+    },
+    spells: {
+        type: Array
     },
     exp: {
         type: Number,
