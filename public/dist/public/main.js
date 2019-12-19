@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Character Sheet</h2>\r\n<div id = \"character_info\">\r\n    <div>Name: {{oneCharacter.name}}</div>\r\n    <div>Class: Levl 1 {{oneCharacter.character_class}}</div>\r\n    <div>Race: {{oneCharacter.race}}</div>\r\n    <div>Experience: {{oneCharacter.exp}}</div>\r\n</div>\r\n<div id = \"stats_and_skills\">\r\n    <div id = \"str\">\r\n        <h3>STR</h3>\r\n        <p>{{oneCharacter.stats[0]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"dex\">\r\n        <h3>DEX</h3>\r\n        <p>{{oneCharacter.stats[1]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"con\">\r\n        <h3>CON</h3>\r\n        <p>{{oneCharacter.stats[2]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"int\">\r\n        <h3>INT</h3>\r\n        <p>{{oneCharacter.stats[3]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"wis\">\r\n        <h3>WIS</h3>\r\n        <p>{{oneCharacter.stats[4]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n    <div id = \"cha\">\r\n        <h3>CHA</h3>\r\n        <p>{{oneCharacter.stats[5]}}</p>\r\n        <h3>Mod</h3>\r\n    </div>\r\n\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n    <div class=\"row\" style=\"display:block;\">\r\n        <h2>Character Sheet</h2>\r\n        <div id=\"character_info\">\r\n        <p>Name: {{oneCharacter.name}}</p>\r\n        <p>Class: Level 1 {{oneCharacter.character_class}}</p>\r\n        <p>Race: {{oneCharacter.race}}</p>\r\n        <p>Experience: {{oneCharacter.exp}}</p>\r\n        </div>\r\n    </div><!--end of row-->\r\n    \r\n    <div class=\"row\">\r\n    <div class=\"col\" id=\"stats_and_skills\">\r\n        <div id=\"str\" class=\"stat_block\">\r\n            <h3>STR</h3>\r\n            <p>{{oneCharacter.stats[0]}}</p>\r\n            <h3>Mod</h3>\r\n            <p>\r\n                {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n            </p>\r\n            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n            <h4>Skills</h4>\r\n            <ul>\r\n                <li>Athletics: </li>\r\n            </ul>\r\n        </div>\r\n        <div id=\"dex\" class=\"stat_block\">\r\n            <h3>DEX</h3>\r\n            <p>{{oneCharacter.stats[1]}}</p>\r\n            <h3>Mod</h3>\r\n            <p>\r\n                {{(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n            </p>\r\n            <h4>Save: {{(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n            <h4>Skills</h4>\r\n            <ul>\r\n                <li>Acrobatics: </li>\r\n                <li>Sleight of Hand: </li>\r\n                <li>Stealth: </li>\r\n            </ul>\r\n\r\n        </div>\r\n        <div id=\"con\" class=\"stat_block\">\r\n            <h3>CON</h3>\r\n            <p>{{oneCharacter.stats[2]}}</p>\r\n            <h3>Mod</h3>\r\n            <p>\r\n                {{(oneCharacter.stats[2] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n            </p>\r\n            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n        </div>\r\n        <div id=\"int\" class=\"stat_block\">\r\n            <h3>INT</h3>\r\n            <p>{{oneCharacter.stats[3]}}</p>\r\n            <h3>Mod</h3>\r\n            <p>\r\n                {{(oneCharacter.stats[3] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n            </p>\r\n            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n            <h4>Skills</h4>\r\n            <ul>\r\n                <li>Arcana: </li>\r\n                <li>History: </li>\r\n                <li>Investigation: </li>\r\n                <li>Nature: </li>\r\n                <li>Religion: </li>\r\n            </ul>\r\n        </div>\r\n        <div id=\"wis\" class=\"stat_block\">\r\n            <h3>WIS</h3>\r\n            <p>{{oneCharacter.stats[4]}}</p>\r\n            <h3>Mod</h3>\r\n            <p>\r\n                {{(oneCharacter.stats[4] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n            </p>\r\n            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n            <h4>Skills</h4>\r\n            <ul>\r\n                <li>Animal Handling: </li>\r\n                <li>Insight: </li>\r\n                <li>Medicine: </li>\r\n                <li>Perception: </li>\r\n                <li>Survival</li>\r\n            </ul>\r\n        </div>\r\n        <div id=\"cha\" class=\"stat_block\">\r\n            <h3>CHA</h3>\r\n            <p>{{oneCharacter.stats[5]}}</p>\r\n            <h3>Mod</h3>\r\n            <p>\r\n                {{(oneCharacter.stats[5] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n            </p>\r\n            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n            <h4>Skills</h4>\r\n            <ul>\r\n                <li>Deception: </li>\r\n                <li>Intimidation: </li>\r\n                <li>Performance: </li>\r\n                <li>Persuasion: </li>\r\n                \r\n            </ul>\r\n        </div>\r\n    </div><!--end of stats_and_skills column-->\r\n\r\n    <div class=\"col\" id=\"combat\">\r\n        <div>\r\n            <h3>Proficiency Bonus </h3>\r\n            <p>2</p>\r\n        </div>\r\n        <div>\r\n            <h3>Initiative</h3>\r\n            <p>{{ (oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</p>\r\n        </div>\r\n        <div>\r\n            <h3>AC</h3>\r\n            <div>{{ 10+(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</div>\r\n        </div>\r\n        <div>\r\n            <h3>Max Health</h3>\r\n            <p>{{ (oneCharacter.stats[2] - 10.1) / 2 | number:'1.0-0'}}</p>\r\n        </div>\r\n     </div><!--end of combat column-->\r\n\r\n    <div class=\"col\" id=\"features_and_spells\">\r\n        <div id=\"features\">\r\n            <h3>Features</h3>\r\n        </div><!--end of features-->\r\n        <div id=\"spells\">\r\n            <h3>Spells</h3>\r\n        </div><!--end of spells-->\r\n    </div><!--end of features column-->\r\n\r\n    </div><!--end of row-->\r\n\r\n</div><!--end of container-->");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n<button [routerLink]=\"['/characters/create']\">Create a new Hero</button><br>\r\n\r\n<table>\r\n    <tr>\r\n        <th>Name</th>\r\n        <th>Race</th>\r\n        <th>Class</th>\r\n        <th>Description</th>\r\n        <th>Actions</th>\r\n\r\n    </tr>\r\n    <tr *ngFor=\"let character of allCharacters\">\r\n        <td>{{character.name}}</td>\r\n        <td>{{character.race}}</td>\r\n        <td>{{character.character_class}}</td>\r\n        <td>{{character.description}}</td>\r\n        <td>\r\n            <button [routerLink]=\"['/character', character._id]\">View Sheet</button><br>\r\n            <button [routerLink]=\"['/character', character._id]\">Enhance a Hero</button><br>\r\n            <button (click) =\"destroyOneCharacter(character._id)\">Retire</button><br>\r\n        </td>\r\n    </tr>\r\n</table>\r\n\r\n<img src=\"../../assets/img/Barbarian.png\">");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n<button [routerLink]=\"['/characters/create']\">Create a new Hero</button><br>\r\n\r\n<table>\r\n    <tr>\r\n        <th>Name</th>\r\n        <th>Race</th>\r\n        <th>Class</th>\r\n        <th>Description</th>\r\n        <th>Actions</th>\r\n\r\n    </tr>\r\n    <tr *ngFor=\"let character of allCharacters\">\r\n        <td>{{character.name}}</td>\r\n        <td>{{character.race}}</td>\r\n        <td>{{character.character_class}}</td>\r\n        <td>{{character.description}}</td>\r\n        <td>\r\n            <button [routerLink]=\"['/character/show', character._id]\">View Sheet</button><br>\r\n            <button [routerLink]=\"['/character', character._id]\">Enhance a Hero</button><br>\r\n            <button (click) =\"destroyOneCharacter(character._id)\">Retire</button><br>\r\n        </td>\r\n    </tr>\r\n</table>\r\n\r\n");
 
 /***/ }),
 
@@ -370,7 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     { path: '', redirectTo: '/characters', pathMatch: "full" },
     { path: 'characters', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
-    { path: 'character/:id', component: _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_4__["CharacterSheetComponent"] },
+    { path: 'character/show/:id', component: _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_4__["CharacterSheetComponent"] },
     { path: 'characters/create', component: _create_create_component__WEBPACK_IMPORTED_MODULE_6__["CreateComponent"] },
     { path: '', pathMatch: 'full', redirectTo: '/characters/create' },
     { path: '**', component: _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_5__["PageNotFoundComponent"] }
@@ -507,7 +507,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#character_info{\r\n    border: 1px solid black;\r\n    padding: 20px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLXNoZWV0L2NoYXJhY3Rlci1zaGVldC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksdUJBQXVCO0lBQ3ZCLGFBQWE7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9jaGFyYWN0ZXItc2hlZXQvY2hhcmFjdGVyLXNoZWV0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY2hhcmFjdGVyX2luZm97XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".row {\r\n    margin-bottom: 10px;\r\n}\r\n#character_info{\r\n    border: 1px solid black;\r\n    padding: 20px;\r\n}\r\n#stats_and_skills{\r\n    display: inline-block;\r\n    text-align: center;\r\n}\r\n#combat{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    text-align: center;\r\n    margin-left: 30px;\r\n}\r\n.stat_block{\r\n    padding: 20px;\r\n    border: 1px solid black;\r\n}\r\n#features_and_spells{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    text-align: center;\r\n    margin-left: 30px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLXNoZWV0L2NoYXJhY3Rlci1zaGVldC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksbUJBQW1CO0FBQ3ZCO0FBQ0E7SUFDSSx1QkFBdUI7SUFDdkIsYUFBYTtBQUNqQjtBQUNBO0lBQ0kscUJBQXFCO0lBQ3JCLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0kscUJBQXFCO0lBQ3JCLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIsaUJBQWlCO0FBQ3JCO0FBQ0E7SUFDSSxhQUFhO0lBQ2IsdUJBQXVCO0FBQzNCO0FBQ0E7SUFDSSxxQkFBcUI7SUFDckIsbUJBQW1CO0lBQ25CLGtCQUFrQjtJQUNsQixpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9jaGFyYWN0ZXItc2hlZXQvY2hhcmFjdGVyLXNoZWV0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucm93IHtcclxuICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XHJcbn1cclxuI2NoYXJhY3Rlcl9pbmZve1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG59XHJcbiNzdGF0c19hbmRfc2tpbGxze1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcbiNjb21iYXR7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMwcHg7XHJcbn1cclxuLnN0YXRfYmxvY2t7XHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XHJcbn1cclxuI2ZlYXR1cmVzX2FuZF9zcGVsbHN7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMwcHg7XHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -544,10 +544,8 @@ let CharacterSheetComponent = class CharacterSheetComponent {
         let observable = this._httpService.getOneCharacter(id);
         observable.subscribe(data => {
             this.oneCharacter = data['results'];
-            console.log(this.oneCharacter);
         });
     }
-    getModOfStat() { }
 };
 CharacterSheetComponent.ctorParameters = () => [
     { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
@@ -575,7 +573,7 @@ CharacterSheetComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("img {\r\n    width: 150px;\r\n    height: 200px;\r\n    border: 1px solid slategray;\r\n    margin: 2px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3JlYXRlL2NyZWF0ZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7SUFDYiwyQkFBMkI7SUFDM0IsV0FBVztBQUNmIiwiZmlsZSI6InNyYy9hcHAvY3JlYXRlL2NyZWF0ZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW1nIHtcclxuICAgIHdpZHRoOiAxNTBweDtcclxuICAgIGhlaWdodDogMjAwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBzbGF0ZWdyYXk7XHJcbiAgICBtYXJnaW46IDJweDtcclxufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("img {\r\n    width: 150px;\r\n    height: 200px;\r\n    border: 1px solid slategray;\r\n    margin: 2px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3JlYXRlL2NyZWF0ZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7SUFDYiwyQkFBMkI7SUFDM0IsV0FBVztBQUNmIiwiZmlsZSI6InNyYy9hcHAvY3JlYXRlL2NyZWF0ZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW1nIHtcclxuICAgIHdpZHRoOiAxNTBweDtcclxuICAgIGhlaWdodDogMjAwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBzbGF0ZWdyYXk7XHJcbiAgICBtYXJnaW46IDJweDtcclxufVxyXG4iXX0= */");
 
 /***/ }),
 
@@ -668,9 +666,15 @@ let CreateComponent = class CreateComponent {
         });
     }
     chooseClass(character_class, classIndex) {
+        this.playAudio(character_class);
         this.newCharacter.character_class = character_class;
         this.classIndex = classIndex;
-        console.log({ classIndex });
+    }
+    playAudio(character_class) {
+        let audio = new Audio();
+        audio.src = `../../assets/audio/${character_class}.mp3`;
+        audio.load();
+        audio.play();
     }
 };
 CreateComponent.ctorParameters = () => [
