@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <title>Document</title>\r\n    <link rel=\"stylesheet\" href=\"create.component.css\">\r\n</head>\r\n\r\n<body>\r\n    <div *ngFor='let err of errors'>\r\n        <p>{{err}}</p>\r\n    </div>\r\n    <form (submit)=\"createCharacter()\">\r\n        <label>Name: </label>\r\n        <input type=\"text\" name=\"newCharacter.name\" [(ngModel)]=\"newCharacter.name\" /><br>\r\n        <label>Bio/Description:</label><br>\r\n        <textarea type=\"textarea\" rows=\"4\" cols=\"50\" name=\"newCharacter.description\" [(ngModel)]=\"newCharacter.description\"></textarea><br>\r\n        <div *ngIf='newCharacter'>\r\n            <h3>Chosen Race: {{newCharacter.race}}</h3>\r\n            <img (click)=\"chooseRace('Dwarf', 1)\" src=\"../../assets/img/Dwarf.png\" alt=\"Dwarf\">\r\n            <img (click)=\"chooseRace('Elf', 2)\" src=\"../../assets/img/Elf.png\" alt=\"Elf\">\r\n            <img (click)=\"chooseRace('Halfling', 3)\" src=\"../../assets/img/Halfling.png\" alt=\"Halfling\">\r\n            <img (click)=\"chooseRace('Human', 4)\" src=\"../../assets/img/human.png\" alt=\"human\">\r\n            <img (click)=\"chooseRace('Dragonborn', 5)\" src=\"../../assets/img/Dragonborn.png\" alt=\"dragonborn\">\r\n            <img (click)=\"chooseRace('Gnome', 6)\" src=\"../../assets/img/Gnome.png\" alt=\"Gnome\">\r\n            <img (click)=\"chooseRace('Half-Elf', 7)\" src=\"../../assets/img/Half-elf.png\" alt=\"Half-elf\">\r\n            <img (click)=\"chooseRace('Half-orc', 8)\" src=\"../../assets/img/Half-orc.png\" alt=\"Half-Orc\">\r\n            <img (click)=\"chooseRace('Tiefling', 9)\" src=\"../../assets/img/Tiefling.png\" alt=\"Tiefling\">\r\n            <div *ngIf='oneRace'>\r\n                Alignment: {{this.oneRace.alignment}}<br>\r\n                Age: {{this.oneRace.age}}<br>\r\n                Size: {{this.oneRace.size}}, {{this.oneRace.size_description}}\r\n            </div>\r\n        </div>\r\n        <div *ngIf='newCharacter.race'>\r\n            <h3>Chosen Class: {{newCharacter.character_class}}</h3>\r\n            <img (click)=\"chooseClass('Barbarian', 1)\" src=\"../../assets/img/Barbarian.png\" alt=\"Barbarian\">\r\n            <img (click)=\"chooseClass('Bard', 2)\" src=\"../../assets/img/Bard.png\" alt=\"Bard\">\r\n            <img (click)=\"chooseClass('Cleric', 3)\" src=\"../../assets/img/Cleric.png\" alt=\"Cleric\">\r\n            <img (click)=\"chooseClass('Druid', 4)\" src=\"../../assets/img/Druid.png\" alt=\"Druid\">\r\n            <img (click)=\"chooseClass('Fighter', 5)\" src=\"../../assets/img/Fighter.png\" alt=\"Fighter\">\r\n            <img (click)=\"chooseClass('Monk', 6)\" src=\"../../assets/img/Monk.png\" alt=\"Monk\">\r\n            <img (click)=\"chooseClass('Paladin', 7)\" src=\"../../assets/img/Paladin.png\" alt=\"Paladin\">\r\n            <img (click)=\"chooseClass('Ranger', 8)\" src=\"../../assets/img/Ranger.png\" alt=\"Ranger\">\r\n            <img (click)=\"chooseClass('Rogue', 9)\" src=\"../../assets/img/Rogue.png\" alt=\"Rogure\">\r\n            <img (click)=\"chooseClass('Sorcerer', 10)\" src=\"../../assets/img/Sorcerer.png\" alt=\"Sorcerer\">\r\n            <img (click)=\"chooseClass('Warlock', 11)\" src=\"../../assets/img/Warlock.png\" alt=\"Warlock\">\r\n            <img (click)=\"chooseClass('Wizard', 12)\" src=\"../../assets/img/Wizard.png\" alt=\"Wizard\">\r\n        </div>\r\n        <input type=\"submit\" value=\"submit\">\r\n    </form>\r\n    <div class=\"root\">\r\n        <app-pick-attributes *ngIf = \"classIndex\" [classIndex]= \"classIndex\" ></app-pick-attributes>\r\n    </div>\r\n</body>\r\n\r\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <title>Document</title>\r\n    <link rel=\"stylesheet\" href=\"create.component.css\">\r\n</head>\r\n\r\n<body>\r\n    <div *ngFor='let err of errors'>\r\n        <p>{{err}}</p>\r\n    </div>\r\n    <form (submit)=\"createCharacter()\">\r\n        <label>Name: </label>\r\n        <input type=\"text\" name=\"newCharacter.name\" [(ngModel)]=\"newCharacter.name\" /><br>\r\n        <label>Bio/Description:</label><br>\r\n        <textarea type=\"textarea\" rows=\"4\" cols=\"50\" name=\"newCharacter.description\" [(ngModel)]=\"newCharacter.description\"></textarea><br>\r\n        <div *ngIf='newCharacter'>\r\n            <h3>Chosen Race: {{newCharacter.race}}</h3>\r\n            <img (click)=\"chooseRace('Dwarf', 1)\" src=\"../../assets/img/Dwarf.png\" alt=\"Dwarf\">\r\n            <img (click)=\"chooseRace('Elf', 2)\" src=\"../../assets/img/Elf.png\" alt=\"Elf\">\r\n            <img (click)=\"chooseRace('Halfling', 3)\" src=\"../../assets/img/Halfling.png\" alt=\"Halfling\">\r\n            <img (click)=\"chooseRace('Human', 4)\" src=\"../../assets/img/human.png\" alt=\"human\">\r\n            <img (click)=\"chooseRace('Dragonborn', 5)\" src=\"../../assets/img/Dragonborn.png\" alt=\"dragonborn\">\r\n            <img (click)=\"chooseRace('Gnome', 6)\" src=\"../../assets/img/Gnome.png\" alt=\"Gnome\">\r\n            <img (click)=\"chooseRace('Half-Elf', 7)\" src=\"../../assets/img/Half-elf.png\" alt=\"Half-elf\">\r\n            <img (click)=\"chooseRace('Half-orc', 8)\" src=\"../../assets/img/Half-orc.png\" alt=\"Half-Orc\">\r\n            <img (click)=\"chooseRace('Tiefling', 9)\" src=\"../../assets/img/Tiefling.png\" alt=\"Tiefling\">\r\n            <div *ngIf='oneRace'>\r\n                Alignment: {{this.oneRace.alignment}}<br>\r\n                Age: {{this.oneRace.age}}<br>\r\n                Size: {{this.oneRace.size}}, {{this.oneRace.size_description}}\r\n            </div>\r\n        </div>\r\n        <div *ngIf='newCharacter.race'>\r\n            <h3>Chosen Class: {{newCharacter.character_class}}</h3>\r\n            <img (click)=\"chooseClass('Barbarian', 1)\" src=\"../../assets/img/Barbarian.png\" alt=\"Barbarian\">\r\n            <img (click)=\"chooseClass('Bard', 2)\" src=\"../../assets/img/Bard.png\" alt=\"Bard\">\r\n            <img (click)=\"chooseClass('Cleric', 3)\" src=\"../../assets/img/Cleric.png\" alt=\"Cleric\">\r\n            <img (click)=\"chooseClass('Druid', 4)\" src=\"../../assets/img/Druid.png\" alt=\"Druid\">\r\n            <img (click)=\"chooseClass('Fighter', 5)\" src=\"../../assets/img/Fighter.png\" alt=\"Fighter\">\r\n            <img (click)=\"chooseClass('Monk', 6)\" src=\"../../assets/img/Monk.png\" alt=\"Monk\">\r\n            <img (click)=\"chooseClass('Paladin', 7)\" src=\"../../assets/img/Paladin.png\" alt=\"Paladin\">\r\n            <img (click)=\"chooseClass('Ranger', 8)\" src=\"../../assets/img/Ranger.png\" alt=\"Ranger\">\r\n            <img (click)=\"chooseClass('Rogue', 9)\" src=\"../../assets/img/Rogue.png\" alt=\"Rogure\">\r\n            <img (click)=\"chooseClass('Sorcerer', 10)\" src=\"../../assets/img/Sorcerer.png\" alt=\"Sorcerer\">\r\n            <img (click)=\"chooseClass('Warlock', 11)\" src=\"../../assets/img/Warlock.png\" alt=\"Warlock\">\r\n            <img (click)=\"chooseClass('Wizard', 12)\" src=\"../../assets/img/Wizard.png\" alt=\"Wizard\">\r\n        </div>\r\n        <input type=\"submit\" value=\"submit\">\r\n    </form>\r\n    <div class=\"root\">\r\n        <app-pick-attributes *ngIf = \"classIndex\" [classIndex]= \"classIndex\"  [newCharacter]='newCharacter'></app-pick-attributes>\r\n    </div>\r\n</body>\r\n\r\n</html>");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<div *ngIf= 'characterClass'>\r\n    <h1>Class: {{characterClass.name}}</h1>\r\n    <div>\r\n        <h4>Hit-Die: {{characterClass['hit_die']}}</h4>\r\n        <h4>Saving-Throws</h4>\r\n        <div>\r\n            <ul *ngFor= \"let throw of characterClass['saving_throws']\">\r\n                <li>{{throw.name}}</li>\r\n            </ul>\r\n        </div>\r\n        <div *ngIf='classFeatures.length>0'>\r\n            <h4>Class Features:</h4>\r\n            <ul *ngFor ='let f of classFeatures'>\r\n                <li>{{f.name}}</li>\r\n            </ul>\r\n        </div>\r\n        <div>\r\n            <h4>Class Proficiencies</h4>\r\n            <ul *ngFor= \" let pros of characterClass['proficiencies']\">\r\n                <li>{{pros.name}}</li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n    <h2>Choose Your Attributes</h2>\r\n    <h3>Choose {{characterClass['proficiency_choices'][0]['choose']}} Skills:</h3>\r\n    <div style = 'vertical-align: top; display: inline-block' *ngFor=\"let skill of  classSkills\">\r\n        <button style = 'margin:3px' *ngIf = 'skill.added==false'(click) = 'addSkill(skill)' >{{skill.name}}</button>\r\n        <button style='background-color: red; margin:3px; color:white'*ngIf = 'skill.added==true' (click) = 'cancelSkill(skill)'>{{skill.name}}</button>\r\n    </div>\r\n</div>\r\n<div *ngIf='classSpells'>\r\n    <div *ngFor=\"let level of classSpells; let i = index\" [attr.data-index]='i'>\r\n    <div *ngIf=\"level.length>0\">\r\n        <h3>Pick {{spellLimit}} Spells from level {{i}} spells</h3>\r\n        <div  style = 'vertical-align: top; display: inline-block' *ngFor= 'let spell of level'>\r\n        <button style = 'margin:3px' *ngIf = 'spell.added==false' (click) = 'addSpell(spell, i)'>{{spell.name}}</button>\r\n        <button style = 'margin:3px; background-color: red; color: white' *ngIf = 'spell.added==true' (click) = 'cancelSpell(spell, i)'>{{spell.name}}</button>\r\n        </div>\r\n    </div>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf='characterClass'>\r\n    <h1>Class: {{characterClass.name}}</h1>\r\n    <div>\r\n        <h4>Hit-Die: {{characterClass['hit_die']}}</h4>\r\n        <h4>Saving-Throws</h4>\r\n        <div>\r\n            <ul *ngFor=\"let throw of characterClass['saving_throws']\">\r\n                <li>{{throw.name}}</li>\r\n            </ul>\r\n        </div>\r\n        <div *ngIf='classFeatures.length>0'>\r\n            <h4>Class Features:</h4>\r\n            <ul *ngFor='let f of classFeatures'>\r\n                <li>{{f.name}}</li>\r\n            </ul>\r\n        </div>\r\n        <div>\r\n            <h4>Class Proficiencies</h4>\r\n            <ul *ngFor=\" let pros of characterClass['proficiencies']\">\r\n                <li>{{pros.name}}</li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n    <h2>Choose Your Attributes</h2>\r\n    <h3>Choose {{characterClass['proficiency_choices'][0]['choose']}} Skills:</h3>\r\n    <div style='vertical-align: top; display: inline-block' *ngFor=\"let skill of  classSkills\">\r\n        <button style='margin:3px' *ngIf='skill.added==false' (click)='addSkill(skill)'>{{skill.name}}</button>\r\n        <button style='background-color: red; margin:3px; color:white' *ngIf='skill.added==true'\r\n            (click)='cancelSkill(skill)'>{{skill.name}}</button>\r\n    </div>\r\n</div>\r\n<div *ngIf='classSpells'>\r\n    <div *ngFor=\"let level of classSpells; let i = index\" [attr.data-index]='i'>\r\n        <div *ngIf=\"level.length>0\">\r\n            <h3>Pick {{spellLimit}} Spells from level {{i}} spells</h3>\r\n            <div style='vertical-align: top; display: inline-block' *ngFor='let spell of level'>\r\n                <button style='margin:3px' *ngIf='spell.added==false'\r\n                    (click)='addSpell(spell, i)'>{{spell.name}}</button>\r\n                <button style='margin:3px; background-color: red; color: white' *ngIf='spell.added==true'\r\n                    (click)='cancelSpell(spell, i)'>{{spell.name}}</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<button style='background-color:green; color: white; width:300px; height: 100px;margin-top:20px; margin-left: 30%; ' (click)='createCharacter()'>Create Character</button>\r\n<div *ngIf= 'errors'>\r\n    <div *ngFor= 'let err of errors'>\r\n        <p style='color:red; font-size: large;'>{{err}}</p>\r\n    </div>\r\n</div>");
 
 /***/ }),
 
@@ -653,7 +653,9 @@ let CreateComponent = class CreateComponent {
         });
     }
     chooseRace(race, raceIndex) {
+        this.race = null;
         this.newCharacter.race = race;
+        this.race = race;
         this.raceIndex = raceIndex;
         this.getARace(raceIndex);
     }
@@ -908,12 +910,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
 let PickAttributesComponent = class PickAttributesComponent {
-    constructor(_httpService) {
+    constructor(_httpService, _router) {
         this._httpService = _httpService;
+        this._router = _router;
     }
     ngOnInit() {
         this.characterClassMap = {
@@ -1052,13 +1057,58 @@ let PickAttributesComponent = class PickAttributesComponent {
             console.log(this.characterSpells);
         }
     }
+    createCharacter() {
+        this.errors = [];
+        this.newCharacter.spells = this.characterSpells;
+        this.newCharacter.skills = this.characterSkills;
+        console.log(this.newCharacter);
+        if (this.newCharacter.name == '') {
+            this.errors.push('you need a name');
+        }
+        if (this.newCharacter.description == '') {
+            this.errors.push('you need a description');
+        }
+        if (this.newCharacter.race == '') {
+            this.errors.push('you need a race');
+        }
+        if (this.newCharacter.skills.length != this.characterClass['proficiency_choices'][0]['choose']) {
+            this.errors.push(`You can have ${this.characterClass['proficiency_choices'][0]['choose']} skills but you only have ${this.newCharacter.skills.length}`);
+        }
+        else {
+            let obs = this._httpService.createCharacter(this.newCharacter);
+            obs.subscribe(data => {
+                if (data['results']) {
+                    console.log(data);
+                    this.newCharacter = {
+                        name: '',
+                        description: '',
+                        race: '',
+                        character_class: '',
+                        inventory: [],
+                        stats: []
+                    };
+                    console.log(data);
+                    this._router.navigate(['/']);
+                }
+                else if (data['errors']) {
+                    for (var key in data['errors']) {
+                        this.errors.push(data['errors'][key]['message']);
+                    }
+                }
+            });
+        }
+    }
 };
 PickAttributesComponent.ctorParameters = () => [
-    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] }
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], PickAttributesComponent.prototype, "classIndex", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], PickAttributesComponent.prototype, "newCharacter", void 0);
 PickAttributesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-pick-attributes',
