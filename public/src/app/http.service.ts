@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ParseErrorLevel } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -40,11 +41,11 @@ export class HttpService {
   getOneRace(race_index){
     return this._http.get(`http://www.dnd5eapi.co/api/classes/${race_index}`)
 }
-  getAllSpells(){
-    return this._http.get("http://www.dnd5eapi.co/api/spells")
+  getAllSpellsForClassAndLevel(name, level){
+    return this._http.get(`http://www.dnd5eapi.co/api/spells/${name}/level/${level}`)
   }
-  checkClassAndLevel(url){
-    return this._http.get(url)
+  getAllFeaturesForClassAndLevel(name, level){
+    return this._http.get(`http://www.dnd5eapi.co/api/features/${name}/level/${level}`)
   }
   getARace(raceIndex) {
     return this._http.get(`http://www.dnd5eapi.co/api/races/${raceIndex}`)

@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Pick Attributes</h1>\r\n<div *ngIf= 'characterClass'>\r\n    <h1>Class: {{characterClass.name}}</h1>\r\n    <h3>Choose Your Attributes</h3>\r\n    <h4>Choose {{characterClass['proficiency_choices'][0]['choose']}} Skills:</h4>\r\n    <div *ngFor=\"let skill of  classSkills\">\r\n        <button *ngIf = 'skill.added==false'(click) = 'addSkill(skill)' >{{skill.name}}</button>\r\n        <button style='background-color: red;'*ngIf = 'skill.added==true' (click) = 'cancelSkill(skill)'>{{skill.name}}</button>\r\n    </div>\r\n</div>\r\n<div *ngIf='classSpells.length > 0'>\r\n    <h2>Pick Spells</h2>\r\n    <div *ngFor= 'let spell of classSpells'>\r\n        <button>{{spell}}</button>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<div *ngIf= 'characterClass'>\r\n    <h1>Class: {{characterClass.name}}</h1>\r\n        <div *ngIf='classFeatures.length>0'>\r\n            <h4>Class Features:</h4>\r\n            <ul *ngFor ='let f of classFeatures'>\r\n                <li>{{f.name}}</li>\r\n            </ul>\r\n        </div>\r\n    <h2>Choose Your Attributes</h2>\r\n    <h3>Choose {{characterClass['proficiency_choices'][0]['choose']}} Skills:</h3>\r\n    <div style = 'vertical-align: top; display: inline-block' *ngFor=\"let skill of  classSkills\">\r\n        <button style = 'margin:3px' *ngIf = 'skill.added==false'(click) = 'addSkill(skill)' >{{skill.name}}</button>\r\n        <button style='background-color: red; margin:3px; color:white'*ngIf = 'skill.added==true' (click) = 'cancelSkill(skill)'>{{skill.name}}</button>\r\n    </div>\r\n</div>\r\n<div *ngIf='classSpells'>\r\n    <h1>Pick Spells</h1>\r\n    <div *ngFor=\"let level of classSpells; let i = index\" [attr.data-index]='i'>\r\n        <h3>Pick {{spellLimit}} Spells from level {{i}} spells</h3>\r\n        <div  style = 'vertical-align: top; display: inline-block' *ngFor= 'let spell of level'>\r\n        <button style = 'margin:3px' *ngIf = 'spell.added==false' (click) = 'addSpell(spell, i)'>{{spell.name}}</button>\r\n        <button style = 'margin:3px; background-color: red; color: white' *ngIf = 'spell.added==true' (click) = 'cancelSpell(spell, i)'>{{spell.name}}</button>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -811,11 +811,11 @@ let HttpService = class HttpService {
     getOneRace(race_index) {
         return this._http.get(`http://www.dnd5eapi.co/api/classes/${race_index}`);
     }
-    getAllSpells() {
-        return this._http.get("http://www.dnd5eapi.co/api/spells");
+    getAllSpellsForClassAndLevel(name, level) {
+        return this._http.get(`http://www.dnd5eapi.co/api/spells/${name}/level/${level}`);
     }
-    checkClassAndLevel(url) {
-        return this._http.get(url);
+    getAllFeaturesForClassAndLevel(name, level) {
+        return this._http.get(`http://www.dnd5eapi.co/api/features/${name}/level/${level}`);
     }
     getARace(raceIndex) {
         return this._http.get(`http://www.dnd5eapi.co/api/races/${raceIndex}`);
@@ -912,19 +912,39 @@ let PickAttributesComponent = class PickAttributesComponent {
         this._httpService = _httpService;
     }
     ngOnInit() {
-        this.skills = [];
+        this.characterClassMap = {
+            1: 'barbarian',
+            2: 'bard',
+            3: 'cleric',
+            4: 'druid',
+            5: 'fighter',
+            6: 'monk',
+            7: 'paladin',
+            8: 'ranger',
+            9: 'rogue',
+            10: 'sorcerer',
+            11: 'warlock',
+            12: 'wizard'
+        };
+        this.characterSkills = [];
         this.classSkills = [];
         this.getOneClass(this.classIndex);
-        this.getAllSpells();
         this.classSpells = [];
+        this.characterSpells = [];
+        this.spellLimit = 4;
+        this.characterLevel = 1;
+        this.classFeatures = [];
+        this.getAllFeatures();
+        this.getAllSpells();
     }
     ngOnChanges() {
         this.getOneClass(this.classIndex);
         this.getAllSpells();
+        this.getAllFeatures();
     }
     getOneClass(classIndex) {
         this.classSpells = [];
-        this.skills = [];
+        this.characterSkills = [];
         this.classSkills = [];
         let obs = this._httpService.getOneClass(classIndex);
         obs.subscribe(data => {
@@ -940,48 +960,93 @@ let PickAttributesComponent = class PickAttributesComponent {
         });
     }
     addSkill(skill) {
-        if (this.skills.length < this.characterClass['proficiency_choices'][0]['choose']) {
-            this.skills.push(skill);
+        if (this.characterSkills.length < this.characterClass['proficiency_choices'][0]['choose']) {
+            this.characterSkills.push(skill);
         }
         else {
-            let canceled = this.skills[this.skills.length - 1];
-            this.skills.splice(this.skills.length - 1, 1);
-            this.skills.push(skill);
+            let canceled = this.characterSkills[this.characterSkills.length - 1];
+            this.characterSkills.splice(this.characterSkills.length - 1, 1);
+            this.characterSkills.push(skill);
             canceled.added = false;
         }
-        console.log(this.skills);
+        console.log(this.characterSkills);
         skill.added = true;
     }
     cancelSkill(skill) {
-        for (var i = 0; i < this.skills.length; i++) {
-            if (this.skills[i] == skill) {
-                this.skills[i].added = false;
-                this.skills.splice(i, 1);
+        for (var i = 0; i < this.characterSkills.length; i++) {
+            if (this.characterSkills[i] == skill) {
+                this.characterSkills[i].added = false;
+                this.characterSkills.splice(i, 1);
             }
-            console.log(this.skills);
+            console.log(this.characterSkills);
         }
     }
-    checkClassAndLevel(url) {
-        let obs = this._httpService.checkClassAndLevel(url);
+    getAllSpells() {
+        console.log('get all spells running');
+        this.characterSpells = [];
+        let character_class_name = (this.characterClassMap[this.classIndex]);
+        console.log(character_class_name);
+        for (let i = 0; i <= this.characterLevel; i++) {
+            this.classSpells.push([]);
+            let obs = this._httpService.getAllSpellsForClassAndLevel(character_class_name, i);
+            obs.subscribe(data => {
+                for (var spell of data['results']) {
+                    this.classSpells[i].push({
+                        name: spell['name'],
+                        added: false
+                    });
+                }
+            });
+        }
+        this.characterSpells = [];
+        for (let i = 0; i <= this.characterLevel; i++) {
+            this.characterSpells.push([]);
+        }
+        console.log("class spells:", this.classSpells);
+    }
+    getAllFeatures() {
+        this.classFeatures = [];
+        let character_class_name = (this.characterClassMap[this.classIndex]);
+        console.log(character_class_name);
+        let obs = this._httpService.getAllFeaturesForClassAndLevel(character_class_name, this.characterLevel);
         obs.subscribe(data => {
-            if (data['level'] <= 1) {
-                for (var check of data['classes']) {
-                    if (check.name == this.characterClass.name) {
-                        this.classSpells.push(data['name']);
+            for (var feature of data['results']) {
+                var test = true;
+                for (var f of this.classFeatures) {
+                    if (feature.name == f.name) {
+                        test = false;
                     }
                 }
+                if (test == true)
+                    this.classFeatures.push(feature);
             }
-            console.log(this.classSpells);
+            console.log(data['results']);
+            console.log(this.classFeatures);
         });
     }
-    getAllSpells() {
-        let obs = this._httpService.getAllSpells();
-        obs.subscribe(data => {
-            console.log(data);
-            for (var spell of data['results']) {
-                this.checkClassAndLevel(spell['url']);
+    addSpell(spell, level) {
+        console.log(level);
+        console.log(this.characterSpells);
+        if (this.characterSpells[level].length < this.spellLimit) {
+            this.characterSpells[level].push(spell);
+        }
+        else {
+            let canceled = this.characterSpells[level][this.characterSpells[level].length - 1];
+            this.characterSpells[level].splice(this.characterSpells[level].length - 1, 1);
+            this.characterSpells[level].push(spell);
+            canceled.added = false;
+        }
+        console.log(this.characterSpells);
+        spell.added = true;
+    }
+    cancelSpell(spell, level) {
+        for (let i = 0; i < this.characterSpells.length; i++) {
+            if (this.characterSpells[level][i] == spell) {
+                this.characterSpells[level][i].added = false;
+                this.characterSpells[level].splice(i, 1);
             }
-        });
+            console.log(this.characterSpells);
+        }
     }
 };
 PickAttributesComponent.ctorParameters = () => [
@@ -1150,7 +1215,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\jndab\Documents\CodingDojo\MEAN\js\Angular\RollClone\rollinitiative\public\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Source\MEAN_Stack\mean_intro\rollinitiative-2\rollinitiative\public\src\main.ts */"./src/main.ts");
 
 
 /***/ })
