@@ -24,11 +24,7 @@
                 <b>Age:</b> {{this.oneRace.age}}<br>
                 <b>Size:</b> {{this.oneRace.size}}, {{this.oneRace.size_description}}
             </div>
-            <div class="root">
-                <app-pick-attributes *ngIf="classIndex" [classIndex]="classIndex" [newCharacter]='newCharacter'>
-                </app-pick-attributes>
-
-            </div>
+            
             <div *ngIf='newCharacter.race'>
                 <h3>Chosen Class: {{newCharacter.character_class}}</h3>
                 <img (click)="chooseClass('Barbarian', 1)" src="../../assets/img/Barbarian.png" alt="Barbarian">
@@ -47,6 +43,8 @@
         </div>
     </form>
     <div class="root">
-        <app-pick-attributes *ngIf="classIndex" [classIndex]="classIndex"></app-pick-attributes>
+        <app-pick-attributes *ngIf="classIndex" [classIndex]="classIndex" [newCharacter]='newCharacter'>
+        </app-pick-attributes>
+
     </div>
 </body>

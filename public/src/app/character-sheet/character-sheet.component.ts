@@ -18,6 +18,7 @@ export class CharacterSheetComponent implements OnInit {
   classFeatures: any;
   firstLevelClass: any;
   totalLevel: any;
+  characterHP: any;
   allSkills = []
   listOfProf = [
     0,
@@ -44,6 +45,7 @@ export class CharacterSheetComponent implements OnInit {
       this.getOneCharacterFromService(params['id']);
       this.getAllSkillsFromService()
       this.profCheck()
+      
     })
     this.classFeatures = [];
     this.firstLevelClass = this.oneCharacter.character_class[0]
@@ -56,7 +58,8 @@ export class CharacterSheetComponent implements OnInit {
       this.oneCharacter = data['results'];
       this.getAllFeatures();
       this.getAllSkillsFromService()
-      this.profCheck()
+      console.log("I'm here now")
+      this.getHpFromClass(this.oneCharacter.character_class[0])
       console.log(this.listOfProf)
     })
   }
@@ -106,5 +109,53 @@ export class CharacterSheetComponent implements OnInit {
         console.log(this.classFeatures)
       })
     }
+  }
+  getHpFromClass(x){
+    console.log(x);
+    if (x == "Barbarian"){
+      this.characterHP = 12
+    }
+    else if (x == "Bard"){
+      this.characterHP = 8
+    }
+    else if (x == "Cleric"){
+      this.characterHP = 8
+    }
+    else if (x == "Druid"){
+      this.characterHP = 8
+    }
+    else if (x == "Fighter"){
+      this.characterHP = 10
+    }
+    else if (x == "Monk"){
+      this.characterHP = 8
+    }
+    else if (x == "Paladin"){
+      this.characterHP = 10
+    }
+    else if (x == "Ranger"){
+      this.characterHP = 10
+    }
+    else if (x == "Rogue"){
+      this.characterHP = 8
+    }
+    else if (x == "Sorcerer"){
+      this.characterHP = 6
+    }
+    else if (x == "Warlock"){
+      this.characterHP = 8
+    }
+    else if (x == "Wizard"){
+      this.characterHP = 6
+    }
+    else{
+      this.characterHP= 0
+    }
+    console.log(this.characterHP)
+  }
+
+  sumHp(){
+    console.log()
+    this.totalLevel = this.getHpFromClass(this.oneCharacter.character_class[0])
   }
 }
