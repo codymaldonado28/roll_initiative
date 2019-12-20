@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n    <div class=\"row\" style=\"display:block;\">\r\n        <h2>Character Sheet</h2>\r\n        <div id=\"character_info\">\r\n        <p>Name: {{oneCharacter.name}}</p>\r\n        <p>Class: Level 1 {{oneCharacter.character_class}}</p>\r\n        <p>Race: {{oneCharacter.race}}</p>\r\n        <p>Experience: {{oneCharacter.exp}}</p>\r\n        </div>\r\n    </div><!--end of row-->\r\n    \r\n    <div class=\"row\">\r\n    <div class=\"col\" id=\"stats_and_skills\">\r\n        <div id=\"str\" class=\"stat_block\">\r\n            <h3>STR</h3>\r\n            <p>{{oneCharacter.stats[0]}}</p>\r\n            <h3>Mod</h3>\r\n            <p>\r\n                {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n            </p>\r\n            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n            <h4>Skills</h4>\r\n            <ul>\r\n                <li>Athletics: </li>\r\n            </ul>\r\n        </div>\r\n        <div id=\"dex\" class=\"stat_block\">\r\n            <h3>DEX</h3>\r\n            <p>{{oneCharacter.stats[1]}}</p>\r\n            <h3>Mod</h3>\r\n            <p>\r\n                {{(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n            </p>\r\n            <h4>Save: {{(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n            <h4>Skills</h4>\r\n            <ul>\r\n                <li>Acrobatics: </li>\r\n                <li>Sleight of Hand: </li>\r\n                <li>Stealth: </li>\r\n            </ul>\r\n\r\n        </div>\r\n        <div id=\"con\" class=\"stat_block\">\r\n            <h3>CON</h3>\r\n            <p>{{oneCharacter.stats[2]}}</p>\r\n            <h3>Mod</h3>\r\n            <p>\r\n                {{(oneCharacter.stats[2] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n            </p>\r\n            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n        </div>\r\n        <div id=\"int\" class=\"stat_block\">\r\n            <h3>INT</h3>\r\n            <p>{{oneCharacter.stats[3]}}</p>\r\n            <h3>Mod</h3>\r\n            <p>\r\n                {{(oneCharacter.stats[3] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n            </p>\r\n            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n            <h4>Skills</h4>\r\n            <ul>\r\n                <li>Arcana: </li>\r\n                <li>History: </li>\r\n                <li>Investigation: </li>\r\n                <li>Nature: </li>\r\n                <li>Religion: </li>\r\n            </ul>\r\n        </div>\r\n        <div id=\"wis\" class=\"stat_block\">\r\n            <h3>WIS</h3>\r\n            <p>{{oneCharacter.stats[4]}}</p>\r\n            <h3>Mod</h3>\r\n            <p>\r\n                {{(oneCharacter.stats[4] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n            </p>\r\n            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n            <h4>Skills</h4>\r\n            <ul>\r\n                <li>Animal Handling: </li>\r\n                <li>Insight: </li>\r\n                <li>Medicine: </li>\r\n                <li>Perception: </li>\r\n                <li>Survival</li>\r\n            </ul>\r\n        </div>\r\n        <div id=\"cha\" class=\"stat_block\">\r\n            <h3>CHA</h3>\r\n            <p>{{oneCharacter.stats[5]}}</p>\r\n            <h3>Mod</h3>\r\n            <p>\r\n                {{(oneCharacter.stats[5] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n            </p>\r\n            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n            <h4>Skills</h4>\r\n            <ul>\r\n                <li>Deception: </li>\r\n                <li>Intimidation: </li>\r\n                <li>Performance: </li>\r\n                <li>Persuasion: </li>\r\n                \r\n            </ul>\r\n        </div>\r\n    </div><!--end of stats_and_skills column-->\r\n\r\n    <div class=\"col\" id=\"combat\">\r\n        <div>\r\n            <h3>Proficiency Bonus </h3>\r\n            <p>2</p>\r\n        </div>\r\n        <div>\r\n            <h3>Initiative</h3>\r\n            <p>{{ (oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</p>\r\n        </div>\r\n        <div>\r\n            <h3>AC</h3>\r\n            <div>{{ 10+(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</div>\r\n        </div>\r\n        <div>\r\n            <h3>Max Health</h3>\r\n            <p>{{ (oneCharacter.stats[2] - 10.1) / 2 | number:'1.0-0'}}</p>\r\n        </div>\r\n     </div><!--end of combat column-->\r\n\r\n    <div class=\"col\" id=\"features_and_spells\">\r\n        <div id=\"features\">\r\n            <h3>Features</h3>\r\n        </div><!--end of features-->\r\n        <div id=\"spells\">\r\n            <h3>Spells</h3>\r\n        </div><!--end of spells-->\r\n    </div><!--end of features column-->\r\n\r\n    </div><!--end of row-->\r\n\r\n</div><!--end of container-->");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n    <div class=\"row\" style=\"display:block;\">\r\n        <h2>Character Sheet</h2>\r\n        <div id=\"character_info\">\r\n            <p>Name: {{oneCharacter.name}}</p>\r\n            <p>Class: Level {{oneCharacter.character_class.length}} {{oneCharacter.character_class}}</p>\r\n            <p>Race: {{oneCharacter.race}}</p>\r\n            <p>Experience: {{oneCharacter.exp}}</p>\r\n            {{\"Skill: \"+ allSkills[0].name}}\r\n            {{oneCharacter.skills[0].name}}\r\n            \r\n        </div>\r\n    </div>\r\n    <!--end of row-->\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col\" id=\"stats_and_skills\">\r\n            <div id=\"str\" class=\"stat_block\">\r\n                <h3>STR</h3>\r\n                <p>{{oneCharacter.stats[0]}}</p>\r\n                <h3>Mod</h3>\r\n                <p>\r\n                    {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n                </p>\r\n                <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n                <h4>Skills</h4>\r\n                <ul>\r\n                    <li>Athletics:\r\n                        {{(listOfProf[3] * ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n            <div id=\"dex\" class=\"stat_block\">\r\n                <h3>DEX</h3>\r\n                <p>{{oneCharacter.stats[1]}}</p>\r\n                <h3>Mod</h3>\r\n                <p>\r\n                    {{(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n                </p>\r\n                <h4>Save: {{(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n                <h4>Skills</h4>\r\n                <ul>\r\n                    <li>Acrobatics:\r\n                        {{(listOfProf[0]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>Sleight of Hand:{{listOfProf[15]}}\r\n                        {{(listOfProf[15]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>Stealth:\r\n                        {{(listOfProf[16]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                </ul>\r\n\r\n            </div>\r\n            <div id=\"con\" class=\"stat_block\">\r\n                <h3>CON</h3>\r\n                <p>{{oneCharacter.stats[2]}}</p>\r\n                <h3>Mod</h3>\r\n                <p>\r\n                    {{(oneCharacter.stats[2] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n                </p>\r\n                <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n            </div>\r\n            <div id=\"int\" class=\"stat_block\">\r\n                <h3>INT</h3>\r\n                <p>{{oneCharacter.stats[3]}}</p>\r\n                <h3>Mod</h3>\r\n                <p>\r\n                    {{(oneCharacter.stats[3] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n                </p>\r\n                <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n                <h4>Skills</h4>\r\n                <ul>\r\n                    <li>Arcana:\r\n                        {{(listOfProf[2]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[3] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>History:\r\n                        {{(listOfProf[5]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[3] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>Investigation:\r\n                        {{(listOfProf[8]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[3] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>Nature:\r\n                        {{(listOfProf[10]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[3] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>Religion:\r\n                        {{(listOfProf[14]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[3] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n            <div id=\"wis\" class=\"stat_block\">\r\n                <h3>WIS</h3>\r\n                <p>{{oneCharacter.stats[4]}}</p>\r\n                <h3>Mod</h3>\r\n                <p>\r\n                    {{(oneCharacter.stats[4] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n                </p>\r\n                <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n                <h4>Skills</h4>\r\n                <ul>\r\n                    <li>Animal Handling:\r\n                        {{(listOfProf[1]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[4] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>Insight:\r\n                        {{(listOfProf[6]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[4] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>Medicine:\r\n                        {{(listOfProf[9]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[4] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>Perception:\r\n                        {{(listOfProf[11]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[4] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>Survival:\r\n                        {{(listOfProf[17]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[4] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n            <div id=\"cha\" class=\"stat_block\">\r\n                <h3>CHA</h3>\r\n                <p>{{oneCharacter.stats[5]}}</p>\r\n                <h3>Mod</h3>\r\n                <p>\r\n                    {{(oneCharacter.stats[5] - 10.1) / 2 | number:'1.0-0'}}\r\n\r\n                </p>\r\n                <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>\r\n                <h4>Skills</h4>\r\n                <ul>\r\n                    <li>Deception: \r\n                        {{(listOfProf[4]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[5] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>Intimidation: \r\n                        {{(listOfProf[7]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[5] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>Performance: \r\n                        {{(listOfProf[12] * ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[5] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n                    <li>Persuasion: \r\n                        {{(listOfProf[13]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[5] - 10.1) / 2 | number:'1.0-0'}}\r\n                    </li>\r\n\r\n                </ul>\r\n            </div>\r\n        </div>\r\n        <!--end of stats_and_skills column-->\r\n\r\n        <div class=\"col\" id=\"combat\">\r\n            <div>\r\n                <h3>Proficiency Bonus </h3>\r\n                <p>{{ ((oneCharacter.character_class.length)+7)/4 | number:'1.0-0'}}</p>\r\n            </div>\r\n            <div>\r\n                <h3>Initiative</h3>\r\n                <p>{{ (oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</p>\r\n            </div>\r\n            <div>\r\n                <h3>AC</h3>\r\n                <div>{{ 10+(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</div>\r\n            </div>\r\n            <div>\r\n                <h3>Max Health</h3>\r\n                <p>{{ (oneCharacter.stats[2] - 10.1) / 2 | number:'1.0-0'}}</p>\r\n            </div>\r\n        </div>\r\n        <!--end of combat column-->\r\n\r\n        <div class=\"col\" id=\"features_and_spells\">\r\n            <div id=\"features\">\r\n                <h3>Features</h3>\r\n                <ul *ngFor=\"let f of classFeatures\">\r\n                    <li>{{f.name}}</li>\r\n                </ul>\r\n            </div>\r\n            <!--end of features-->\r\n            <div id=\"spells\">\r\n                <h3>Spells</h3>\r\n            </div>\r\n            <!--end of spells-->\r\n        </div>\r\n        <!--end of features column-->\r\n\r\n    </div>\r\n    <!--end of row-->\r\n\r\n</div>\r\n<!--end of container-->");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>page-not-found works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>page-not-found works!</p>\n");
 
 /***/ }),
 
@@ -534,17 +534,92 @@ let CharacterSheetComponent = class CharacterSheetComponent {
         this._httpService = _httpService;
         this._router = _router;
         this._route = _route;
+        this.allSkills = [];
+        this.listOfProf = [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ];
     }
     ngOnInit() {
         this._route.params.subscribe((params) => {
             this.getOneCharacterFromService(params['id']);
+            this.getAllSkillsFromService();
+            this.profCheck();
         });
+        this.classFeatures = [];
+        this.firstLevelClass = this.oneCharacter.character_class[0];
+        this.totalLevel = this.oneCharacter.character_class.length;
     }
     getOneCharacterFromService(id) {
         let observable = this._httpService.getOneCharacter(id);
         observable.subscribe(data => {
             this.oneCharacter = data['results'];
+            this.getAllFeatures();
+            this.getAllSkillsFromService();
+            this.profCheck();
+            console.log(this.listOfProf);
         });
+    }
+    profCheck() {
+        console.log(this.oneCharacter.skills);
+        console.log(this.allSkills);
+        for (var i = 0; i < this.oneCharacter.skills.length; i++) {
+            for (var j = 0; j < this.listOfProf.length; j++) {
+                if (this.oneCharacter.skills[i] == "Skill: " + this.allSkills[j].name) {
+                    this.listOfProf[j] = 1;
+                }
+            }
+        }
+    }
+    getAllSkillsFromService() {
+        let obs = this._httpService.getAllSkills();
+        obs.subscribe(data => {
+            if (data['results']) {
+                this.allSkills = data['results'];
+                console.log(this.allSkills);
+            }
+        });
+    }
+    getAllFeatures() {
+        this.classFeatures = [];
+        let character_class_name = this.oneCharacter.character_class[0];
+        let character_level = this.oneCharacter.character_class.length;
+        console.log(character_level);
+        console.log(character_class_name);
+        for (var i = character_level; i > 0; i--) {
+            let obs = this._httpService.getAllFeaturesForClassAndLevel(character_class_name.toLowerCase(), character_level);
+            obs.subscribe(data => {
+                console.log(data);
+                for (var feature of data['results']) {
+                    var test = true;
+                    for (var f of this.classFeatures) {
+                        if (feature.name == f.name) {
+                            test = false;
+                        }
+                    }
+                    if (test == true)
+                        this.classFeatures.push(feature);
+                }
+                console.log(data['results']);
+                console.log(this.classFeatures);
+            });
+        }
     }
 };
 CharacterSheetComponent.ctorParameters = () => [
@@ -825,6 +900,9 @@ let HttpService = class HttpService {
     }
     getARace(raceIndex) {
         return this._http.get(`http://www.dnd5eapi.co/api/races/${raceIndex}`);
+    }
+    getAllSkills() {
+        return this._http.get('http://www.dnd5eapi.co/api/skills');
     }
 };
 HttpService.ctorParameters = () => [
@@ -1315,7 +1393,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Source\MEAN_Stack\mean_intro\rollinitiative-2\rollinitiative\public\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\abrya\Desktop\Roll_Initiative\RollInitClone2\rollinitiative\public\src\main.ts */"./src/main.ts");
 
 
 /***/ })

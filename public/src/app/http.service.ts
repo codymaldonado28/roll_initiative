@@ -50,4 +50,7 @@ export class HttpService {
   getARace(raceIndex) {
     return this._http.get(`http://www.dnd5eapi.co/api/races/${raceIndex}`)
   }
+  getAllSkills(){
+    return this._http.get('http://www.dnd5eapi.co/api/skills')
+  }
 }
