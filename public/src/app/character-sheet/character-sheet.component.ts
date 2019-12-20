@@ -44,13 +44,12 @@ export class CharacterSheetComponent implements OnInit {
     this._route.params.subscribe((params: Params) => {
       this.getOneCharacterFromService(params['id']);
       this.getAllSkillsFromService()
-      this.profCheck()
-      
+
     })
     this.classFeatures = [];
     this.firstLevelClass = this.oneCharacter.character_class[0]
     this.totalLevel = this.oneCharacter.character_class.length
-    
+
   }
   getOneCharacterFromService(id) {
     let observable = this._httpService.getOneCharacter(id);
@@ -61,22 +60,25 @@ export class CharacterSheetComponent implements OnInit {
       console.log("I'm here now")
       this.getHpFromClass(this.oneCharacter.character_class[0])
       console.log(this.listOfProf)
+      this.profCheck()
     })
   }
+
   profCheck() {
-    console.log(this.oneCharacter.skills)
-    console.log(this.allSkills)
+    console.log(this.oneCharacter.skills[0].name)
+    console.log("Skill: " + this.allSkills[2].name)
     for (var i = 0; i < this.oneCharacter.skills.length; i++) {
-      for(var j = 0; j< this.listOfProf.length; j++){
-        if(this.oneCharacter.skills[i] == "Skill: "+this.allSkills[j].name){
-          this.listOfProf[j]=1
+      for (var j = 0; j < this.allSkills.length; j++) {
+        if (this.oneCharacter.skills[i].name == "Skill: " + this.allSkills[j].name) {
+          this.listOfProf[j] = 1
+          console.log("We found a match!")
         }
       }
     }
   }
-  getAllSkillsFromService(){
+  getAllSkillsFromService() {
     let obs = this._httpService.getAllSkills();
-    obs.subscribe(data =>{
+    obs.subscribe(data => {
       if (data['results']) {
         this.allSkills = data['results'];
         console.log(this.allSkills)
@@ -110,51 +112,51 @@ export class CharacterSheetComponent implements OnInit {
       })
     }
   }
-  getHpFromClass(x){
+  getHpFromClass(x) {
     console.log(x);
-    if (x == "Barbarian"){
+    if (x == "Barbarian") {
       this.characterHP = 12
     }
-    else if (x == "Bard"){
+    else if (x == "Bard") {
       this.characterHP = 8
     }
-    else if (x == "Cleric"){
+    else if (x == "Cleric") {
       this.characterHP = 8
     }
-    else if (x == "Druid"){
+    else if (x == "Druid") {
       this.characterHP = 8
     }
-    else if (x == "Fighter"){
+    else if (x == "Fighter") {
       this.characterHP = 10
     }
-    else if (x == "Monk"){
+    else if (x == "Monk") {
       this.characterHP = 8
     }
-    else if (x == "Paladin"){
+    else if (x == "Paladin") {
       this.characterHP = 10
     }
-    else if (x == "Ranger"){
+    else if (x == "Ranger") {
       this.characterHP = 10
     }
-    else if (x == "Rogue"){
+    else if (x == "Rogue") {
       this.characterHP = 8
     }
-    else if (x == "Sorcerer"){
+    else if (x == "Sorcerer") {
       this.characterHP = 6
     }
-    else if (x == "Warlock"){
+    else if (x == "Warlock") {
       this.characterHP = 8
     }
-    else if (x == "Wizard"){
+    else if (x == "Wizard") {
       this.characterHP = 6
     }
-    else{
-      this.characterHP= 0
+    else {
+      this.characterHP = 0
     }
     console.log(this.characterHP)
   }
 
-  sumHp(){
+  sumHp() {
     console.log()
     this.totalLevel = this.getHpFromClass(this.oneCharacter.character_class[0])
   }
