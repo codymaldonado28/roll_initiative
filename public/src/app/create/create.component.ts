@@ -19,6 +19,7 @@ export class CreateComponent implements OnInit {
   audclass: any;
   raceIndex: number;
   classIndex: number;
+  race: any;
   ngOnInit() {
     this.getAllClasses()
     this.getAllRaces()
@@ -70,7 +71,9 @@ export class CreateComponent implements OnInit {
     })
   }
   chooseRace(race, raceIndex){
+    this.race=null;
     this.newCharacter.race=race
+    this.race=race
     this.raceIndex=raceIndex
     this.getARace(raceIndex);
   }

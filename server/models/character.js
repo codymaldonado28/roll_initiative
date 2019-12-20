@@ -30,6 +30,14 @@ const CharacterSchema = new mongoose.Schema({
     spells: {
         type: Array
     },
+    skills: {
+        type: Array
+    },
+    
+    spells: {
+        type: Array
+    },
+
     exp: {
         type: Number,
         default: 0,
