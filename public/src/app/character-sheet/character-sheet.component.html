@@ -6,8 +6,8 @@
             <p>Class: Level {{oneCharacter.character_class.length}} {{oneCharacter.character_class}}</p>
             <p>Race: {{oneCharacter.race}}</p>
             <p>Experience: {{oneCharacter.exp}}</p>
-            {{"Skill: "+ allSkills[0].name}}
-            {{oneCharacter.skills[0].name}}
+            {{"Skill: "+ allSkills[2].name}}
+            {{oneCharacter.skills[1].name}}
 
         </div>
     </div>
@@ -45,7 +45,7 @@
                     <li>Acrobatics:
                         {{(listOfProf[0]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].dexterity - 10.1) / 2 | number:'1.0-0'}}
                     </li>
-                    <li>Sleight of Hand:{{listOfProf[15]}}
+                    <li>Sleight of Hand:
                         {{(listOfProf[15]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].dexterity - 10.1) / 2 | number:'1.0-0'}}
                     </li>
                     <li>Stealth:
@@ -165,6 +165,13 @@
             <div>
                 <h3>Max Health</h3>
                 <p>{{ characterHP + (oneCharacter.stats[0].constitution - 10.1) / 2 | number:'1.0-0'}}</p>
+            </div>
+            <div>
+                <h3>Skill Proficiencies</h3>
+                <div *ngFor="let skill of oneCharacter.skills">
+                    {{skill.name}}
+
+                </div>
             </div>
         </div>
         <!--end of combat column-->
