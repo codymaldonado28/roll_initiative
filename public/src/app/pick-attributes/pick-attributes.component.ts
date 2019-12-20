@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, Output } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { HttpService } from '../http.service';
 import { ActivatedRoute, Router, Params } from '@angular/router'
 import { analyzeAndValidateNgModules } from '@angular/compiler';
@@ -14,6 +14,7 @@ import { of, throwError } from 'rxjs';
 
 
 export class PickAttributesComponent implements OnInit, OnChanges {
+  @Output() add = new EventEmitter<any>();
   @Input() classIndex: any;
   @Input() newCharacter: any;
   characterClass: any;
@@ -108,6 +109,8 @@ export class PickAttributesComponent implements OnInit, OnChanges {
       this.characterSkills.push(skill);
       canceled.added = false;
     }
+    this.newCharacter.skills=this.characterSkills
+    this.emitCharacter();
     console.log(this.characterSkills)
     skill.added = true
   }
@@ -118,6 +121,8 @@ export class PickAttributesComponent implements OnInit, OnChanges {
         this.characterSkills.splice(i, 1);
       }
       console.log(this.characterSkills)
+      this.newCharacter.skills=this.characterSkills
+      this.emitCharacter();
     }
   }
   getAllSpells() {
@@ -175,6 +180,8 @@ export class PickAttributesComponent implements OnInit, OnChanges {
       this.characterSpells[level].push(spell);
       canceled.added = false;
     }
+    this.newCharacter.spells=this.characterSpells;
+    this.emitCharacter();
     console.log(this.characterSpells)
     spell.added = true
   }
@@ -185,6 +192,8 @@ export class PickAttributesComponent implements OnInit, OnChanges {
         this.characterSpells[level].splice(i, 1);
       }
       console.log(this.characterSpells)
+      this.newCharacter.spells=this.characterSpells;
+      this.emitCharacter();
     }
   }
   addStat(stat, value){
@@ -209,6 +218,9 @@ export class PickAttributesComponent implements OnInit, OnChanges {
     }
     this.stats[stat]=value;
     console.log(this.stats)
+    this.characterSkills.stats=this.stats;
+    this.newCharacter.stats=this.stats;
+    this.emitCharacter()
   }
   createCharacter() {
     this.errors = []
@@ -256,5 +268,9 @@ export class PickAttributesComponent implements OnInit, OnChanges {
       }
     })
     }
+  }
+  emitCharacter(){
+    console.log('emitting', this.newCharacter)
+    this.add.emit(this.newCharacter);
   }
 }

@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-md\">\r\n<nav class=\"navbar navbar-light\" style=\"background-color: #fff;\">\r\n  <a class=\"navbar-brand\" href=\"#\">\r\n    <img src=\"/assets/img/D&Dlogo_stacked.jpg\" width=\"105\" height=\"30\" class=\"d-inline-block align-top\" alt=\"Dungeons and Dragons Character Creator\">\r\n    Character Creator\r\n  </a>\r\n</nav>\r\n<header>\r\n  <h1>\r\n    Roll Initiative\r\n  </h1>\r\n</header>\r\n<router-outlet></router-outlet>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-md\">\r\n  <nav class=\"navbar navbar-light\" style=\"background-color: #fff;\">\r\n    <a class=\"navbar-brand\" href=\"#\">\r\n      <img src=\"/assets/img/D&Dlogo_stacked.jpg\" width=\"105\" height=\"30\" class=\"d-inline-block align-top\"\r\n        alt=\"Dungeons and Dragons Character Creator\">\r\n      Character Creator\r\n    </a>\r\n  </nav>\r\n  <header>\r\n    <h1>\r\n      Roll Initiative\r\n    </h1>\r\n  </header>\r\n  <router-outlet></router-outlet>\r\n</div>");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <title>Document</title>\r\n    <link rel=\"stylesheet\" href=\"create.component.css\">\r\n</head>\r\n\r\n<body>\r\n    <div *ngFor='let err of errors'>\r\n        <p>{{err}}</p>\r\n    </div>\r\n    <form (submit)=\"createCharacter()\">\r\n        <label>Name: </label>\r\n        <input type=\"text\" name=\"newCharacter.name\" [(ngModel)]=\"newCharacter.name\" /><br>\r\n        <label>Bio/Description:</label><br>\r\n        <textarea type=\"textarea\" rows=\"4\" cols=\"50\" name=\"newCharacter.description\" [(ngModel)]=\"newCharacter.description\"></textarea><br>\r\n        <div *ngIf='newCharacter'>\r\n            <h3>Chosen Race: {{newCharacter.race}}</h3>\r\n            <img (click)=\"chooseRace('Dwarf', 1)\" src=\"../../assets/img/Dwarf.png\" alt=\"Dwarf\">\r\n            <img (click)=\"chooseRace('Elf', 2)\" src=\"../../assets/img/Elf.png\" alt=\"Elf\">\r\n            <img (click)=\"chooseRace('Halfling', 3)\" src=\"../../assets/img/Halfling.png\" alt=\"Halfling\">\r\n            <img (click)=\"chooseRace('Human', 4)\" src=\"../../assets/img/human.png\" alt=\"human\">\r\n            <img (click)=\"chooseRace('Dragonborn', 5)\" src=\"../../assets/img/Dragonborn.png\" alt=\"dragonborn\">\r\n            <img (click)=\"chooseRace('Gnome', 6)\" src=\"../../assets/img/Gnome.png\" alt=\"Gnome\">\r\n            <img (click)=\"chooseRace('Half-Elf', 7)\" src=\"../../assets/img/Half-elf.png\" alt=\"Half-elf\">\r\n            <img (click)=\"chooseRace('Half-orc', 8)\" src=\"../../assets/img/Half-orc.png\" alt=\"Half-Orc\">\r\n            <img (click)=\"chooseRace('Tiefling', 9)\" src=\"../../assets/img/Tiefling.png\" alt=\"Tiefling\">\r\n            <div *ngIf='oneRace'>\r\n                <b>Alignment:</b> {{this.oneRace.alignment}}<br>\r\n                <b>Age:</b> {{this.oneRace.age}}<br>\r\n                <b>Size:</b> {{this.oneRace.size}}, {{this.oneRace.size_description}}\r\n            </div>\r\n        </div>\r\n        <div *ngIf='newCharacter.race'>\r\n            <h3>Chosen Class: {{newCharacter.character_class}}</h3>\r\n            <img (click)=\"chooseClass('Barbarian', 1)\" src=\"../../assets/img/Barbarian.png\" alt=\"Barbarian\">\r\n            <img (click)=\"chooseClass('Bard', 2)\" src=\"../../assets/img/Bard.png\" alt=\"Bard\">\r\n            <img (click)=\"chooseClass('Cleric', 3)\" src=\"../../assets/img/Cleric.png\" alt=\"Cleric\">\r\n            <img (click)=\"chooseClass('Druid', 4)\" src=\"../../assets/img/Druid.png\" alt=\"Druid\">\r\n            <img (click)=\"chooseClass('Fighter', 5)\" src=\"../../assets/img/Fighter.png\" alt=\"Fighter\">\r\n            <img (click)=\"chooseClass('Monk', 6)\" src=\"../../assets/img/Monk.png\" alt=\"Monk\">\r\n            <img (click)=\"chooseClass('Paladin', 7)\" src=\"../../assets/img/Paladin.png\" alt=\"Paladin\">\r\n            <img (click)=\"chooseClass('Ranger', 8)\" src=\"../../assets/img/Ranger.png\" alt=\"Ranger\">\r\n            <img (click)=\"chooseClass('Rogue', 9)\" src=\"../../assets/img/Rogue.png\" alt=\"Rogure\">\r\n            <img (click)=\"chooseClass('Sorcerer', 10)\" src=\"../../assets/img/Sorcerer.png\" alt=\"Sorcerer\">\r\n            <img (click)=\"chooseClass('Warlock', 11)\" src=\"../../assets/img/Warlock.png\" alt=\"Warlock\">\r\n            <img (click)=\"chooseClass('Wizard', 12)\" src=\"../../assets/img/Wizard.png\" alt=\"Wizard\">\r\n        </div>\r\n    </form>\r\n    <div class=\"root\">\r\n        <app-pick-attributes *ngIf = \"classIndex\" [classIndex]= \"classIndex\"  [newCharacter]='newCharacter'></app-pick-attributes>\r\n    </div>\r\n</body>\r\n\r\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<ng-sidebar-container style=\"height: 100vh; width: 100%; display: inline-block; vertical-align: top;\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <title>Document</title>\r\n    <link rel=\"stylesheet\" href=\"create.component.css\">\r\n</head>\r\n    <ng-sidebar [(opened)]=\"_opened\" position=\"left\"\r\n        style=\"display: inline-block;width:100px; height: 100%; margin:20px;padding:5px; padding-top: 30%;\">\r\n        <ul>\r\n            <li style='margin-top: 50px;'>Name: {{newCharacter.name}}</li>\r\n            <li>Race: {{newCharacter.race}}</li>\r\n            <li>Class: {{newCharacter.character_class}}</li>\r\n        </ul>\r\n        <span>Skills:</span>\r\n        <ul *ngFor='let skill of newCharacter.skills'>\r\n            <li>{{skill.name}}</li>\r\n        </ul>\r\n        <span>Stats:</span>\r\n        <ul>\r\n            <li>Strength: {{newCharacter.stats.strength}}</li>\r\n            <li>Dexterity: {{newCharacter.stats.dexterity}}</li>\r\n            <li>Constitution: {{newCharacter.stats.constitution}}</li>\r\n            <li>Intelligence: {{newCharacter.stats.intelligence}}</li>\r\n            <li>Wisdom: {{newCharacter.stats.wisdom}}</li>\r\n            <li>Charisma: {{newCharacter.stats.charisma}}</li>\r\n\r\n        </ul>\r\n    </ng-sidebar>\r\n    <div ng-sidebar-content style='margin-left: 200px;'>\r\n\r\n        <body>\r\n            <div *ngFor='let err of errors'>\r\n                <p>{{err}}</p>\r\n            </div>\r\n            <form (submit)=\"createCharacter()\">\r\n                <label>Name: </label>\r\n                <input type=\"text\" name=\"newCharacter.name\" [(ngModel)]=\"newCharacter.name\" /><br>\r\n                <label>Bio/Description:</label><br>\r\n                <textarea type=\"textarea\" rows=\"4\" cols=\"50\" name=\"newCharacter.description\"\r\n                    [(ngModel)]=\"newCharacter.description\"></textarea><br>\r\n                <div *ngIf='newCharacter'>\r\n                    <h3>Chosen Race: {{newCharacter.race}}</h3>\r\n                    <img (click)=\"chooseRace('Dwarf', 1)\" src=\"../../assets/img/Dwarf.png\" alt=\"Dwarf\">\r\n                    <img (click)=\"chooseRace('Elf', 2)\" src=\"../../assets/img/Elf.png\" alt=\"Elf\">\r\n                    <img (click)=\"chooseRace('Halfling', 3)\" src=\"../../assets/img/Halfling.png\" alt=\"Halfling\">\r\n                    <img (click)=\"chooseRace('Human', 4)\" src=\"../../assets/img/human.png\" alt=\"human\">\r\n                    <img (click)=\"chooseRace('Dragonborn', 5)\" src=\"../../assets/img/Dragonborn.png\" alt=\"dragonborn\">\r\n                    <img (click)=\"chooseRace('Gnome', 6)\" src=\"../../assets/img/Gnome.png\" alt=\"Gnome\">\r\n                    <img (click)=\"chooseRace('Half-Elf', 7)\" src=\"../../assets/img/Half-elf.png\" alt=\"Half-elf\">\r\n                    <img (click)=\"chooseRace('Half-orc', 8)\" src=\"../../assets/img/Half-orc.png\" alt=\"Half-Orc\">\r\n                    <img (click)=\"chooseRace('Tiefling', 9)\" src=\"../../assets/img/Tiefling.png\" alt=\"Tiefling\">\r\n                    <div *ngIf='oneRace'>\r\n                        <b>Alignment:</b> {{this.oneRace.alignment}}<br>\r\n                        <b>Age:</b> {{this.oneRace.age}}<br>\r\n                        <b>Size:</b> {{this.oneRace.size}}, {{this.oneRace.size_description}}\r\n                    </div>\r\n                </div>\r\n                <div *ngIf='newCharacter.race'>\r\n                    <h3>Chosen Class: {{newCharacter.character_class}}</h3>\r\n                    <img (click)=\"chooseClass('Barbarian', 1)\" src=\"../../assets/img/Barbarian.png\" alt=\"Barbarian\">\r\n                    <img (click)=\"chooseClass('Bard', 2)\" src=\"../../assets/img/Bard.png\" alt=\"Bard\">\r\n                    <img (click)=\"chooseClass('Cleric', 3)\" src=\"../../assets/img/Cleric.png\" alt=\"Cleric\">\r\n                    <img (click)=\"chooseClass('Druid', 4)\" src=\"../../assets/img/Druid.png\" alt=\"Druid\">\r\n                    <img (click)=\"chooseClass('Fighter', 5)\" src=\"../../assets/img/Fighter.png\" alt=\"Fighter\">\r\n                    <img (click)=\"chooseClass('Monk', 6)\" src=\"../../assets/img/Monk.png\" alt=\"Monk\">\r\n                    <img (click)=\"chooseClass('Paladin', 7)\" src=\"../../assets/img/Paladin.png\" alt=\"Paladin\">\r\n                    <img (click)=\"chooseClass('Ranger', 8)\" src=\"../../assets/img/Ranger.png\" alt=\"Ranger\">\r\n                    <img (click)=\"chooseClass('Rogue', 9)\" src=\"../../assets/img/Rogue.png\" alt=\"Rogure\">\r\n                    <img (click)=\"chooseClass('Sorcerer', 10)\" src=\"../../assets/img/Sorcerer.png\" alt=\"Sorcerer\">\r\n                    <img (click)=\"chooseClass('Warlock', 11)\" src=\"../../assets/img/Warlock.png\" alt=\"Warlock\">\r\n                    <img (click)=\"chooseClass('Wizard', 12)\" src=\"../../assets/img/Wizard.png\" alt=\"Wizard\">\r\n                </div>\r\n            </form>\r\n            <div class=\"root\">\r\n                <app-pick-attributes *ngIf=\"classIndex\" [classIndex]=\"classIndex\" [newCharacter]='newCharacter'\r\n                    (add)=\"onUpdate($event)\"></app-pick-attributes>\r\n            </div>\r\n        </body>\r\n    </div>\r\n</ng-sidebar-container>\r\n\r\n</html>");
 
 /***/ }),
 
@@ -448,14 +448,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./http.service */ "./src/app/http.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./character-sheet/character-sheet.component */ "./src/app/character-sheet/character-sheet.component.ts");
-/* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./page-not-found/page-not-found.component */ "./src/app/page-not-found/page-not-found.component.ts");
-/* harmony import */ var _create_create_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./create/create.component */ "./src/app/create/create.component.ts");
-/* harmony import */ var _stat_stat_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./stat/stat.component */ "./src/app/stat/stat.component.ts");
-/* harmony import */ var _pick_attributes_pick_attributes_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pick-attributes/pick-attributes.component */ "./src/app/pick-attributes/pick-attributes.component.ts");
+/* harmony import */ var ng_sidebar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ng-sidebar */ "./node_modules/ng-sidebar/lib/index.js");
+/* harmony import */ var ng_sidebar__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(ng_sidebar__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./character-sheet/character-sheet.component */ "./src/app/character-sheet/character-sheet.component.ts");
+/* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./page-not-found/page-not-found.component */ "./src/app/page-not-found/page-not-found.component.ts");
+/* harmony import */ var _create_create_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./create/create.component */ "./src/app/create/create.component.ts");
+/* harmony import */ var _stat_stat_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./stat/stat.component */ "./src/app/stat/stat.component.ts");
+/* harmony import */ var _pick_attributes_pick_attributes_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pick-attributes/pick-attributes.component */ "./src/app/pick-attributes/pick-attributes.component.ts");
+
 
 
 
@@ -475,22 +478,23 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
-            _stat_stat_component__WEBPACK_IMPORTED_MODULE_12__["StatComponent"],
-            _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"],
-            _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_9__["CharacterSheetComponent"],
-            _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_10__["PageNotFoundComponent"],
-            _create_create_component__WEBPACK_IMPORTED_MODULE_11__["CreateComponent"],
-            _pick_attributes_pick_attributes_component__WEBPACK_IMPORTED_MODULE_13__["PickAttributesComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
+            _stat_stat_component__WEBPACK_IMPORTED_MODULE_13__["StatComponent"],
+            _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"],
+            _character_sheet_character_sheet_component__WEBPACK_IMPORTED_MODULE_10__["CharacterSheetComponent"],
+            _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_11__["PageNotFoundComponent"],
+            _create_create_component__WEBPACK_IMPORTED_MODULE_12__["CreateComponent"],
+            _pick_attributes_pick_attributes_component__WEBPACK_IMPORTED_MODULE_14__["PickAttributesComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]
+            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+            ng_sidebar__WEBPACK_IMPORTED_MODULE_6__["SidebarModule"].forRoot()
         ],
         providers: [_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"]],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
     })
 ], AppModule);
 
@@ -600,6 +604,8 @@ let CreateComponent = class CreateComponent {
         this._httpService = _httpService;
         this._route = _route;
         this._router = _router;
+        this._opened = true;
+        this.add = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.errors = [];
     }
     ngOnInit() {
@@ -678,12 +684,19 @@ let CreateComponent = class CreateComponent {
         audio.load();
         audio.play();
     }
+    onUpdate(event) {
+        console.log('newCharacter', event);
+        this.newCharacter = event;
+    }
 };
 CreateComponent.ctorParameters = () => [
     { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], CreateComponent.prototype, "add", void 0);
 CreateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-create',
@@ -919,6 +932,7 @@ let PickAttributesComponent = class PickAttributesComponent {
     constructor(_httpService, _router) {
         this._httpService = _httpService;
         this._router = _router;
+        this.add = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     ngOnInit() {
         this.characterClassMap = {
@@ -995,6 +1009,8 @@ let PickAttributesComponent = class PickAttributesComponent {
             this.characterSkills.push(skill);
             canceled.added = false;
         }
+        this.newCharacter.skills = this.characterSkills;
+        this.emitCharacter();
         console.log(this.characterSkills);
         skill.added = true;
     }
@@ -1005,6 +1021,8 @@ let PickAttributesComponent = class PickAttributesComponent {
                 this.characterSkills.splice(i, 1);
             }
             console.log(this.characterSkills);
+            this.newCharacter.skills = this.characterSkills;
+            this.emitCharacter();
         }
     }
     getAllSpells() {
@@ -1062,6 +1080,8 @@ let PickAttributesComponent = class PickAttributesComponent {
             this.characterSpells[level].push(spell);
             canceled.added = false;
         }
+        this.newCharacter.spells = this.characterSpells;
+        this.emitCharacter();
         console.log(this.characterSpells);
         spell.added = true;
     }
@@ -1072,6 +1092,8 @@ let PickAttributesComponent = class PickAttributesComponent {
                 this.characterSpells[level].splice(i, 1);
             }
             console.log(this.characterSpells);
+            this.newCharacter.spells = this.characterSpells;
+            this.emitCharacter();
         }
     }
     addStat(stat, value) {
@@ -1096,6 +1118,9 @@ let PickAttributesComponent = class PickAttributesComponent {
         }
         this.stats[stat] = value;
         console.log(this.stats);
+        this.characterSkills.stats = this.stats;
+        this.newCharacter.stats = this.stats;
+        this.emitCharacter();
     }
     createCharacter() {
         this.errors = [];
@@ -1144,11 +1169,18 @@ let PickAttributesComponent = class PickAttributesComponent {
             });
         }
     }
+    emitCharacter() {
+        console.log('emitting', this.newCharacter);
+        this.add.emit(this.newCharacter);
+    }
 };
 PickAttributesComponent.ctorParameters = () => [
     { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], PickAttributesComponent.prototype, "add", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], PickAttributesComponent.prototype, "classIndex", void 0);
