@@ -164,7 +164,7 @@
             </div>
             <div>
                 <h3>Max Health</h3>
-                <p>{{ (oneCharacter.stats[0].constitution - 10.1) / 2 | number:'1.0-0'}}</p>
+                <p>{{ characterHP + (oneCharacter.stats[0].constitution - 10.1) / 2 | number:'1.0-0'}}</p>
             </div>
         </div>
         <!--end of combat column-->
