@@ -2,140 +2,202 @@
     <div class="row" style="display:block;">
         <h2>Character Sheet</h2>
         <div id="character_info">
-        <p>Name: {{oneCharacter.name}}</p>
-        <p>Class: Level 1 {{oneCharacter.character_class}}</p>
-        <p>Race: {{oneCharacter.race}}</p>
-        <p>Experience: {{oneCharacter.exp}}</p>
+            <p>Name: {{oneCharacter.name}}</p>
+            <p>Class: Level {{oneCharacter.character_class.length}} {{oneCharacter.character_class}}</p>
+            <p>Race: {{oneCharacter.race}}</p>
+            <p>Experience: {{oneCharacter.exp}}</p>
+            {{"Skill: "+ allSkills[2].name}}
+            {{oneCharacter.skills[1].name}}
+
         </div>
-    </div><!--end of row-->
-    
+    </div>
+    <!--end of row-->
+
     <div class="row">
-    <div class="col" id="stats_and_skills">
-        <div id="str" class="stat_block">
-            <h3>STR</h3>
-            <p>{{oneCharacter.stats[0]}}</p>
-            <h3>Mod</h3>
-            <p>
-                {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}
+        <div class="col" id="stats_and_skills">
+            <div id="str" class="stat_block">
+                <h3>STR</h3>
+                <p>{{oneCharacter.stats[0].strength}}</p>
+                <h3>Mod</h3>
+                <p>
+                    {{(oneCharacter.stats[0].strength - 10.1) / 2 | number:'1.0-0'}}
 
-            </p>
-            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>
-            <h4>Skills</h4>
-            <ul>
-                <li>Athletics: </li>
-            </ul>
+                </p>
+                <h4>Save: {{(oneCharacter.stats[0].strength - 10.1) / 2 | number:'1.0-0'}}</h4>
+                <h4>Skills</h4>
+                <ul>
+                    <li>Athletics:
+                        {{(listOfProf[3] * ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].strength - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                </ul>
+            </div>
+            <div id="dex" class="stat_block">
+                <h3>DEX</h3>
+                <p>{{oneCharacter.stats[0].dexterity}}</p>
+                <h3>Mod</h3>
+                <p>
+                    {{(oneCharacter.stats[0].dexterity - 10.1) / 2 | number:'1.0-0'}}
+
+                </p>
+                <h4>Save: {{(oneCharacter.stats[0].dexterity - 10.1) / 2 | number:'1.0-0'}}</h4>
+                <h4>Skills</h4>
+                <ul>
+                    <li>Acrobatics:
+                        {{(listOfProf[0]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].dexterity - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>Sleight of Hand:
+                        {{(listOfProf[15]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].dexterity - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>Stealth:
+                        {{(listOfProf[16]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].dexterity - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                </ul>
+
+            </div>
+            <div id="con" class="stat_block">
+                <h3>CON</h3>
+                <p>{{oneCharacter.stats[0].constitution}}</p>
+                <h3>Mod</h3>
+                <p>
+                    {{(oneCharacter.stats[0].constitution - 10.1) / 2 | number:'1.0-0'}}
+
+                </p>
+                <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>
+            </div>
+            <div id="int" class="stat_block">
+                <h3>INT</h3>
+                <p>{{oneCharacter.stats[0].intelligence}}</p>
+                <h3>Mod</h3>
+                <p>
+                    {{(oneCharacter.stats[0].intelligence - 10.1) / 2 | number:'1.0-0'}}
+
+                </p>
+                <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>
+                <h4>Skills</h4>
+                <ul>
+                    <li>Arcana:
+                        {{(listOfProf[2]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].intelligence - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>History:
+                        {{(listOfProf[5]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].intelligence - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>Investigation:
+                        {{(listOfProf[8]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].intelligence - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>Nature:
+                        {{(listOfProf[10]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].intelligence - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>Religion:
+                        {{(listOfProf[14]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].intelligence - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                </ul>
+            </div>
+            <div id="wis" class="stat_block">
+                <h3>WIS</h3>
+                <p>{{oneCharacter.stats[0].wisdom}}</p>
+                <h3>Mod</h3>
+                <p>
+                    {{(oneCharacter.stats[0].wisdom - 10.1) / 2 | number:'1.0-0'}}
+
+                </p>
+                <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>
+                <h4>Skills</h4>
+                <ul>
+                    <li>Animal Handling:
+                        {{(listOfProf[1]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].wisdom - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>Insight:
+                        {{(listOfProf[6]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].wisdom - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>Medicine:
+                        {{(listOfProf[9]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].wisdom - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>Perception:
+                        {{(listOfProf[11]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].wisdom - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>Survival:
+                        {{(listOfProf[17]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].wisdom - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                </ul>
+            </div>
+            <div id="cha" class="stat_block">
+                <h3>CHA</h3>
+                <p>{{oneCharacter.stats[0].charisma}}</p>
+                <h3>Mod</h3>
+                <p>
+                    {{(oneCharacter.stats[0].charisma - 10.1) / 2 | number:'1.0-0'}}
+
+                </p>
+                <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>
+                <h4>Skills</h4>
+                <ul>
+                    <li>Deception:
+                        {{(listOfProf[4]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].charisma - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>Intimidation:
+                        {{(listOfProf[7]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].charisma - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>Performance:
+                        {{(listOfProf[12] * ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].charisma - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+                    <li>Persuasion:
+                        {{(listOfProf[13]* ((oneCharacter.character_class.length)+7)/4)+ (oneCharacter.stats[0].charisma - 10.1) / 2 | number:'1.0-0'}}
+                    </li>
+
+                </ul>
+            </div>
         </div>
-        <div id="dex" class="stat_block">
-            <h3>DEX</h3>
-            <p>{{oneCharacter.stats[1]}}</p>
-            <h3>Mod</h3>
-            <p>
-                {{(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}
+        <!--end of stats_and_skills column-->
 
-            </p>
-            <h4>Save: {{(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</h4>
-            <h4>Skills</h4>
-            <ul>
-                <li>Acrobatics: </li>
-                <li>Sleight of Hand: </li>
-                <li>Stealth: </li>
-            </ul>
+        <div class="col" id="combat">
+            <div>
+                <h3>Proficiency Bonus </h3>
+                <p>{{ ((oneCharacter.character_class.length)+7)/4 | number:'1.0-0'}}</p>
+            </div>
+            <div>
+                <h3>Initiative</h3>
+                <p>{{ (oneCharacter.stats[0].dexterity - 10.1) / 2 | number:'1.0-0'}}</p>
+            </div>
+            <div>
+                <h3>AC</h3>
+                <div>{{ 10+(oneCharacter.stats[0].dexterity - 10.1) / 2 | number:'1.0-0'}}</div>
+            </div>
+            <div>
+                <h3>Max Health</h3>
+                <p>{{ characterHP + (oneCharacter.stats[0].constitution - 10.1) / 2 | number:'1.0-0'}}</p>
+            </div>
+            <div>
+                <h3>Skill Proficiencies</h3>
+                <div *ngFor="let skill of oneCharacter.skills">
+                    {{skill.name}}
 
+                </div>
+            </div>
         </div>
-        <div id="con" class="stat_block">
-            <h3>CON</h3>
-            <p>{{oneCharacter.stats[2]}}</p>
-            <h3>Mod</h3>
-            <p>
-                {{(oneCharacter.stats[2] - 10.1) / 2 | number:'1.0-0'}}
+        <!--end of combat column-->
 
-            </p>
-            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>
+        <div class="col" id="features_and_spells">
+            <div id="features">
+                <h3>Features</h3>
+                <ul *ngFor="let f of classFeatures">
+                    <li>{{f.name}}</li>
+                </ul>
+            </div>
+            <!--end of features-->
+            <div id="spells">
+                <h3>Spells</h3>
+                <div *ngFor="let level of oneCharacter.spells">
+                    <div *ngFor="let spell of level">
+                        <p>{{spell.name}}</p>
+                    </div>
+                </div>
+            </div>
+            <!--end of spells-->
         </div>
-        <div id="int" class="stat_block">
-            <h3>INT</h3>
-            <p>{{oneCharacter.stats[3]}}</p>
-            <h3>Mod</h3>
-            <p>
-                {{(oneCharacter.stats[3] - 10.1) / 2 | number:'1.0-0'}}
+        <!--end of features column-->
 
-            </p>
-            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>
-            <h4>Skills</h4>
-            <ul>
-                <li>Arcana: </li>
-                <li>History: </li>
-                <li>Investigation: </li>
-                <li>Nature: </li>
-                <li>Religion: </li>
-            </ul>
-        </div>
-        <div id="wis" class="stat_block">
-            <h3>WIS</h3>
-            <p>{{oneCharacter.stats[4]}}</p>
-            <h3>Mod</h3>
-            <p>
-                {{(oneCharacter.stats[4] - 10.1) / 2 | number:'1.0-0'}}
+    </div>
+    <!--end of row-->
 
-            </p>
-            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>
-            <h4>Skills</h4>
-            <ul>
-                <li>Animal Handling: </li>
-                <li>Insight: </li>
-                <li>Medicine: </li>
-                <li>Perception: </li>
-                <li>Survival</li>
-            </ul>
-        </div>
-        <div id="cha" class="stat_block">
-            <h3>CHA</h3>
-            <p>{{oneCharacter.stats[5]}}</p>
-            <h3>Mod</h3>
-            <p>
-                {{(oneCharacter.stats[5] - 10.1) / 2 | number:'1.0-0'}}
-
-            </p>
-            <h4>Save: {{(oneCharacter.stats[0] - 10.1) / 2 | number:'1.0-0'}}</h4>
-            <h4>Skills</h4>
-            <ul>
-                <li>Deception: </li>
-                <li>Intimidation: </li>
-                <li>Performance: </li>
-                <li>Persuasion: </li>
-                
-            </ul>
-        </div>
-    </div><!--end of stats_and_skills column-->
-
-    <div class="col" id="combat">
-        <div>
-            <h3>Proficiency Bonus </h3>
-            <p>2</p>
-        </div>
-        <div>
-            <h3>Initiative</h3>
-            <p>{{ (oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</p>
-        </div>
-        <div>
-            <h3>AC</h3>
-            <div>{{ 10+(oneCharacter.stats[1] - 10.1) / 2 | number:'1.0-0'}}</div>
-        </div>
-        <div>
-            <h3>Max Health</h3>
-            <p>{{ (oneCharacter.stats[2] - 10.1) / 2 | number:'1.0-0'}}</p>
-        </div>
-     </div><!--end of combat column-->
-
-    <div class="col" id="features_and_spells">
-        <div id="features">
-            <h3>Features</h3>
-        </div><!--end of features-->
-        <div id="spells">
-            <h3>Spells</h3>
-        </div><!--end of spells-->
-    </div><!--end of features column-->
-
-    </div><!--end of row-->
-
-</div><!--end of container-->
+</div>
+<!--end of container-->
