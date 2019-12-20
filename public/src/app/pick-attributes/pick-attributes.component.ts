@@ -71,6 +71,15 @@ export class PickAttributesComponent implements OnInit, OnChanges {
     this.getOneClass(this.classIndex);
     this.getAllSpells();
     this.getAllFeatures();
+    this.stats={
+      'strength': null,
+      'dexterity': null,
+      'constitution': null,
+      'intelligence': null,
+      'wisdom': null,
+      'charisma': null
+    };
+    this.errors=[];
   }
   getOneClass(classIndex) {
     this.classSpells = [];
@@ -180,10 +189,7 @@ export class PickAttributesComponent implements OnInit, OnChanges {
   }
   addStat(stat, value){
     console.log(stat)
-      if (this.stats.stat == value){
-        this.stats[stat]=null;
-      }
-      else if(value == this.stats.strength){
+      if(value == this.stats.strength){
         this.stats.strength=null;
     }
       else if(value == this.stats.dexterity){

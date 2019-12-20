@@ -46,139 +46,139 @@
     <h4>Choose Stats:</h4>
     <div>
         <span *ngIf= 'stats.strength == null'>Strength: </span>
-        <span *ngIf= 'stats.strength != null' style="color: blue;">Strength: is {{stats.strength}}</span>
+        <span *ngIf= 'stats.strength != null' style="color: red; text-decoration: underline;">Strength: is {{stats.strength}}</span>
 
         <button *ngIf= 'stats.strength!=8' style='margin:10px;' (click)='addStat("strength", 8 )'>8</button>
-        <button *ngIf= 'stats.strength == 8' style='background-color: red;' (click)='addstat("strength", 8)'>8</button>
+        <button *ngIf= 'stats.strength == 8' style='background-color: red; color:white;' (click)='addStat("strength", 8)'>8</button>
 
         <button *ngIf= 'stats.strength!=10' style='margin:10px;' (click)='addStat("strength", 10 )'>10</button>
-        <button *ngIf= 'stats.strength == 10' style='background-color: red;' (click)='addstat("strength", 10)'>10</button>
+        <button *ngIf= 'stats.strength == 10' style='background-color: red; color:white;' (click)='addStat("strength", 10)'>10</button>
 
         <button *ngIf= 'stats.strength!=12' style='margin:10px;' (click)='addStat("strength", 12 )'>12</button>
-        <button *ngIf= 'stats.strength == 12' style='background-color: red;' (click)='addstat("strength", 12)'>12</button>
+        <button *ngIf= 'stats.strength == 12' style='background-color: red; color:white;' (click)='addStat("strength", 12)'>12</button>
 
         <button *ngIf= 'stats.strength!=13' style='margin:10px;' (click)='addStat("strength", 13 )'>13</button>
-        <button *ngIf= 'stats.strength == 13' style='background-color: red;' (click)='addstat("strength", 13)'>13</button>
+        <button *ngIf= 'stats.strength == 13' style='background-color: red; color:white;' (click)='addStat("strength", 13)'>13</button>
 
         <button *ngIf= 'stats.strength!=14' style='margin:10px;' (click)='addStat("strength", 14 )'>14</button>
-        <button *ngIf= 'stats.strength == 14' style='background-color: red;' (click)='addstat("strength", 14)'>14</button>
+        <button *ngIf= 'stats.strength == 14' style='background-color: red; color:white;' (click)='addStat("strength", 14)'>14</button>
 
         <button *ngIf= 'stats.strength!=15' style='margin:10px;' (click)='addStat("strength", 15 )'>15</button>
-        <button *ngIf= 'stats.strength == 15' style='background-color: red;' (click)='addstat("strength", 15)'>15</button>
+        <button *ngIf= 'stats.strength == 15' style='background-color: red; color:white;' (click)='addStat("strength", 15)'>15</button>
     </div>
     <div>
         <span *ngIf= 'stats.dexterity == null'>Dexterity: </span>
-        <span *ngIf= 'stats.dexterity != null' style="color: blue;">Dexterity: is {{stats.dexterity}}</span>
+        <span *ngIf= 'stats.dexterity != null' style="color: red; text-decoration: underline;">Dexterity: is {{stats.dexterity}}</span>
 
         <button *ngIf= 'stats.dexterity!=8' style='margin:10px;' (click)='addStat("dexterity", 8 )'>8</button>
-        <button *ngIf= 'stats.dexterity == 8' style='background-color: red;' (click)='addstat("dexterity", 8)'>8</button>
+        <button *ngIf= 'stats.dexterity == 8' style='background-color: red; color:white;' (click)='addStat("dexterity", 8)'>8</button>
 
         <button *ngIf= 'stats.dexterity!=10' style='margin:10px;' (click)='addStat("dexterity", 10 )'>10</button>
-        <button *ngIf= 'stats.dexterity == 10' style='background-color: red;' (click)='addstat("dexterity", 10)'>10</button>
+        <button *ngIf= 'stats.dexterity == 10' style='background-color: red; color:white;' (click)='addStat("dexterity", 10)'>10</button>
 
         <button *ngIf= 'stats.dexterity!=12' style='margin:10px;' (click)='addStat("dexterity", 12 )'>12</button>
-        <button *ngIf= 'stats.dexterity == 12' style='background-color: red;' (click)='addstat("dexterity", 12)'>12</button>
+        <button *ngIf= 'stats.dexterity == 12' style='background-color: red; color:white;' (click)='addStat("dexterity", 12)'>12</button>
 
         <button *ngIf= 'stats.dexterity!=13' style='margin:10px;' (click)='addStat("dexterity", 13 )'>13</button>
-        <button *ngIf= 'stats.dexterity == 13' style='background-color: red;' (click)='addstat("dexterity", 13)'>13</button>
+        <button *ngIf= 'stats.dexterity == 13' style='background-color: red; color:white;' (click)='addStat("dexterity", 13)'>13</button>
 
         <button *ngIf= 'stats.dexterity!=14' style='margin:10px;' (click)='addStat("dexterity", 14 )'>14</button>
-        <button *ngIf= 'stats.dexterity == 14' style='background-color: red;' (click)='addstat("dexterity", 14)'>14</button>
+        <button *ngIf= 'stats.dexterity == 14' style='background-color: red; color:white;' (click)='addStat("dexterity", 14)'>14</button>
 
         <button *ngIf= 'stats.dexterity!=15' style='margin:10px;' (click)='addStat("dexterity", 15 )'>15</button>
-        <button *ngIf= 'stats.dexterity == 15' style='background-color: red;' (click)='addstat("dexterity", 15)'>15</button>
+        <button *ngIf= 'stats.dexterity == 15' style='background-color: red; color:white;' (click)='addStat("dexterity", 15)'>15</button>
         
         
     </div>
     <div>
         <span *ngIf= 'stats.constitution == null'>Constitution: </span>
-        <span *ngIf= 'stats.constitution != null' style="color: blue;">Constitution: is {{stats.constitution}}</span>
+        <span *ngIf= 'stats.constitution != null' style="color: red; text-decoration: underline;">Constitution: is {{stats.constitution}}</span>
 
         <button *ngIf= 'stats.constitution!=8' style='margin:10px;' (click)='addStat("constitution", 8 )'>8</button>
-        <button *ngIf= 'stats.constitution == 8' style='background-color: red;' (click)='addstat("constitution", 8)'>8</button>
+        <button *ngIf= 'stats.constitution == 8' style='background-color: red; color:white;' (click)='addStat("constitution", 8)'>8</button>
 
         <button *ngIf= 'stats.constitution!=10' style='margin:10px;' (click)='addStat("constitution", 10 )'>10</button>
-        <button *ngIf= 'stats.constitution == 10' style='background-color: red;' (click)='addstat("constitution", 10)'>10</button>
+        <button *ngIf= 'stats.constitution == 10' style='background-color: red; color:white;' (click)='addStat("constitution", 10)'>10</button>
 
         <button *ngIf= 'stats.constitution!=12' style='margin:10px;' (click)='addStat("constitution", 12 )'>12</button>
-        <button *ngIf= 'stats.constitution == 12' style='background-color: red;' (click)='addstat("constitution", 12)'>12</button>
+        <button *ngIf= 'stats.constitution == 12' style='background-color: red; color:white;' (click)='addStat("constitution", 12)'>12</button>
 
         <button *ngIf= 'stats.constitution!=13' style='margin:10px;' (click)='addStat("constitution", 13 )'>13</button>
-        <button *ngIf= 'stats.constitution == 13' style='background-color: red;' (click)='addstat("constitution", 13)'>13</button>
+        <button *ngIf= 'stats.constitution == 13' style='background-color: red; color:white;' (click)='addStat("constitution", 13)'>13</button>
 
         <button *ngIf= 'stats.constitution!=14' style='margin:10px;' (click)='addStat("constitution", 14 )'>14</button>
-        <button *ngIf= 'stats.constitution == 14' style='background-color: red;' (click)='addstat("constitution", 14)'>14</button>
+        <button *ngIf= 'stats.constitution == 14' style='background-color: red; color:white;' (click)='addStat("constitution", 14)'>14</button>
 
         <button *ngIf= 'stats.constitution!=15' style='margin:10px;' (click)='addStat("constitution", 15 )'>15</button>
-        <button *ngIf= 'stats.constitution == 15' style='background-color: red;' (click)='addstat("constitution", 15)'>15</button>
+        <button *ngIf= 'stats.constitution == 15' style='background-color: red; color:white;' (click)='addStat("constitution", 15)'>15</button>
         
     </div>
     <div>
         <span *ngIf= 'stats.intelligence == null'>Intelligence: </span>
-        <span *ngIf= 'stats.intelligence != null' style="color: blue;">Intelligence: is {{stats.intelligence}}</span>
+        <span *ngIf= 'stats.intelligence != null' style="color: red; text-decoration: underline;">Intelligence: is {{stats.intelligence}}</span>
 
         <button *ngIf= 'stats.intelligence!=8' style='margin:10px;' (click)='addStat("intelligence", 8 )'>8</button>
-        <button *ngIf= 'stats.intelligence == 8' style='background-color: red;' (click)='addstat("intelligence", 8)'>8</button>
+        <button *ngIf= 'stats.intelligence == 8' style='background-color: red; color:white;' (click)='addStat("intelligence", 8)'>8</button>
 
         <button *ngIf= 'stats.intelligence!=10' style='margin:10px;' (click)='addStat("intelligence", 10 )'>10</button>
-        <button *ngIf= 'stats.intelligence == 10' style='background-color: red;' (click)='addstat("intelligence", 10)'>10</button>
+        <button *ngIf= 'stats.intelligence == 10' style='background-color: red; color:white;' (click)='addStat("intelligence", 10)'>10</button>
 
         <button *ngIf= 'stats.intelligence!=12' style='margin:10px;' (click)='addStat("intelligence", 12 )'>12</button>
-        <button *ngIf= 'stats.intelligence == 12' style='background-color: red;' (click)='addstat("intelligence", 12)'>12</button>
+        <button *ngIf= 'stats.intelligence == 12' style='background-color: red; color:white;' (click)='addStat("intelligence", 12)'>12</button>
 
         <button *ngIf= 'stats.intelligence!=13' style='margin:10px;' (click)='addStat("intelligence", 13 )'>13</button>
-        <button *ngIf= 'stats.intelligence == 13' style='background-color: red;' (click)='addstat("intelligence", 13)'>13</button>
+        <button *ngIf= 'stats.intelligence == 13' style='background-color: red; color:white;' (click)='addStat("intelligence", 13)'>13</button>
 
         <button *ngIf= 'stats.intelligence!=14'  style='margin:10px;' (click)='addStat("intelligence", 14 )'>14</button>
-        <button *ngIf= 'stats.intelligence == 14' style='background-color: red;' (click)='addstat("intelligence", 14)'>14</button>
+        <button *ngIf= 'stats.intelligence == 14' style='background-color: red; color:white;' (click)='addStat("intelligence", 14)'>14</button>
 
         <button *ngIf= 'stats.intelligence!=15' style='margin:10px;' (click)='addStat("intelligence", 15 )'>15</button>
-        <button *ngIf= 'stats.intelligence == 15' style='background-color: red;' (click)='addstat("intelligence", 15)'>15</button>
+        <button *ngIf= 'stats.intelligence == 15' style='background-color: red; color:white;' (click)='addStat("intelligence", 15)'>15</button>
         
     </div>
     <div>
         <span *ngIf= 'stats.wisdom == null'>Wisdom: </span>
-        <span *ngIf= 'stats.wisdom != null' style="color: blue;">Wisdom: is {{stats.wisdom}}</span>
+        <span *ngIf= 'stats.wisdom != null' style="color: red; text-decoration: underline;">Wisdom: is {{stats.wisdom}}</span>
 
         <button *ngIf= 'stats.wisdom!=8' style='margin:10px;' (click)='addStat("wisdom", 8 )'>8</button>
-        <button *ngIf= 'stats.wisdom == 8' style='background-color: red; margin:10px;' (click)='addstat("wisdom", 8)'>8</button>
+        <button *ngIf= 'stats.wisdom == 8' style='background-color: red; color:white; margin:10px;' (click)='addStat("wisdom", 8)'>8</button>
 
         <button *ngIf= 'stats.wisdom!=10' style='margin:10px;' (click)='addStat("wisdom", 10 )'>10</button>
-        <button *ngIf= 'stats.wisdom == 10' style='background-color: red; margin:10px;' (click)='addstat("wisdom", 10)'>10</button>
+        <button *ngIf= 'stats.wisdom == 10' style='background-color: red; color:white; margin:10px;' (click)='addStat("wisdom", 10)'>10</button>
 
         <button *ngIf= 'stats.wisdom!=12'  style='margin:10px;' (click)='addStat("wisdom", 12 )'>12</button>
-        <button *ngIf= 'stats.wisdom == 12' style='background-color: red; margin:10px;' (click)='addstat("wisdom", 12)'>12</button>
+        <button *ngIf= 'stats.wisdom == 12' style='background-color: red; color:white; margin:10px;' (click)='addStat("wisdom", 12)'>12</button>
 
         <button *ngIf= 'stats.wisdom!=13' style='margin:10px;' (click)='addStat("wisdom", 13 )'>13</button>
-        <button *ngIf= 'stats.wisdom == 13' style='background-color: red; margin:10px;' (click)='addstat("wisdom", 13)'>13</button>
+        <button *ngIf= 'stats.wisdom == 13' style='background-color: red; color:white; margin:10px;' (click)='addStat("wisdom", 13)'>13</button>
 
         <button *ngIf= 'stats.wisdom!=14' style='margin:10px;' (click)='addStat("wisdom", 14 )'>14</button>
-        <button *ngIf= 'stats.wisdom == 14' style='background-color: red; margin:10px;' (click)='addstat("wisdom", 14)'>14</button>
+        <button *ngIf= 'stats.wisdom == 14' style='background-color: red; color:white; margin:10px;' (click)='addStat("wisdom", 14)'>14</button>
 
         <button *ngIf= 'stats.wisdom!=15' style='margin:10px;' (click)='addStat("wisdom", 15 )'>15</button>
-        <button *ngIf= 'stats.wisdom == 15' style='background-color: red; margin:10px;' (click)='addstat("wisdom", 15)'>15</button>
+        <button *ngIf= 'stats.wisdom == 15' style='background-color: red; color:white; margin:10px;' (click)='addStat("wisdom", 15)'>15</button>
     </div>
     <div>
         <span *ngIf= 'stats.charisma == null'>Charisma: </span>
-        <span *ngIf= 'stats.charisma != null' style="color: blue;">Charisma: is {{stats.charisma}}</span>
+        <span *ngIf= 'stats.charisma != null' style="color: red; text-decoration: underline;">Charisma: is {{stats.charisma}}</span>
 
         <button *ngIf= 'stats.charisma!=8' style='margin:10px;' (click)='addStat("charisma", 8 )'>8</button>
-        <button *ngIf= 'stats.charisma == 8' style='background-color: red; margin:10px;' (click)='addstat("charisma", 8)'>8</button>
+        <button *ngIf= 'stats.charisma == 8' style='background-color: red; color:white; margin:10px;' (click)='addStat("charisma", 8)'>8</button>
 
         <button *ngIf= 'stats.charisma!=10' style='margin:10px;' (click)='addStat("charisma", 10 )'>10</button>
-        <button *ngIf= 'stats.charisma == 10' style='background-color: red; margin:10px;' (click)='addstat("charisma", 10)'>10</button>
+        <button *ngIf= 'stats.charisma == 10' style='background-color: red; color:white; margin:10px;' (click)='addStat("charisma", 10)'>10</button>
 
         <button *ngIf= 'stats.charisma!=12' style='margin:10px;' (click)='addStat("charisma", 12 )'>12</button>
-        <button *ngIf= 'stats.charisma == 12' style='background-color: red; margin:10px;' (click)='addstat("charisma", 12)'>12</button>
+        <button *ngIf= 'stats.charisma == 12' style='background-color: red; color:white; margin:10px;' (click)='addStat("charisma", 12)'>12</button>
 
         <button *ngIf= 'stats.charisma!=13' style='margin:10px;' (click)='addStat("charisma", 13 )'>13</button>
-        <button *ngIf= 'stats.charisma == 13' style='background-color: red; margin:10px;' (click)='addstat("charisma", 13)'>13</button>
+        <button *ngIf= 'stats.charisma == 13' style='background-color: red; color:white; margin:10px;' (click)='addStat("charisma", 13)'>13</button>
 
         <button *ngIf= 'stats.charisma!=14' style='margin:10px;' (click)='addStat("charisma", 14 )'>14</button>
-        <button *ngIf= 'stats.charisma == 14' style='background-color: red; margin:10px;' (click)='addstat("charisma", 14)'>14</button>
+        <button *ngIf= 'stats.charisma == 14' style='background-color: red; color:white; margin:10px;' (click)='addStat("charisma", 14)'>14</button>
 
         <button *ngIf= 'stats.charisma!=15' (click)='addStat("charisma", 15 )'>15</button>
-        <button *ngIf= 'stats.charisma == 15' style='background-color: red; margin:10px;' (click)='addstat("charisma", 15)'>15</button>
+        <button *ngIf= 'stats.charisma == 15' style='background-color: red; color:white; margin:10px;' (click)='addStat("charisma", 15)'>15</button>
     </div>
 </div>
 <div *ngIf= 'errors'>
@@ -186,5 +186,5 @@
         <p style='color:red; font-size: large;'>{{err}}</p>
     </div>
 </div>
-<button style='background-color:green; color: white; width:300px; height: 100px;margin-top:20px; margin-left: 30%; ' (click)='createCharacter()'>Create Character</button>
+<button style='background-image: linear-gradient(rgb(235, 222, 153),gold,gold, rgb(235, 222, 153)); box-shadow: 5px 5px rgb(41, 36, 9); color: white; width:300px; height: 100px;margin-top:20px; margin-left: 30%; border-radius: 5px; ' (click)='createCharacter()'>Create Character</button>
 
